@@ -41,3 +41,7 @@ Reference points following the Paczynski single-lens morphology used by OGLE mic
 
 - Paczynski, B., 1986. Gravitational microlensing by the galactic halo. The Astrophysical Journal, 304, pp.1-5.
 - Udalski, A., Szymanski, M.K. and Szymanski, G., 2015. OGLE-IV: Fourth phase of the Optical Gravitational Lensing Experiment. Acta Astronomica, 65, pp.1-38.
+
+## Research Quality Upgrade
+
+See [RESEARCH_QUALITY.md](RESEARCH_QUALITY.md) for the validation layer, reference anchors, equations and research boundaries added to this repository.
