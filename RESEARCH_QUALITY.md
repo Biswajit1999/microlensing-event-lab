@@ -4,7 +4,7 @@ This repository has been upgraded with a compact research-quality layer: referen
 
 ## Scope
 
-microlensing-event-lab upgraded with reproducibility metadata and validation.
+Private microlensing light-curve lab with Paczynski modelling and OGLE-style reference anchors.
 
 ## Equations And Models
 

@@ -1,6 +1,6 @@
 {
   "title": "microlensing event lab",
-  "description": "microlensing-event-lab upgraded with reproducibility metadata and validation.",
+  "description": "Private microlensing light-curve lab with Paczynski modelling and OGLE-style reference anchors.",
   "equations": [
     "Repository metadata completeness",
     "Reference-data finite anchor validation",
