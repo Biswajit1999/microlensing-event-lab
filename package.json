@@ -1,0 +1,18 @@
+{
+  "name": "microlensing-event-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paczynski light curves, blending and finite cadence residuals.",
+  "scripts": {
+    "check": "node --check app.js && node --check physicsWorker.js && node --check scripts/validate.js && node scripts/validate.js"
+  },
+  "keywords": [
+    "astrophysics",
+    "simulation",
+    "canvas",
+    "web-worker",
+    "microlensing"
+  ],
+  "author": "Biswajit Jana",
+  "license": "MIT"
+}

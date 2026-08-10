@@ -1,0 +1,38 @@
+{
+  "dataset": "OGLE-like microlensing light-curve anchors",
+  "source": "Reference points following the Paczynski single-lens morphology used by OGLE microlensing analyses.",
+  "citation": "Udalski, A., Szymanski, M.K. and Szymanski, G., 2015. OGLE-IV: Fourth phase of the Optical Gravitational Lensing Experiment. Acta Astronomica, 65, pp.1-38.",
+  "x_label": "Time - t0 [days]",
+  "y_label": "Relative flux",
+  "points": [
+    {
+      "x": -40,
+      "y": 1.02,
+      "label": "baseline"
+    },
+    {
+      "x": -15,
+      "y": 1.19,
+      "label": "rising wing"
+    },
+    {
+      "x": 0,
+      "y": 6.95,
+      "label": "peak"
+    },
+    {
+      "x": 15,
+      "y": 1.19,
+      "label": "falling wing"
+    },
+    {
+      "x": 40,
+      "y": 1.02,
+      "label": "baseline return"
+    }
+  ],
+  "requiredCitations": [
+    "Paczynski, B., 1986. Gravitational microlensing by the galactic halo. The Astrophysical Journal, 304, pp.1-5.",
+    "Udalski, A., Szymanski, M.K. and Szymanski, G., 2015. OGLE-IV: Fourth phase of the Optical Gravitational Lensing Experiment. Acta Astronomica, 65, pp.1-38."
+  ]
+}
