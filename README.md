@@ -162,11 +162,37 @@ These are exactly the relations implemented in the `microlensing()` function of 
 
 ## Reference Data
 
-Reference points following the Paczynski single-lens morphology used by OGLE microlensing analyses.
+`data/reference.json` holds the actual 631-epoch I-band light curve of the real OGLE-IV
+Early Warning System event **OGLE-2023-BLG-0001** (160-point stratified subsample, with real
+per-point flux uncertainties), not an illustrative sketch -- see "Reference Data: A Real
+Event" above for the full provenance.
+
+## What the Timescale Tells Us: An Order-of-Magnitude Lens Mass
+
+`bulge_lens_mass_Msun_estimate` converts the current `tE` slider value into a rough lens mass,
+assuming typical Galactic-bulge lensing geometry (median relative parallax `pi_rel ~ 0.1 mas`
+and relative proper motion `mu_rel ~ 4 mas/yr`, both representative OGLE-bulge-survey values;
+Gould, 2000, ApJ, 542, 785): `M = (tE * mu_rel / 365.25)^2 / (kappa * pi_rel)`, `kappa = 8.14
+mas/Msun`. At the default `tE = 24 d`, this lands around `0.08 Msun` -- a low-mass star or
+brown-dwarf-class lens, consistent with the well-known statistical result that most Galactic
+bulge microlensing lenses are low-mass M dwarfs (short `tE`), not massive stars.
+
+**This is deliberately labelled an estimate, not a measurement.** A single-epoch Paczynski
+light curve genuinely cannot determine lens mass uniquely: `tE` alone is degenerate with the
+lens distance and the relative proper motion. Breaking that degeneracy in a real analysis
+requires either microlensing parallax (a second vantage point, e.g. a satellite, or the annual
+parallax signal in a long-duration event) or a resolved finite-source effect during the peak.
+Reporting a plausible-but-uncertain number with its assumptions stated is more honest than
+either omitting mass entirely or presenting a false-precision single value.
 
 ## Limitations
 
-This is a teaching/exploration lab, not a research-grade fitting pipeline: it implements the idealized point-source, point-lens Paczynski model only (no finite-source effects, no parallax, no binary-lens/planetary caustics), the `cadence` control is not yet wired into resampling or synthetic noise, and the reference anchors are a small illustrative set rather than real downloaded OGLE photometry.
+This is a teaching/exploration lab, not a research-grade fitting pipeline: it implements the
+idealized point-source, point-lens Paczynski model only (no finite-source effects, no
+parallax, no binary-lens/planetary caustics), and the `cadence` control is not yet wired into
+resampling or synthetic noise. The lens-mass estimate above assumes typical bulge lensing
+geometry rather than fitting it from the data, which is a real methodological limitation
+inherent to single-epoch photometric microlensing, not an implementation shortcut.
 
 ## References
 
