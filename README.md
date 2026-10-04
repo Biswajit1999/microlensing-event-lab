@@ -92,8 +92,7 @@ This repository is a self-contained, zero-build browser app (no bundler, no fram
    - Also generates a 72x72 normalized "magnification field" heatmap, sweeping impact-parameter offsets in both plotted dimensions with the same `A(u)` law, as a quick visual for how magnification falls off around the `(u0, 0)` alignment point.
    - The same worker file also hosts the physics models for this repository's sibling labs (CMB, supernovae, FRB dispersion, rotation curves, asteroseismology, weak lensing shear, spectrograph RV precision, clustering, exoplanet transmission spectra) behind a `lab` id dispatch table — only the `microlensing` branch is exercised by this app.
 3. **`data/reference.json`** now ships the actual I-band photometry (160-epoch stratified subsample of a 631-point light curve) of a real OGLE-IV Early Warning System event, **OGLE-2023-BLG-0001**, pulled directly from `ogle.astrouw.edu.pl/ogle4/ews/`. Magnitudes are converted to baseline-normalised relative flux (`flux = 10^(-0.4*(mag - baseline))`, with the baseline taken as the median of the faintest 150 epochs), and time is referenced to the epoch of peak brightness. The real event shows genuine ~8x amplification at peak. Each point carries its propagated 1-sigma flux uncertainty, rendered as an error bar. This replaces the previous 5-point synthetic morphology sketch with an actual observed event — drag `tE`/`u0` to see how well a single-lens Paczynski curve can (or cannot) match real survey photometry.
-4. **`research-overlay.js`** adds a non-invasive status panel that surfaces the repository's validation state, and **`data/research-reference.json`** plus **`scripts/validate_repository.mjs`** hold the auditable benchmark anchors used for that check (see `RESEARCH_QUALITY.md`).
-5. **`scripts/validate.js`** is a dependency-free repository check (`npm run check`): verifies required files exist, that reference points are finite, that required citations appear in the README, and that no unfinished scaffold tokens remain.
+4. **`scripts/validate.js`** is a dependency-free repository check (`npm run check`): verifies required files exist, that reference points are finite, that required citations appear in the README, and that no unfinished scaffold tokens remain.
 
 The `cadence` control does not currently resample or add noise to the simulated curve inside `physicsWorker.js` — it is exposed as a parameter for future work on finite-cadence sampling residuals (see Limitations below).
 
@@ -104,10 +103,9 @@ The `cadence` control does not currently resample or add noise to the simulated 
 - `app.js`: UI state, Canvas rendering and worker orchestration.
 - `physicsWorker.js`: numerical model and heatmap generation.
 - `data/reference.json`: small auditable reference-data bundle.
-- `data/research-reference.json`: benchmark anchors for the research-quality validation layer.
+- `data/research-reference.json`: benchmark anchors for the validation layer.
 - `research-overlay.js`: non-invasive validation/telemetry panel.
 - `scripts/validate.js`: no-dependency repository validation.
-- `scripts/validate_repository.mjs`: research-quality validation (see `RESEARCH_QUALITY.md`).
 
 ## Usage
 
@@ -128,7 +126,8 @@ npm run check
 npm run validate:research
 ```
 
-`npm run check` verifies required files, JSON reference data, worker syntax, citations and the absence of unfinished scaffold tokens. `npm run validate:research` runs the additional research-quality benchmark check described in `RESEARCH_QUALITY.md`.
+`npm run check` verifies required files, JSON reference data, worker syntax, citations and the absence of unfinished scaffold tokens. `npm run validate:research` checks benchmark-reference data and repository integrity.
+
 
 ## Math Appendix
 
@@ -201,7 +200,3 @@ inherent to single-epoch photometric microlensing, not an implementation shortcu
 - Udalski, A., Szymanski, M.K. and Szymanski, G., 2015. OGLE-IV: Fourth phase of the Optical Gravitational Lensing Experiment. Acta Astronomica, 65, pp.1-38.
 - Gaudi, B.S., 2012. Microlensing surveys for exoplanets. Annual Review of Astronomy and Astrophysics, 50, pp.411-453.
 - Mao, S. and Paczynski, B., 1991. Gravitational microlensing by double stars and planetary systems. The Astrophysical Journal, 374, pp.L37-L40.
-
-## Research Quality Upgrade
-
-See [RESEARCH_QUALITY.md](RESEARCH_QUALITY.md) for the validation layer, reference anchors, equations and research boundaries added to this repository.
