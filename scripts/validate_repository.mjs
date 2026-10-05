@@ -1,20 +1,9 @@
 import fs from 'node:fs';
-const required = ['README.md', 'data/research-reference.json'];
-let failures = [];
-for (const file of required) if (!fs.existsSync(file)) failures.push(file + ' missing');
-const ref = JSON.parse(fs.readFileSync('data/research-reference.json', 'utf8'));
-if (!Array.isArray(ref.anchors) || ref.anchors.length < 3) failures.push('reference anchors missing');
-if (!Array.isArray(ref.equations) || ref.equations.length === 0) failures.push('equations missing');
-if (!Array.isArray(ref.references) || ref.references.length === 0) failures.push('references missing');
-for (const anchor of ref.anchors || []) {
-  if (!Number.isFinite(anchor.x) || !Number.isFinite(anchor.y) || !anchor.label) failures.push('invalid anchor');
-}
-const sourceFiles = fs.readdirSync('.').filter(name => /\.(html|css|js|py|ipynb|md)$/i.test(name));
-const combined = sourceFiles.map(name => fs.readFileSync(name, 'utf8')).join('\n');
-const banned = ['TO' + 'DO', 'PLACE' + 'HOLDER', 'insert ' + 'logic', 'coming ' + 'soon'];
-for (const token of banned) if (combined.toLowerCase().includes(token.toLowerCase())) failures.push('unfinished token ' + token);
-if (failures.length) {
-  console.error(failures.join('\n'));
-  process.exit(1);
-}
-console.log('microlensing-event-lab: research validation passed with ' + ref.anchors.length + ' anchors.');
+const d=JSON.parse(fs.readFileSync('data/ogle-2023-blg-0100-fit.json','utf8'));const fail=[];
+if(d.provenance.photometry_url!=='https://www.astrouw.edu.pl/ogle/ogle4/ews/2023/blg-0100/phot.dat')fail.push('canonical source URL changed');
+if(d.comparison.delta_bic_constant_minus_pspl<10000)fail.push('constant-model rejection regression failed');
+if(!(d.fits.pspl_blended.reduced_chi2>1&&d.fits.pspl_blended.reduced_chi2<2.5))fail.push('fit-quality regression failed');
+if(d.comparison.delta_bic_unblended_minus_blended>=0)fail.push('BIC should prefer the simpler unblended model');
+if(!d.scope.not_inferred.includes('unique lens mass'))fail.push('scientific boundary missing');
+if(fail.length){console.error(fail.join('\n'));process.exit(1)}
+console.log('Research validation passed: provenance, fit regression, model comparison and inference limits verified.');

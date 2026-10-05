@@ -1,0 +1,7220 @@
+{
+  "schema_version": "2.0.0",
+  "event": {
+    "name": "OGLE-2023-BLG-0100",
+    "field": "BLG510.09",
+    "star_number": 99023,
+    "ra_j2000": "17:59:29.62",
+    "dec_j2000": "-35:27:55.6",
+    "survey": "OGLE-IV Early Warning System",
+    "band": "I",
+    "reference_magnitude": 18.669,
+    "n_observations": 360
+  },
+  "provenance": {
+    "event_page": "https://ogle.astrouw.edu.pl/ogle4/ews/2023/blg-0100.html",
+    "photometry_url": "https://www.astrouw.edu.pl/ogle/ogle4/ews/2023/blg-0100/phot.dat",
+    "finding_chart_url": "https://ogle.astrouw.edu.pl/ogle4/ews/data/2023/blg-0100/fchart.jpg",
+    "source_sha256": "63f39592308728c46747400f5a608fb7ecf1367014ac54658221ccfdd2878a2f",
+    "retrieved_utc": "2026-10-05",
+    "columns": [
+      "HJD",
+      "I magnitude",
+      "magnitude error",
+      "seeing [px]",
+      "sky level"
+    ]
+  },
+  "model": {
+    "name": "point-source point-lens (PSPL) with constant blend flux",
+    "equations": {
+      "separation": "u(t)=sqrt(u0^2+((t-t0)/tE)^2)",
+      "magnification": "A(u)=(u^2+2)/(u*sqrt(u^2+4))",
+      "flux": "F(t)=Fs*A(u(t))+Fb"
+    },
+    "fit_method": "bounded scipy.optimize.least_squares, Gaussian reported flux errors"
+  },
+  "fits": {
+    "constant": {
+      "parameters": 1,
+      "chi2": 13361.96197304782,
+      "dof": 359,
+      "reduced_chi2": 37.219949785648524,
+      "bic": 13367.84807707927
+    },
+    "pspl_unblended": {
+      "parameters": {
+        "t0_hjd": 2460001.5186972087,
+        "tE_days": 23.032770416445377,
+        "u0": 0.328786661862347,
+        "source_flux": 0.9996390719147183,
+        "blend_flux": 0.0,
+        "peak_magnification": 3.1634182552221257
+      },
+      "chi2": 561.0632165600405,
+      "dof": 356,
+      "reduced_chi2": 1.5760202712360687,
+      "aic": 569.0632165600405,
+      "bic": 584.607632685841
+    },
+    "pspl_blended": {
+      "parameters": {
+        "t0_hjd": 2460001.5175041254,
+        "tE_days": 24.06091460709747,
+        "u0": 0.3071776586988786,
+        "source_flux": 0.9153139309966519,
+        "blend_flux": 0.08419072051961156,
+        "peak_magnification": 3.369522842989812
+      },
+      "chi2": 560.8583737254105,
+      "dof": 355,
+      "reduced_chi2": 1.5798827428884803,
+      "aic": 570.8583737254105,
+      "bic": 590.2888938826612
+    }
+  },
+  "comparison": {
+    "delta_bic_constant_minus_pspl": 12777.559183196609,
+    "delta_bic_unblended_minus_blended": -5.681261196820174,
+    "outliers_abs_residual_gt_3": 7,
+    "median_abs_standardised_residual": 0.9345058901963246
+  },
+  "observations": [
+    {
+      "day": -3650.62928,
+      "hjd": 2456350.88822,
+      "magnitude": 18.631,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.035619,
+      "flux_error": 0.0343383,
+      "seeing_px": 5.0,
+      "sky": 438.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.05172
+    },
+    {
+      "day": -3646.66976,
+      "hjd": 2456354.84774,
+      "magnitude": 18.656,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0120454,
+      "flux_error": 0.0260996,
+      "seeing_px": 4.01,
+      "sky": 426.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.4805
+    },
+    {
+      "day": -3638.69658,
+      "hjd": 2456362.82092,
+      "magnitude": 18.66,
+      "magnitude_error": 0.031,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0287897,
+      "seeing_px": 4.76,
+      "sky": 335.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.30633
+    },
+    {
+      "day": -3633.61832,
+      "hjd": 2456367.89918,
+      "magnitude": 18.633,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0337131,
+      "flux_error": 0.0238021,
+      "seeing_px": 4.42,
+      "sky": 263.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.4372
+    },
+    {
+      "day": -3630.73111,
+      "hjd": 2456370.78639,
+      "magnitude": 18.666,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0027669,
+      "flux_error": 0.0267839,
+      "seeing_px": 5.1,
+      "sky": 268.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.1218
+    },
+    {
+      "day": -3629.60109,
+      "hjd": 2456371.91641,
+      "magnitude": 18.668,
+      "magnitude_error": 0.05,
+      "relative_flux": 1.0009215,
+      "flux_error": 0.0460941,
+      "seeing_px": 4.54,
+      "sky": 1102.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.03074
+    },
+    {
+      "day": -3628.60684,
+      "hjd": 2456372.91066,
+      "magnitude": 18.61,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0558446,
+      "flux_error": 0.0320915,
+      "seeing_px": 5.43,
+      "sky": 429.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.7556
+    },
+    {
+      "day": -3626.64075,
+      "hjd": 2456374.87675,
+      "magnitude": 18.685,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9853715,
+      "flux_error": 0.0281344,
+      "seeing_px": 5.44,
+      "sky": 288.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.50234
+    },
+    {
+      "day": -3624.68274,
+      "hjd": 2456376.83476,
+      "magnitude": 18.666,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0027669,
+      "flux_error": 0.0277075,
+      "seeing_px": 4.35,
+      "sky": 382.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.11774
+    },
+    {
+      "day": -3622.73778,
+      "hjd": 2456378.77972,
+      "magnitude": 18.66,
+      "magnitude_error": 0.034,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0315758,
+      "seeing_px": 4.64,
+      "sky": 580.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.2793
+    },
+    {
+      "day": -3621.61796,
+      "hjd": 2456379.89954,
+      "magnitude": 18.569,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0964782,
+      "flux_error": 0.0262572,
+      "seeing_px": 3.23,
+      "sky": 475.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 3.69321
+    },
+    {
+      "day": -3619.65443,
+      "hjd": 2456381.86307,
+      "magnitude": 18.645,
+      "magnitude_error": 0.027,
+      "relative_flux": 1.0223509,
+      "flux_error": 0.0254237,
+      "seeing_px": 4.01,
+      "sky": 379.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.89862
+    },
+    {
+      "day": -3614.72929,
+      "hjd": 2456386.78821,
+      "magnitude": 18.7,
+      "magnitude_error": 0.03,
+      "relative_flux": 0.9718517,
+      "flux_error": 0.0268533,
+      "seeing_px": 4.6,
+      "sky": 306.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.02978
+    },
+    {
+      "day": -3613.63387,
+      "hjd": 2456387.88363,
+      "magnitude": 18.755,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9238469,
+      "flux_error": 0.0357376,
+      "seeing_px": 6.68,
+      "sky": 280.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.11704
+    },
+    {
+      "day": -3611.71099,
+      "hjd": 2456389.80651,
+      "magnitude": 18.609,
+      "magnitude_error": 0.027,
+      "relative_flux": 1.0568175,
+      "flux_error": 0.0262809,
+      "seeing_px": 4.73,
+      "sky": 288.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.18078
+    },
+    {
+      "day": -3610.64184,
+      "hjd": 2456390.87566,
+      "magnitude": 18.647,
+      "magnitude_error": 0.031,
+      "relative_flux": 1.0204694,
+      "flux_error": 0.0291365,
+      "seeing_px": 4.69,
+      "sky": 295.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.71954
+    },
+    {
+      "day": -3607.65637,
+      "hjd": 2456393.86113,
+      "magnitude": 18.661,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0073955,
+      "flux_error": 0.0334024,
+      "seeing_px": 6.93,
+      "sky": 332.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.23624
+    },
+    {
+      "day": -3605.65244,
+      "hjd": 2456395.86506,
+      "magnitude": 18.643,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0242359,
+      "flux_error": 0.0235839,
+      "seeing_px": 3.98,
+      "sky": 341.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.04865
+    },
+    {
+      "day": -3603.6792,
+      "hjd": 2456397.8383,
+      "magnitude": 18.644,
+      "magnitude_error": 0.027,
+      "relative_flux": 1.023293,
+      "flux_error": 0.0254472,
+      "seeing_px": 4.6,
+      "sky": 289.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.93481
+    },
+    {
+      "day": -3601.76502,
+      "hjd": 2456399.75248,
+      "magnitude": 18.634,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0327614,
+      "flux_error": 0.027585,
+      "seeing_px": 4.83,
+      "sky": 286.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.20561
+    },
+    {
+      "day": -3599.72893,
+      "hjd": 2456401.78857,
+      "magnitude": 18.615,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0509934,
+      "flux_error": 0.0242,
+      "seeing_px": 4.24,
+      "sky": 263.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.12763
+    },
+    {
+      "day": -3597.80495,
+      "hjd": 2456403.71255,
+      "magnitude": 18.691,
+      "magnitude_error": 0.028,
+      "relative_flux": 0.9799412,
+      "flux_error": 0.0252717,
+      "seeing_px": 4.42,
+      "sky": 314.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.77413
+    },
+    {
+      "day": -3596.81318,
+      "hjd": 2456404.70432,
+      "magnitude": 18.65,
+      "magnitude_error": 0.038,
+      "relative_flux": 1.0176537,
+      "flux_error": 0.0356172,
+      "seeing_px": 4.59,
+      "sky": 680.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.50956
+    },
+    {
+      "day": -3596.60862,
+      "hjd": 2456404.90888,
+      "magnitude": 18.644,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.023293,
+      "flux_error": 0.0282746,
+      "seeing_px": 4.6,
+      "sky": 341.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.84133
+    },
+    {
+      "day": -3593.67566,
+      "hjd": 2456407.84184,
+      "magnitude": 18.613,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0529312,
+      "flux_error": 0.0339425,
+      "seeing_px": 4.89,
+      "sky": 507.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.57403
+    },
+    {
+      "day": -3585.75227,
+      "hjd": 2456415.76523,
+      "magnitude": 18.695,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9763376,
+      "flux_error": 0.0305742,
+      "seeing_px": 5.32,
+      "sky": 313.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.75773
+    },
+    {
+      "day": -3583.83709,
+      "hjd": 2456417.68041,
+      "magnitude": 18.749,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9289664,
+      "flux_error": 0.0376468,
+      "seeing_px": 6.29,
+      "sky": 382.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.87368
+    },
+    {
+      "day": -3582.73956,
+      "hjd": 2456418.77794,
+      "magnitude": 18.639,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0280163,
+      "flux_error": 0.023671,
+      "seeing_px": 4.05,
+      "sky": 260.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.2045
+    },
+    {
+      "day": -3580.89572,
+      "hjd": 2456420.62178,
+      "magnitude": 18.657,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0111137,
+      "flux_error": 0.0307319,
+      "seeing_px": 5.44,
+      "sky": 370.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.37775
+    },
+    {
+      "day": -3579.58238,
+      "hjd": 2456421.93512,
+      "magnitude": 18.685,
+      "magnitude_error": 0.062,
+      "relative_flux": 0.9853715,
+      "flux_error": 0.0562688,
+      "seeing_px": 7.04,
+      "sky": 584.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.25117
+    },
+    {
+      "day": -3577.59611,
+      "hjd": 2456423.92139,
+      "magnitude": 18.621,
+      "magnitude_error": 0.031,
+      "relative_flux": 1.0452014,
+      "flux_error": 0.0298426,
+      "seeing_px": 4.34,
+      "sky": 472.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.53126
+    },
+    {
+      "day": -3574.71126,
+      "hjd": 2456426.80624,
+      "magnitude": 18.664,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0046158,
+      "flux_error": 0.025908,
+      "seeing_px": 4.65,
+      "sky": 302.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.19728
+    },
+    {
+      "day": -3572.59097,
+      "hjd": 2456428.92653,
+      "magnitude": 18.691,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9799412,
+      "flux_error": 0.0379075,
+      "seeing_px": 6.23,
+      "sky": 385.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.51609
+    },
+    {
+      "day": -3568.81964,
+      "hjd": 2456432.69786,
+      "magnitude": 18.672,
+      "magnitude_error": 0.032,
+      "relative_flux": 0.9972407,
+      "flux_error": 0.0293918,
+      "seeing_px": 5.15,
+      "sky": 354.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.07703
+    },
+    {
+      "day": -3567.71785,
+      "hjd": 2456433.79965,
+      "magnitude": 18.719,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9549926,
+      "flux_error": 0.0334241,
+      "seeing_px": 5.52,
+      "sky": 391.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.33174
+    },
+    {
+      "day": -3565.8682,
+      "hjd": 2456435.6493,
+      "magnitude": 18.691,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9799412,
+      "flux_error": 0.0315896,
+      "seeing_px": 4.75,
+      "sky": 487.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.6193
+    },
+    {
+      "day": -3564.79744,
+      "hjd": 2456436.72006,
+      "magnitude": 18.756,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9229964,
+      "flux_error": 0.0340044,
+      "seeing_px": 4.97,
+      "sky": 579.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.24995
+    },
+    {
+      "day": -3563.5817,
+      "hjd": 2456437.9358,
+      "magnitude": 18.56,
+      "magnitude_error": 0.057,
+      "relative_flux": 1.105605,
+      "flux_error": 0.0580431,
+      "seeing_px": 4.73,
+      "sky": 1605.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.82796
+    },
+    {
+      "day": -3558.73278,
+      "hjd": 2456442.78472,
+      "magnitude": 18.661,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0073955,
+      "flux_error": 0.024124,
+      "seeing_px": 4.42,
+      "sky": 324.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.32709
+    },
+    {
+      "day": -3556.60371,
+      "hjd": 2456444.91379,
+      "magnitude": 18.729,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9462372,
+      "flux_error": 0.0313746,
+      "seeing_px": 4.96,
+      "sky": 480.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.69779
+    },
+    {
+      "day": -3554.57031,
+      "hjd": 2456446.94719,
+      "magnitude": 18.677,
+      "magnitude_error": 0.053,
+      "relative_flux": 0.9926588,
+      "flux_error": 0.0484564,
+      "seeing_px": 4.91,
+      "sky": 1412.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.14128
+    },
+    {
+      "day": -3552.94456,
+      "hjd": 2456448.57294,
+      "magnitude": 18.721,
+      "magnitude_error": 0.041,
+      "relative_flux": 0.953235,
+      "flux_error": 0.0359964,
+      "seeing_px": 5.86,
+      "sky": 406.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.28539
+    },
+    {
+      "day": -3551.90434,
+      "hjd": 2456449.61316,
+      "magnitude": 18.681,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.030971,
+      "seeing_px": 5.86,
+      "sky": 304.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.3389
+    },
+    {
+      "day": -3550.85457,
+      "hjd": 2456450.66293,
+      "magnitude": 18.652,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0157808,
+      "flux_error": 0.0233892,
+      "seeing_px": 4.12,
+      "sky": 306.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.69588
+    },
+    {
+      "day": -3549.78593,
+      "hjd": 2456451.73157,
+      "magnitude": 18.634,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0327614,
+      "flux_error": 0.0266338,
+      "seeing_px": 4.51,
+      "sky": 335.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.24867
+    },
+    {
+      "day": -3548.66611,
+      "hjd": 2456452.85139,
+      "magnitude": 18.646,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0214098,
+      "flux_error": 0.0244596,
+      "seeing_px": 4.44,
+      "sky": 305.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.89556
+    },
+    {
+      "day": -3546.62516,
+      "hjd": 2456454.89234,
+      "magnitude": 18.691,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9799412,
+      "flux_error": 0.0279793,
+      "seeing_px": 4.84,
+      "sky": 304.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.69921
+    },
+    {
+      "day": -3544.73911,
+      "hjd": 2456456.77839,
+      "magnitude": 18.627,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0394414,
+      "flux_error": 0.0248914,
+      "seeing_px": 4.49,
+      "sky": 294.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.60444
+    },
+    {
+      "day": -3542.88604,
+      "hjd": 2456458.63146,
+      "magnitude": 18.635,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0318106,
+      "flux_error": 0.031361,
+      "seeing_px": 5.42,
+      "sky": 329.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.03013
+    },
+    {
+      "day": -3541.82584,
+      "hjd": 2456459.69166,
+      "magnitude": 18.585,
+      "magnitude_error": 0.023,
+      "relative_flux": 1.0804384,
+      "flux_error": 0.0228878,
+      "seeing_px": 4.12,
+      "sky": 272.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 3.53611
+    },
+    {
+      "day": -3539.94557,
+      "hjd": 2456461.57193,
+      "magnitude": 18.653,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0148457,
+      "flux_error": 0.0299106,
+      "seeing_px": 4.53,
+      "sky": 433.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.51289
+    },
+    {
+      "day": -3538.66958,
+      "hjd": 2456462.84792,
+      "magnitude": 18.638,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0289636,
+      "flux_error": 0.0303267,
+      "seeing_px": 4.88,
+      "sky": 373.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.97138
+    },
+    {
+      "day": -3537.62389,
+      "hjd": 2456463.89361,
+      "magnitude": 18.669,
+      "magnitude_error": 0.04,
+      "relative_flux": 1.0,
+      "flux_error": 0.0368414,
+      "seeing_px": 5.46,
+      "sky": 504.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.01345
+    },
+    {
+      "day": -3532.90063,
+      "hjd": 2456468.61687,
+      "magnitude": 18.625,
+      "magnitude_error": 0.043,
+      "relative_flux": 1.0413579,
+      "flux_error": 0.0412424,
+      "seeing_px": 5.44,
+      "sky": 665.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.01481
+    },
+    {
+      "day": -3527.90784,
+      "hjd": 2456473.60966,
+      "magnitude": 18.725,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9497297,
+      "flux_error": 0.0253673,
+      "seeing_px": 5.01,
+      "sky": 258.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.96217
+    },
+    {
+      "day": -3526.83137,
+      "hjd": 2456474.68613,
+      "magnitude": 18.633,
+      "magnitude_error": 0.031,
+      "relative_flux": 1.0337131,
+      "flux_error": 0.0295146,
+      "seeing_px": 5.1,
+      "sky": 330.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.15903
+    },
+    {
+      "day": -3525.74047,
+      "hjd": 2456475.77703,
+      "magnitude": 18.671,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9981596,
+      "flux_error": 0.0321769,
+      "seeing_px": 5.48,
+      "sky": 356.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.0418
+    },
+    {
+      "day": -3524.69007,
+      "hjd": 2456476.82743,
+      "magnitude": 18.728,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9471091,
+      "flux_error": 0.0348928,
+      "seeing_px": 6.25,
+      "sky": 352.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.50162
+    },
+    {
+      "day": -3522.92913,
+      "hjd": 2456478.58837,
+      "magnitude": 18.678,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.991745,
+      "flux_error": 0.0310566,
+      "seeing_px": 5.57,
+      "sky": 309.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.24986
+    },
+    {
+      "day": -3520.86077,
+      "hjd": 2456480.65673,
+      "magnitude": 18.728,
+      "magnitude_error": 0.032,
+      "relative_flux": 0.9471091,
+      "flux_error": 0.0279142,
+      "seeing_px": 5.43,
+      "sky": 263.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.87702
+    },
+    {
+      "day": -3519.71422,
+      "hjd": 2456481.80328,
+      "magnitude": 18.607,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.058766,
+      "flux_error": 0.0312051,
+      "seeing_px": 5.56,
+      "sky": 345.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.89909
+    },
+    {
+      "day": -3515.84938,
+      "hjd": 2456485.66812,
+      "magnitude": 18.638,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0289636,
+      "flux_error": 0.0246405,
+      "seeing_px": 4.48,
+      "sky": 287.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.19555
+    },
+    {
+      "day": -3514.72908,
+      "hjd": 2456486.78842,
+      "magnitude": 18.663,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0055415,
+      "flux_error": 0.0277841,
+      "seeing_px": 4.94,
+      "sky": 326.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.21728
+    },
+    {
+      "day": -3510.84529,
+      "hjd": 2456490.67221,
+      "magnitude": 18.67,
+      "magnitude_error": 0.03,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0276056,
+      "seeing_px": 4.42,
+      "sky": 317.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.01541
+    },
+    {
+      "day": -3509.69633,
+      "hjd": 2456491.82117,
+      "magnitude": 18.664,
+      "magnitude_error": 0.039,
+      "relative_flux": 1.0046158,
+      "flux_error": 0.0360861,
+      "seeing_px": 6.14,
+      "sky": 410.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.14164
+    },
+    {
+      "day": -3504.94663,
+      "hjd": 2456496.57087,
+      "magnitude": 18.724,
+      "magnitude_error": 0.054,
+      "relative_flux": 0.9506048,
+      "flux_error": 0.0472791,
+      "seeing_px": 6.01,
+      "sky": 686.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.03428
+    },
+    {
+      "day": -3502.91028,
+      "hjd": 2456498.60722,
+      "magnitude": 18.697,
+      "magnitude_error": 0.028,
+      "relative_flux": 0.9745407,
+      "flux_error": 0.0251324,
+      "seeing_px": 4.05,
+      "sky": 383.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.9933
+    },
+    {
+      "day": -3500.81765,
+      "hjd": 2456500.69985,
+      "magnitude": 18.695,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.9763376,
+      "flux_error": 0.0458612,
+      "seeing_px": 7.15,
+      "sky": 437.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.50516
+    },
+    {
+      "day": -3495.97903,
+      "hjd": 2456505.53847,
+      "magnitude": 18.676,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.032029,
+      "seeing_px": 5.77,
+      "sky": 321.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.18518
+    },
+    {
+      "day": -3493.82938,
+      "hjd": 2456507.68812,
+      "magnitude": 18.694,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.9772372,
+      "flux_error": 0.0414032,
+      "seeing_px": 7.14,
+      "sky": 330.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.53782
+    },
+    {
+      "day": -3491.88894,
+      "hjd": 2456509.62856,
+      "magnitude": 18.703,
+      "magnitude_error": 0.025,
+      "relative_flux": 0.9691701,
+      "flux_error": 0.022316,
+      "seeing_px": 3.78,
+      "sky": 292.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.35932
+    },
+    {
+      "day": -3489.99259,
+      "hjd": 2456511.52491,
+      "magnitude": 18.632,
+      "magnitude_error": 0.034,
+      "relative_flux": 1.0346656,
+      "flux_error": 0.0324007,
+      "seeing_px": 5.69,
+      "sky": 324.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.08519
+    },
+    {
+      "day": -3486.02129,
+      "hjd": 2456515.49621,
+      "magnitude": 18.732,
+      "magnitude_error": 0.03,
+      "relative_flux": 0.9436262,
+      "flux_error": 0.0260734,
+      "seeing_px": 4.58,
+      "sky": 356.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.14312
+    },
+    {
+      "day": -3482.88327,
+      "hjd": 2456518.63423,
+      "magnitude": 18.719,
+      "magnitude_error": 0.03,
+      "relative_flux": 0.9549926,
+      "flux_error": 0.0263874,
+      "seeing_px": 5.24,
+      "sky": 298.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.68687
+    },
+    {
+      "day": -3477.92222,
+      "hjd": 2456523.59528,
+      "magnitude": 18.706,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9664959,
+      "flux_error": 0.0320463,
+      "seeing_px": 4.22,
+      "sky": 561.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.03003
+    },
+    {
+      "day": -3475.89053,
+      "hjd": 2456525.62697,
+      "magnitude": 18.754,
+      "magnitude_error": 0.057,
+      "relative_flux": 0.9246982,
+      "flux_error": 0.0485457,
+      "seeing_px": 6.33,
+      "sky": 602.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.54095
+    },
+    {
+      "day": -3469.91565,
+      "hjd": 2456531.60185,
+      "magnitude": 18.652,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0157808,
+      "flux_error": 0.0299382,
+      "seeing_px": 5.56,
+      "sky": 293.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.54366
+    },
+    {
+      "day": -3466.94402,
+      "hjd": 2456534.57348,
+      "magnitude": 18.637,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0299117,
+      "flux_error": 0.0303547,
+      "seeing_px": 5.16,
+      "sky": 334.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.00173
+    },
+    {
+      "day": -3461.98253,
+      "hjd": 2456539.53497,
+      "magnitude": 18.758,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9212977,
+      "flux_error": 0.0246079,
+      "seeing_px": 4.6,
+      "sky": 323.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -3.17813
+    },
+    {
+      "day": -3456.94308,
+      "hjd": 2456544.57442,
+      "magnitude": 18.597,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0685627,
+      "flux_error": 0.032478,
+      "seeing_px": 6.08,
+      "sky": 265.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.1263
+    },
+    {
+      "day": -3450.0141,
+      "hjd": 2456551.5034,
+      "magnitude": 18.617,
+      "magnitude_error": 0.055,
+      "relative_flux": 1.0490592,
+      "flux_error": 0.0531421,
+      "seeing_px": 7.09,
+      "sky": 527.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.93249
+    },
+    {
+      "day": -3441.9119,
+      "hjd": 2456559.6056,
+      "magnitude": 18.67,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0331267,
+      "seeing_px": 5.98,
+      "sky": 344.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.01284
+    },
+    {
+      "day": -3437.94023,
+      "hjd": 2456563.57727,
+      "magnitude": 18.674,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9954054,
+      "flux_error": 0.0385057,
+      "seeing_px": 6.61,
+      "sky": 309.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.10646
+    },
+    {
+      "day": -3431.92296,
+      "hjd": 2456569.59454,
+      "magnitude": 18.687,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9835581,
+      "flux_error": 0.0280826,
+      "seeing_px": 4.8,
+      "sky": 321.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.56785
+    },
+    {
+      "day": -3428.93262,
+      "hjd": 2456572.58488,
+      "magnitude": 18.789,
+      "magnitude_error": 0.045,
+      "relative_flux": 0.8953648,
+      "flux_error": 0.0371098,
+      "seeing_px": 5.89,
+      "sky": 392.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.80627
+    },
+    {
+      "day": -3428.93082,
+      "hjd": 2456572.58668,
+      "magnitude": 18.609,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.0568175,
+      "flux_error": 0.0360145,
+      "seeing_px": 5.39,
+      "sky": 395.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.59138
+    },
+    {
+      "day": -3424.93896,
+      "hjd": 2456576.57854,
+      "magnitude": 18.547,
+      "magnitude_error": 0.081,
+      "relative_flux": 1.1189225,
+      "flux_error": 0.0834758,
+      "seeing_px": 6.23,
+      "sky": 2248.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.43057
+    },
+    {
+      "day": -3424.01821,
+      "hjd": 2456577.49929,
+      "magnitude": 18.653,
+      "magnitude_error": 0.074,
+      "relative_flux": 1.0148457,
+      "flux_error": 0.0691683,
+      "seeing_px": 5.77,
+      "sky": 1581.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.22179
+    },
+    {
+      "day": -3419.97665,
+      "hjd": 2456581.54085,
+      "magnitude": 18.728,
+      "magnitude_error": 0.043,
+      "relative_flux": 0.9471091,
+      "flux_error": 0.0375097,
+      "seeing_px": 5.25,
+      "sky": 560.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.39685
+    },
+    {
+      "day": -3416.97412,
+      "hjd": 2456584.54338,
+      "magnitude": 18.686,
+      "magnitude_error": 0.059,
+      "relative_flux": 0.9844644,
+      "flux_error": 0.0534968,
+      "seeing_px": 6.0,
+      "sky": 877.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.28114
+    },
+    {
+      "day": -3299.63781,
+      "hjd": 2456701.87969,
+      "magnitude": 18.668,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0009215,
+      "flux_error": 0.0276565,
+      "seeing_px": 4.38,
+      "sky": 512.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.05123
+    },
+    {
+      "day": -3292.62907,
+      "hjd": 2456708.88843,
+      "magnitude": 18.753,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9255502,
+      "flux_error": 0.0306887,
+      "seeing_px": 4.72,
+      "sky": 534.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.40983
+    },
+    {
+      "day": -3286.62887,
+      "hjd": 2456714.88863,
+      "magnitude": 18.775,
+      "magnitude_error": 0.049,
+      "relative_flux": 0.9069848,
+      "flux_error": 0.0409328,
+      "seeing_px": 7.23,
+      "sky": 362.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.26029
+    },
+    {
+      "day": -3283.65815,
+      "hjd": 2456717.85935,
+      "magnitude": 18.712,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9611695,
+      "flux_error": 0.0354108,
+      "seeing_px": 6.22,
+      "sky": 385.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.08258
+    },
+    {
+      "day": -3280.69304,
+      "hjd": 2456720.82446,
+      "magnitude": 18.651,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0167168,
+      "flux_error": 0.0271565,
+      "seeing_px": 4.95,
+      "sky": 375.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.63381
+    },
+    {
+      "day": -3278.66781,
+      "hjd": 2456722.84969,
+      "magnitude": 18.618,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0480934,
+      "flux_error": 0.0318559,
+      "seeing_px": 5.42,
+      "sky": 431.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.52527
+    },
+    {
+      "day": -3276.64559,
+      "hjd": 2456724.87191,
+      "magnitude": 18.683,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9871883,
+      "flux_error": 0.0345509,
+      "seeing_px": 6.12,
+      "sky": 380.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.35647
+    },
+    {
+      "day": -3274.6419,
+      "hjd": 2456726.8756,
+      "magnitude": 18.673,
+      "magnitude_error": 0.032,
+      "relative_flux": 0.9963226,
+      "flux_error": 0.0293647,
+      "seeing_px": 4.87,
+      "sky": 395.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.10836
+    },
+    {
+      "day": -3272.65158,
+      "hjd": 2456728.86592,
+      "magnitude": 18.637,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0299117,
+      "flux_error": 0.0246632,
+      "seeing_px": 4.8,
+      "sky": 325.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.23289
+    },
+    {
+      "day": -3270.68181,
+      "hjd": 2456730.83569,
+      "magnitude": 18.723,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9514807,
+      "flux_error": 0.0385592,
+      "seeing_px": 6.4,
+      "sky": 427.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.24546
+    },
+    {
+      "day": -3268.6156,
+      "hjd": 2456732.9019,
+      "magnitude": 18.664,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0046158,
+      "flux_error": 0.032385,
+      "seeing_px": 4.87,
+      "sky": 525.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.15782
+    },
+    {
+      "day": -3266.67104,
+      "hjd": 2456734.84646,
+      "magnitude": 18.739,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.937562,
+      "flux_error": 0.0293599,
+      "seeing_px": 4.54,
+      "sky": 477.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.10977
+    },
+    {
+      "day": -3264.73513,
+      "hjd": 2456736.78237,
+      "magnitude": 18.698,
+      "magnitude_error": 0.052,
+      "relative_flux": 0.9736436,
+      "flux_error": 0.0466315,
+      "seeing_px": 6.69,
+      "sky": 610.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.55458
+    },
+    {
+      "day": -3263.6439,
+      "hjd": 2456737.8736,
+      "magnitude": 18.707,
+      "magnitude_error": 0.028,
+      "relative_flux": 0.9656061,
+      "flux_error": 0.024902,
+      "seeing_px": 3.76,
+      "sky": 484.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.36128
+    },
+    {
+      "day": -3259.64456,
+      "hjd": 2456741.87294,
+      "magnitude": 18.724,
+      "magnitude_error": 0.039,
+      "relative_flux": 0.9506048,
+      "flux_error": 0.034146,
+      "seeing_px": 3.94,
+      "sky": 831.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.43208
+    },
+    {
+      "day": -3258.68513,
+      "hjd": 2456742.83237,
+      "magnitude": 18.61,
+      "magnitude_error": 0.023,
+      "relative_flux": 1.0558446,
+      "flux_error": 0.0223668,
+      "seeing_px": 3.98,
+      "sky": 342.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.51891
+    },
+    {
+      "day": -3255.7833,
+      "hjd": 2456745.7342,
+      "magnitude": 18.59,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0754742,
+      "flux_error": 0.0326881,
+      "seeing_px": 5.98,
+      "sky": 371.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.32407
+    },
+    {
+      "day": -3255.74255,
+      "hjd": 2456745.77495,
+      "magnitude": 18.666,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0027669,
+      "flux_error": 0.0323254,
+      "seeing_px": 5.95,
+      "sky": 337.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.10092
+    },
+    {
+      "day": -3254.67509,
+      "hjd": 2456746.84241,
+      "magnitude": 18.647,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0204694,
+      "flux_error": 0.0234972,
+      "seeing_px": 4.29,
+      "sky": 300.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.89223
+    },
+    {
+      "day": -3245.68818,
+      "hjd": 2456755.82932,
+      "magnitude": 18.624,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0423174,
+      "flux_error": 0.0268803,
+      "seeing_px": 4.92,
+      "sky": 326.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.59272
+    },
+    {
+      "day": -3242.59854,
+      "hjd": 2456758.91896,
+      "magnitude": 18.639,
+      "magnitude_error": 0.038,
+      "relative_flux": 1.0280163,
+      "flux_error": 0.0359798,
+      "seeing_px": 6.59,
+      "sky": 331.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.79243
+    },
+    {
+      "day": -3239.64856,
+      "hjd": 2456761.86894,
+      "magnitude": 18.66,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0297184,
+      "seeing_px": 4.87,
+      "sky": 419.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.29676
+    },
+    {
+      "day": -3236.65129,
+      "hjd": 2456764.86621,
+      "magnitude": 18.649,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0185914,
+      "flux_error": 0.0328355,
+      "seeing_px": 4.68,
+      "sky": 589.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.58128
+    },
+    {
+      "day": -3231.68652,
+      "hjd": 2456769.83098,
+      "magnitude": 18.738,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9384259,
+      "flux_error": 0.026794,
+      "seeing_px": 4.68,
+      "sky": 395.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.27957
+    },
+    {
+      "day": -3228.82297,
+      "hjd": 2456772.69453,
+      "magnitude": 18.622,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0442392,
+      "flux_error": 0.0269298,
+      "seeing_px": 4.83,
+      "sky": 383.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.66115
+    },
+    {
+      "day": -3226.67703,
+      "hjd": 2456774.84047,
+      "magnitude": 18.685,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9853715,
+      "flux_error": 0.0363024,
+      "seeing_px": 6.36,
+      "sky": 356.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.38932
+    },
+    {
+      "day": -3223.65256,
+      "hjd": 2456777.86494,
+      "magnitude": 18.588,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0774571,
+      "flux_error": 0.0277865,
+      "seeing_px": 4.48,
+      "sky": 380.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.80541
+    },
+    {
+      "day": -3210.87566,
+      "hjd": 2456790.64184,
+      "magnitude": 18.755,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.9238469,
+      "flux_error": 0.0433956,
+      "seeing_px": 5.41,
+      "sky": 663.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.74344
+    },
+    {
+      "day": -3209.58976,
+      "hjd": 2456791.92774,
+      "magnitude": 18.654,
+      "magnitude_error": 0.039,
+      "relative_flux": 1.0139114,
+      "flux_error": 0.03642,
+      "seeing_px": 3.91,
+      "sky": 825.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.39557
+    },
+    {
+      "day": -3204.64408,
+      "hjd": 2456796.87342,
+      "magnitude": 18.713,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9602847,
+      "flux_error": 0.0336093,
+      "seeing_px": 4.74,
+      "sky": 513.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.16694
+    },
+    {
+      "day": -3197.85278,
+      "hjd": 2456803.66472,
+      "magnitude": 18.734,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9418896,
+      "flux_error": 0.0286279,
+      "seeing_px": 5.58,
+      "sky": 239.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.01255
+    },
+    {
+      "day": -3196.60417,
+      "hjd": 2456804.91333,
+      "magnitude": 18.704,
+      "magnitude_error": 0.048,
+      "relative_flux": 0.9682779,
+      "flux_error": 0.0428072,
+      "seeing_px": 6.33,
+      "sky": 421.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.72948
+    },
+    {
+      "day": -3193.73241,
+      "hjd": 2456807.78509,
+      "magnitude": 18.61,
+      "magnitude_error": 0.039,
+      "relative_flux": 1.0558446,
+      "flux_error": 0.0379263,
+      "seeing_px": 6.36,
+      "sky": 295.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.48551
+    },
+    {
+      "day": -3191.84776,
+      "hjd": 2456809.66974,
+      "magnitude": 18.624,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0423174,
+      "flux_error": 0.0268803,
+      "seeing_px": 4.47,
+      "sky": 302.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.59272
+    },
+    {
+      "day": -3189.94932,
+      "hjd": 2456811.56818,
+      "magnitude": 18.633,
+      "magnitude_error": 0.05,
+      "relative_flux": 1.0337131,
+      "flux_error": 0.0476042,
+      "seeing_px": 6.77,
+      "sky": 463.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.7186
+    },
+    {
+      "day": -3187.57263,
+      "hjd": 2456813.94487,
+      "magnitude": 18.755,
+      "magnitude_error": 0.067,
+      "relative_flux": 0.9238469,
+      "flux_error": 0.0570099,
+      "seeing_px": 6.21,
+      "sky": 884.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.3271
+    },
+    {
+      "day": -3185.58113,
+      "hjd": 2456815.93637,
+      "magnitude": 18.682,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.988098,
+      "flux_error": 0.038223,
+      "seeing_px": 5.14,
+      "sky": 557.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.29842
+    },
+    {
+      "day": -3183.58899,
+      "hjd": 2456817.92851,
+      "magnitude": 18.667,
+      "magnitude_error": 0.053,
+      "relative_flux": 1.0018438,
+      "flux_error": 0.0489048,
+      "seeing_px": 6.65,
+      "sky": 517.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.04783
+    },
+    {
+      "day": -3177.74337,
+      "hjd": 2456823.77413,
+      "magnitude": 18.686,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9844644,
+      "flux_error": 0.0335488,
+      "seeing_px": 4.38,
+      "sky": 554.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.44831
+    },
+    {
+      "day": -3175.90529,
+      "hjd": 2456825.61221,
+      "magnitude": 18.618,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0480934,
+      "flux_error": 0.0337865,
+      "seeing_px": 4.65,
+      "sky": 407.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.43811
+    },
+    {
+      "day": -3174.62783,
+      "hjd": 2456826.88967,
+      "magnitude": 18.668,
+      "magnitude_error": 0.041,
+      "relative_flux": 1.0009215,
+      "flux_error": 0.0377972,
+      "seeing_px": 4.75,
+      "sky": 597.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.03748
+    },
+    {
+      "day": -3172.77679,
+      "hjd": 2456828.74071,
+      "magnitude": 18.64,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0270699,
+      "flux_error": 0.0245951,
+      "seeing_px": 4.01,
+      "sky": 276.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.12076
+    },
+    {
+      "day": -3170.93007,
+      "hjd": 2456830.58743,
+      "magnitude": 18.718,
+      "magnitude_error": 0.048,
+      "relative_flux": 0.9558726,
+      "flux_error": 0.0422588,
+      "seeing_px": 6.28,
+      "sky": 377.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.0325
+    },
+    {
+      "day": -3168.90909,
+      "hjd": 2456832.60841,
+      "magnitude": 18.66,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0343619,
+      "seeing_px": 5.65,
+      "sky": 321.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.25665
+    },
+    {
+      "day": -3166.98482,
+      "hjd": 2456834.53268,
+      "magnitude": 18.643,
+      "magnitude_error": 0.043,
+      "relative_flux": 1.0242359,
+      "flux_error": 0.0405643,
+      "seeing_px": 6.0,
+      "sky": 434.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.60968
+    },
+    {
+      "day": -3165.69153,
+      "hjd": 2456835.82597,
+      "magnitude": 18.69,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9808441,
+      "flux_error": 0.0361356,
+      "seeing_px": 6.11,
+      "sky": 343.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.5164
+    },
+    {
+      "day": -3163.79419,
+      "hjd": 2456837.72331,
+      "magnitude": 18.63,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0365733,
+      "flux_error": 0.030551,
+      "seeing_px": 4.46,
+      "sky": 389.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.21333
+    },
+    {
+      "day": -3161.94981,
+      "hjd": 2456839.56769,
+      "magnitude": 18.682,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.988098,
+      "flux_error": 0.0336727,
+      "seeing_px": 5.29,
+      "sky": 367.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.33875
+    },
+    {
+      "day": -3159.91906,
+      "hjd": 2456841.59844,
+      "magnitude": 18.627,
+      "magnitude_error": 0.031,
+      "relative_flux": 1.0394414,
+      "flux_error": 0.0296782,
+      "seeing_px": 4.6,
+      "sky": 375.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.34566
+    },
+    {
+      "day": -3157.00879,
+      "hjd": 2456844.50871,
+      "magnitude": 18.665,
+      "magnitude_error": 0.041,
+      "relative_flux": 1.0036909,
+      "flux_error": 0.0379018,
+      "seeing_px": 5.21,
+      "sky": 521.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.11045
+    },
+    {
+      "day": -3155.76596,
+      "hjd": 2456845.75154,
+      "magnitude": 18.676,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.0265383,
+      "seeing_px": 3.92,
+      "sky": 369.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.22349
+    },
+    {
+      "day": -3149.97627,
+      "hjd": 2456851.54123,
+      "magnitude": 18.676,
+      "magnitude_error": 0.041,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.0375197,
+      "seeing_px": 4.39,
+      "sky": 747.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.15808
+    },
+    {
+      "day": -3146.01126,
+      "hjd": 2456855.50624,
+      "magnitude": 18.718,
+      "magnitude_error": 0.039,
+      "relative_flux": 0.9558726,
+      "flux_error": 0.0343353,
+      "seeing_px": 5.21,
+      "sky": 347.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.27077
+    },
+    {
+      "day": -3144.73726,
+      "hjd": 2456856.78024,
+      "magnitude": 18.709,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.963829,
+      "flux_error": 0.0328456,
+      "seeing_px": 5.17,
+      "sky": 391.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.08616
+    },
+    {
+      "day": -3142.78389,
+      "hjd": 2456858.73361,
+      "magnitude": 18.627,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0394414,
+      "flux_error": 0.0277635,
+      "seeing_px": 4.57,
+      "sky": 294.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.43846
+    },
+    {
+      "day": -3137.89603,
+      "hjd": 2456863.62147,
+      "magnitude": 18.674,
+      "magnitude_error": 0.028,
+      "relative_flux": 0.9954054,
+      "flux_error": 0.0256705,
+      "seeing_px": 4.34,
+      "sky": 274.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.15969
+    },
+    {
+      "day": -3130.93113,
+      "hjd": 2456870.58637,
+      "magnitude": 18.656,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0120454,
+      "flux_error": 0.0307602,
+      "seeing_px": 5.16,
+      "sky": 273.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.40769
+    },
+    {
+      "day": -3120.89149,
+      "hjd": 2456880.62601,
+      "magnitude": 18.681,
+      "magnitude_error": 0.062,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.0564764,
+      "seeing_px": 7.06,
+      "sky": 592.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.18585
+    },
+    {
+      "day": -3117.9739,
+      "hjd": 2456883.5436,
+      "magnitude": 18.683,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9871883,
+      "flux_error": 0.030914,
+      "seeing_px": 5.66,
+      "sky": 290.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.39841
+    },
+    {
+      "day": -3114.79011,
+      "hjd": 2456886.72739,
+      "magnitude": 18.729,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.9462372,
+      "flux_error": 0.0444473,
+      "seeing_px": 6.32,
+      "sky": 533.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.19844
+    },
+    {
+      "day": -3111.85996,
+      "hjd": 2456889.65754,
+      "magnitude": 18.726,
+      "magnitude_error": 0.03,
+      "relative_flux": 0.9488553,
+      "flux_error": 0.0262178,
+      "seeing_px": 4.89,
+      "sky": 248.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.93187
+    },
+    {
+      "day": -3105.89975,
+      "hjd": 2456895.61775,
+      "magnitude": 18.634,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.0327614,
+      "flux_error": 0.0247314,
+      "seeing_px": 4.08,
+      "sky": 265.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.34472
+    },
+    {
+      "day": -3092.9272,
+      "hjd": 2456908.5903,
+      "magnitude": 18.717,
+      "magnitude_error": 0.043,
+      "relative_flux": 0.9567534,
+      "flux_error": 0.0378917,
+      "seeing_px": 4.74,
+      "sky": 571.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.12825
+    },
+    {
+      "day": -3082.88898,
+      "hjd": 2456918.62852,
+      "magnitude": 18.694,
+      "magnitude_error": 0.052,
+      "relative_flux": 0.9772372,
+      "flux_error": 0.0468036,
+      "seeing_px": 7.22,
+      "sky": 452.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.47576
+    },
+    {
+      "day": -3076.00315,
+      "hjd": 2456925.51435,
+      "magnitude": 18.774,
+      "magnitude_error": 0.052,
+      "relative_flux": 0.9078205,
+      "flux_error": 0.0434789,
+      "seeing_px": 6.75,
+      "sky": 397.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.1087
+    },
+    {
+      "day": -3068.96793,
+      "hjd": 2456932.54957,
+      "magnitude": 18.708,
+      "magnitude_error": 0.075,
+      "relative_flux": 0.9647172,
+      "flux_error": 0.0666403,
+      "seeing_px": 5.78,
+      "sky": 1457.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.52202
+    },
+    {
+      "day": -3065.02682,
+      "hjd": 2456936.49068,
+      "magnitude": 18.726,
+      "magnitude_error": 0.041,
+      "relative_flux": 0.9488553,
+      "flux_error": 0.0358311,
+      "seeing_px": 4.86,
+      "sky": 576.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.41356
+    },
+    {
+      "day": -3061.98789,
+      "hjd": 2456939.52961,
+      "magnitude": 18.591,
+      "magnitude_error": 0.049,
+      "relative_flux": 1.0744841,
+      "flux_error": 0.0484922,
+      "seeing_px": 5.91,
+      "sky": 550.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.54622
+    },
+    {
+      "day": -3057.02232,
+      "hjd": 2456944.49518,
+      "magnitude": 18.626,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0403992,
+      "flux_error": 0.031622,
+      "seeing_px": 4.87,
+      "sky": 365.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.29323
+    },
+    {
+      "day": -3050.9712,
+      "hjd": 2456950.5463,
+      "magnitude": 18.729,
+      "magnitude_error": 0.05,
+      "relative_flux": 0.9462372,
+      "flux_error": 0.0435758,
+      "seeing_px": 5.97,
+      "sky": 465.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.22241
+    },
+    {
+      "day": -3048.00091,
+      "hjd": 2456953.51659,
+      "magnitude": 18.641,
+      "magnitude_error": 0.041,
+      "relative_flux": 1.0261244,
+      "flux_error": 0.0387489,
+      "seeing_px": 5.46,
+      "sky": 468.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.68698
+    },
+    {
+      "day": -3045.97284,
+      "hjd": 2456955.54466,
+      "magnitude": 18.742,
+      "magnitude_error": 0.043,
+      "relative_flux": 0.934975,
+      "flux_error": 0.0370292,
+      "seeing_px": 5.59,
+      "sky": 460.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.74267
+    },
+    {
+      "day": -2934.62886,
+      "hjd": 2457066.88864,
+      "magnitude": 18.63,
+      "magnitude_error": 0.055,
+      "relative_flux": 1.0365733,
+      "flux_error": 0.0525096,
+      "seeing_px": 4.4,
+      "sky": 1448.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.70594
+    },
+    {
+      "day": -2929.65829,
+      "hjd": 2457071.85921,
+      "magnitude": 18.688,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0298669,
+      "seeing_px": 5.24,
+      "sky": 341.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.56424
+    },
+    {
+      "day": -2926.63442,
+      "hjd": 2457074.88308,
+      "magnitude": 18.758,
+      "magnitude_error": 0.05,
+      "relative_flux": 0.9212977,
+      "flux_error": 0.0424273,
+      "seeing_px": 6.58,
+      "sky": 386.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.84332
+    },
+    {
+      "day": -2925.65834,
+      "hjd": 2457075.85916,
+      "magnitude": 18.709,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.963829,
+      "flux_error": 0.0337333,
+      "seeing_px": 6.01,
+      "sky": 355.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.05758
+    },
+    {
+      "day": -2923.67167,
+      "hjd": 2457077.84583,
+      "magnitude": 18.743,
+      "magnitude_error": 0.049,
+      "relative_flux": 0.9341143,
+      "flux_error": 0.0421572,
+      "seeing_px": 6.78,
+      "sky": 370.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.55111
+    },
+    {
+      "day": -2922.61797,
+      "hjd": 2457078.89953,
+      "magnitude": 18.604,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0616956,
+      "flux_error": 0.0312914,
+      "seeing_px": 4.11,
+      "sky": 494.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.98747
+    },
+    {
+      "day": -2919.62149,
+      "hjd": 2457081.89601,
+      "magnitude": 18.681,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.0400801,
+      "seeing_px": 6.67,
+      "sky": 392.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.26188
+    },
+    {
+      "day": -2917.67588,
+      "hjd": 2457083.84162,
+      "magnitude": 18.621,
+      "magnitude_error": 0.044,
+      "relative_flux": 1.0452014,
+      "flux_error": 0.0423573,
+      "seeing_px": 6.66,
+      "sky": 330.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.07884
+    },
+    {
+      "day": -2916.67948,
+      "hjd": 2457084.83802,
+      "magnitude": 18.625,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0413579,
+      "flux_error": 0.0316512,
+      "seeing_px": 4.3,
+      "sky": 482.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.32233
+    },
+    {
+      "day": -2914.61104,
+      "hjd": 2457086.90646,
+      "magnitude": 18.603,
+      "magnitude_error": 0.042,
+      "relative_flux": 1.0626739,
+      "flux_error": 0.0411079,
+      "seeing_px": 3.97,
+      "sky": 1040.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.53667
+    },
+    {
+      "day": -2911.69312,
+      "hjd": 2457089.82438,
+      "magnitude": 18.613,
+      "magnitude_error": 0.042,
+      "relative_flux": 1.0529312,
+      "flux_error": 0.040731,
+      "seeing_px": 5.74,
+      "sky": 475.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.31169
+    },
+    {
+      "day": -2909.66786,
+      "hjd": 2457091.84964,
+      "magnitude": 18.674,
+      "magnitude_error": 0.043,
+      "relative_flux": 0.9954054,
+      "flux_error": 0.0394225,
+      "seeing_px": 5.62,
+      "sky": 500.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.10398
+    },
+    {
+      "day": -2903.74418,
+      "hjd": 2457097.77332,
+      "magnitude": 18.562,
+      "magnitude_error": 0.034,
+      "relative_flux": 1.1035703,
+      "flux_error": 0.0345585,
+      "seeing_px": 5.74,
+      "sky": 356.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 3.01129
+    },
+    {
+      "day": -2902.60577,
+      "hjd": 2457098.91173,
+      "magnitude": 18.656,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0120454,
+      "flux_error": 0.0307602,
+      "seeing_px": 3.73,
+      "sky": 614.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.40769
+    },
+    {
+      "day": -2900.609,
+      "hjd": 2457100.9085,
+      "magnitude": 18.616,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0500259,
+      "flux_error": 0.0290133,
+      "seeing_px": 4.15,
+      "sky": 390.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.74131
+    },
+    {
+      "day": -2892.67264,
+      "hjd": 2457108.84486,
+      "magnitude": 18.682,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.988098,
+      "flux_error": 0.0327626,
+      "seeing_px": 4.92,
+      "sky": 380.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.34816
+    },
+    {
+      "day": -2891.72279,
+      "hjd": 2457109.79471,
+      "magnitude": 18.688,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0280568,
+      "seeing_px": 5.03,
+      "sky": 284.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.60064
+    },
+    {
+      "day": -2889.77372,
+      "hjd": 2457111.74378,
+      "magnitude": 18.611,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.0548726,
+      "flux_error": 0.0359482,
+      "seeing_px": 5.91,
+      "sky": 407.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.54021
+    },
+    {
+      "day": -2888.63413,
+      "hjd": 2457112.88337,
+      "magnitude": 18.64,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0270699,
+      "flux_error": 0.027433,
+      "seeing_px": 3.99,
+      "sky": 373.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.00482
+    },
+    {
+      "day": -2884.79914,
+      "hjd": 2457116.71836,
+      "magnitude": 18.647,
+      "magnitude_error": 0.052,
+      "relative_flux": 1.0204694,
+      "flux_error": 0.0488741,
+      "seeing_px": 6.05,
+      "sky": 727.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.42895
+    },
+    {
+      "day": -2881.68215,
+      "hjd": 2457119.83535,
+      "magnitude": 18.612,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.0539014,
+      "flux_error": 0.0359151,
+      "seeing_px": 4.67,
+      "sky": 534.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.51459
+    },
+    {
+      "day": -2874.74839,
+      "hjd": 2457126.76911,
+      "magnitude": 18.643,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0242359,
+      "flux_error": 0.0301874,
+      "seeing_px": 4.72,
+      "sky": 387.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.81926
+    },
+    {
+      "day": -2869.81022,
+      "hjd": 2457131.70728,
+      "magnitude": 18.665,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0036909,
+      "flux_error": 0.0323552,
+      "seeing_px": 5.15,
+      "sky": 380.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.12938
+    },
+    {
+      "day": -2866.74408,
+      "hjd": 2457134.77342,
+      "magnitude": 18.67,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0331267,
+      "seeing_px": 5.38,
+      "sky": 333.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.01284
+    },
+    {
+      "day": -2864.61205,
+      "hjd": 2457136.90545,
+      "magnitude": 18.638,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0289636,
+      "flux_error": 0.0312744,
+      "seeing_px": 4.86,
+      "sky": 338.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.94195
+    },
+    {
+      "day": -2861.7753,
+      "hjd": 2457139.7422,
+      "magnitude": 18.676,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.0311139,
+      "seeing_px": 5.15,
+      "sky": 315.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.19063
+    },
+    {
+      "day": -2859.69838,
+      "hjd": 2457141.81912,
+      "magnitude": 18.631,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.035619,
+      "flux_error": 0.0247998,
+      "seeing_px": 3.73,
+      "sky": 356.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.45623
+    },
+    {
+      "day": -2857.6198,
+      "hjd": 2457143.8977,
+      "magnitude": 18.661,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0073955,
+      "flux_error": 0.0296911,
+      "seeing_px": 4.4,
+      "sky": 361.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.26576
+    },
+    {
+      "day": -2856.77899,
+      "hjd": 2457144.73851,
+      "magnitude": 18.592,
+      "magnitude_error": 0.042,
+      "relative_flux": 1.0734949,
+      "flux_error": 0.0415265,
+      "seeing_px": 5.03,
+      "sky": 627.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.78176
+    },
+    {
+      "day": -2854.65731,
+      "hjd": 2457146.86019,
+      "magnitude": 18.574,
+      "magnitude_error": 0.04,
+      "relative_flux": 1.0914403,
+      "flux_error": 0.0402101,
+      "seeing_px": 5.0,
+      "sky": 700.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.28638
+    },
+    {
+      "day": -2848.60597,
+      "hjd": 2457152.91153,
+      "magnitude": 18.568,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0974886,
+      "flux_error": 0.0363897,
+      "seeing_px": 4.9,
+      "sky": 528.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.69263
+    },
+    {
+      "day": -2846.59481,
+      "hjd": 2457154.92269,
+      "magnitude": 18.652,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0157808,
+      "flux_error": 0.0271315,
+      "seeing_px": 3.77,
+      "sky": 399.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.5999
+    },
+    {
+      "day": -2843.80381,
+      "hjd": 2457157.71369,
+      "magnitude": 18.664,
+      "magnitude_error": 0.027,
+      "relative_flux": 1.0046158,
+      "flux_error": 0.0249827,
+      "seeing_px": 4.25,
+      "sky": 302.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.20459
+    },
+    {
+      "day": -2841.77283,
+      "hjd": 2457159.74467,
+      "magnitude": 18.751,
+      "magnitude_error": 0.039,
+      "relative_flux": 0.9272567,
+      "flux_error": 0.0333074,
+      "seeing_px": 5.16,
+      "sky": 362.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.16913
+    },
+    {
+      "day": -2839.78134,
+      "hjd": 2457161.73616,
+      "magnitude": 18.651,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0167168,
+      "flux_error": 0.0234108,
+      "seeing_px": 3.32,
+      "sky": 332.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.73522
+    },
+    {
+      "day": -2837.82814,
+      "hjd": 2457163.68936,
+      "magnitude": 18.681,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.0346146,
+      "seeing_px": 5.48,
+      "sky": 363.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.30323
+    },
+    {
+      "day": -2834.81006,
+      "hjd": 2457166.70744,
+      "magnitude": 18.635,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.0318106,
+      "flux_error": 0.0351623,
+      "seeing_px": 5.93,
+      "sky": 309.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.91877
+    },
+    {
+      "day": -2831.58275,
+      "hjd": 2457169.93475,
+      "magnitude": 18.735,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9410225,
+      "flux_error": 0.0320684,
+      "seeing_px": 5.14,
+      "sky": 388.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.82367
+    },
+    {
+      "day": -2828.64173,
+      "hjd": 2457172.87577,
+      "magnitude": 18.556,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.1096857,
+      "flux_error": 0.0378162,
+      "seeing_px": 5.85,
+      "sky": 387.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.9136
+    },
+    {
+      "day": -2826.78845,
+      "hjd": 2457174.72905,
+      "magnitude": 18.697,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9745407,
+      "flux_error": 0.0323131,
+      "seeing_px": 4.13,
+      "sky": 547.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.77256
+    },
+    {
+      "day": -2822.78346,
+      "hjd": 2457178.73404,
+      "magnitude": 18.677,
+      "magnitude_error": 0.059,
+      "relative_flux": 0.9926588,
+      "flux_error": 0.0539421,
+      "seeing_px": 4.72,
+      "sky": 1253.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.12691
+    },
+    {
+      "day": -2821.75741,
+      "hjd": 2457179.76009,
+      "magnitude": 18.632,
+      "magnitude_error": 0.041,
+      "relative_flux": 1.0346656,
+      "flux_error": 0.0390715,
+      "seeing_px": 5.39,
+      "sky": 454.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.89991
+    },
+    {
+      "day": -2819.93062,
+      "hjd": 2457181.58688,
+      "magnitude": 18.661,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0073955,
+      "flux_error": 0.0296911,
+      "seeing_px": 5.35,
+      "sky": 270.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.26576
+    },
+    {
+      "day": -2818.645,
+      "hjd": 2457182.8725,
+      "magnitude": 18.666,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0027669,
+      "flux_error": 0.0304782,
+      "seeing_px": 4.75,
+      "sky": 344.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.10704
+    },
+    {
+      "day": -2816.76957,
+      "hjd": 2457184.74793,
+      "magnitude": 18.696,
+      "magnitude_error": 0.039,
+      "relative_flux": 0.9754387,
+      "flux_error": 0.0350381,
+      "seeing_px": 6.22,
+      "sky": 269.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.68685
+    },
+    {
+      "day": -2814.86785,
+      "hjd": 2457186.64965,
+      "magnitude": 18.702,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.9700631,
+      "flux_error": 0.0455665,
+      "seeing_px": 7.3,
+      "sky": 357.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.64612
+    },
+    {
+      "day": -2812.87513,
+      "hjd": 2457188.64237,
+      "magnitude": 18.597,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0685627,
+      "flux_error": 0.0344464,
+      "seeing_px": 5.57,
+      "sky": 339.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 2.0048
+    },
+    {
+      "day": -2810.92544,
+      "hjd": 2457190.59206,
+      "magnitude": 18.738,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9384259,
+      "flux_error": 0.0345729,
+      "seeing_px": 6.07,
+      "sky": 360.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.76667
+    },
+    {
+      "day": -2809.90494,
+      "hjd": 2457191.61256,
+      "magnitude": 18.635,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0318106,
+      "flux_error": 0.034212,
+      "seeing_px": 5.19,
+      "sky": 397.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.94429
+    },
+    {
+      "day": -2806.70586,
+      "hjd": 2457194.81164,
+      "magnitude": 18.834,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.8590135,
+      "flux_error": 0.0269001,
+      "seeing_px": 4.55,
+      "sky": 420.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -5.22269
+    },
+    {
+      "day": -2803.98521,
+      "hjd": 2457197.53229,
+      "magnitude": 18.698,
+      "magnitude_error": 0.048,
+      "relative_flux": 0.9736436,
+      "flux_error": 0.0430444,
+      "seeing_px": 6.55,
+      "sky": 446.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.6008
+    },
+    {
+      "day": -2802.70043,
+      "hjd": 2457198.81707,
+      "magnitude": 18.724,
+      "magnitude_error": 0.056,
+      "relative_flux": 0.9506048,
+      "flux_error": 0.0490302,
+      "seeing_px": 5.39,
+      "sky": 842.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.99734
+    },
+    {
+      "day": -2800.85586,
+      "hjd": 2457200.66164,
+      "magnitude": 18.624,
+      "magnitude_error": 0.024,
+      "relative_flux": 1.0423174,
+      "flux_error": 0.0230402,
+      "seeing_px": 3.77,
+      "sky": 296.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.85817
+    },
+    {
+      "day": -2798.71004,
+      "hjd": 2457202.80746,
+      "magnitude": 18.573,
+      "magnitude_error": 0.056,
+      "relative_flux": 1.0924461,
+      "flux_error": 0.0563461,
+      "seeing_px": 6.26,
+      "sky": 737.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.64947
+    },
+    {
+      "day": -2798.69331,
+      "hjd": 2457202.82419,
+      "magnitude": 18.696,
+      "magnitude_error": 0.058,
+      "relative_flux": 0.9754387,
+      "flux_error": 0.0521079,
+      "seeing_px": 5.59,
+      "sky": 768.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.46185
+    },
+    {
+      "day": -2793.82018,
+      "hjd": 2457207.69732,
+      "magnitude": 18.711,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9620552,
+      "flux_error": 0.0354434,
+      "seeing_px": 4.55,
+      "sky": 543.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.0566
+    },
+    {
+      "day": -2789.92262,
+      "hjd": 2457211.59488,
+      "magnitude": 18.643,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0242359,
+      "flux_error": 0.026414,
+      "seeing_px": 4.18,
+      "sky": 274.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.93629
+    },
+    {
+      "day": -2783.89148,
+      "hjd": 2457217.62602,
+      "magnitude": 18.826,
+      "magnitude_error": 0.055,
+      "relative_flux": 0.8653663,
+      "flux_error": 0.0438368,
+      "seeing_px": 7.27,
+      "sky": 329.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -3.05995
+    },
+    {
+      "day": -2780.77229,
+      "hjd": 2457220.74521,
+      "magnitude": 18.65,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0176537,
+      "flux_error": 0.0234323,
+      "seeing_px": 4.01,
+      "sky": 284.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.77453
+    },
+    {
+      "day": -2778.81949,
+      "hjd": 2457222.69801,
+      "magnitude": 18.716,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.957635,
+      "flux_error": 0.0370446,
+      "seeing_px": 6.03,
+      "sky": 393.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.13025
+    },
+    {
+      "day": -2776.81102,
+      "hjd": 2457224.70648,
+      "magnitude": 18.73,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.945366,
+      "flux_error": 0.0348286,
+      "seeing_px": 5.88,
+      "sky": 304.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.55443
+    },
+    {
+      "day": -2774.70006,
+      "hjd": 2457226.81744,
+      "magnitude": 18.696,
+      "magnitude_error": 0.036,
+      "relative_flux": 0.9754387,
+      "flux_error": 0.0323428,
+      "seeing_px": 4.52,
+      "sky": 466.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.74409
+    },
+    {
+      "day": -2772.71574,
+      "hjd": 2457228.80176,
+      "magnitude": 18.676,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.0301988,
+      "seeing_px": 5.24,
+      "sky": 596.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.1964
+    },
+    {
+      "day": -2765.78042,
+      "hjd": 2457235.73708,
+      "magnitude": 18.681,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.0419019,
+      "seeing_px": 4.86,
+      "sky": 754.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.2505
+    },
+    {
+      "day": -2748.99332,
+      "hjd": 2457252.52418,
+      "magnitude": 18.7,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9718517,
+      "flux_error": 0.0393848,
+      "seeing_px": 6.32,
+      "sky": 372.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.70212
+    },
+    {
+      "day": -2744.93339,
+      "hjd": 2457256.58411,
+      "magnitude": 18.723,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.9514807,
+      "flux_error": 0.0403119,
+      "seeing_px": 5.78,
+      "sky": 450.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.19131
+    },
+    {
+      "day": -2737.83465,
+      "hjd": 2457263.68285,
+      "magnitude": 18.696,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9754387,
+      "flux_error": 0.0377333,
+      "seeing_px": 4.25,
+      "sky": 860.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.63779
+    },
+    {
+      "day": -2733.0164,
+      "hjd": 2457268.5011,
+      "magnitude": 18.68,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9899198,
+      "flux_error": 0.0264407,
+      "seeing_px": 4.42,
+      "sky": 317.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.3625
+    },
+    {
+      "day": -2729.97828,
+      "hjd": 2457271.53922,
+      "magnitude": 18.631,
+      "magnitude_error": 0.037,
+      "relative_flux": 1.035619,
+      "flux_error": 0.0352921,
+      "seeing_px": 5.59,
+      "sky": 309.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.0233
+    },
+    {
+      "day": -2723.90425,
+      "hjd": 2457277.61325,
+      "magnitude": 18.648,
+      "magnitude_error": 0.048,
+      "relative_flux": 1.01953,
+      "flux_error": 0.045073,
+      "seeing_px": 7.63,
+      "sky": 288.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.44429
+    },
+    {
+      "day": -2708.93367,
+      "hjd": 2457292.58383,
+      "magnitude": 18.597,
+      "magnitude_error": 0.054,
+      "relative_flux": 1.0685627,
+      "flux_error": 0.0531459,
+      "seeing_px": 6.28,
+      "sky": 753.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.29941
+    },
+    {
+      "day": -2705.93331,
+      "hjd": 2457295.58419,
+      "magnitude": 18.641,
+      "magnitude_error": 0.043,
+      "relative_flux": 1.0261244,
+      "flux_error": 0.0406391,
+      "seeing_px": 5.61,
+      "sky": 502.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.65503
+    },
+    {
+      "day": -2701.00397,
+      "hjd": 2457300.51353,
+      "magnitude": 18.822,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.8685604,
+      "flux_error": 0.0407987,
+      "seeing_px": 6.29,
+      "sky": 488.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -3.20953
+    },
+    {
+      "day": -2564.63542,
+      "hjd": 2457436.88208,
+      "magnitude": 18.713,
+      "magnitude_error": 0.043,
+      "relative_flux": 0.9602847,
+      "flux_error": 0.0380316,
+      "seeing_px": 5.79,
+      "sky": 373.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.03125
+    },
+    {
+      "day": -2559.63208,
+      "hjd": 2457441.88542,
+      "magnitude": 18.716,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.957635,
+      "flux_error": 0.0335165,
+      "seeing_px": 4.47,
+      "sky": 536.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.24922
+    },
+    {
+      "day": -2552.70498,
+      "hjd": 2457448.81252,
+      "magnitude": 18.696,
+      "magnitude_error": 0.047,
+      "relative_flux": 0.9754387,
+      "flux_error": 0.0422254,
+      "seeing_px": 5.55,
+      "sky": 684.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.56994
+    },
+    {
+      "day": -2547.6297,
+      "hjd": 2457453.8878,
+      "magnitude": 18.638,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0289636,
+      "flux_error": 0.0236928,
+      "seeing_px": 3.89,
+      "sky": 302.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.24337
+    },
+    {
+      "day": -2542.69638,
+      "hjd": 2457458.82112,
+      "magnitude": 18.616,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0500259,
+      "flux_error": 0.0309475,
+      "seeing_px": 4.82,
+      "sky": 344.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.63248
+    },
+    {
+      "day": -2538.62044,
+      "hjd": 2457462.89706,
+      "magnitude": 18.683,
+      "magnitude_error": 0.027,
+      "relative_flux": 0.9871883,
+      "flux_error": 0.0245493,
+      "seeing_px": 3.69,
+      "sky": 298.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.5017
+    },
+    {
+      "day": -2533.63243,
+      "hjd": 2457467.88507,
+      "magnitude": 18.677,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9926588,
+      "flux_error": 0.0265139,
+      "seeing_px": 4.42,
+      "sky": 284.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.2582
+    },
+    {
+      "day": -2528.68588,
+      "hjd": 2457472.83162,
+      "magnitude": 18.707,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9656061,
+      "flux_error": 0.037353,
+      "seeing_px": 5.03,
+      "sky": 463.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.90752
+    },
+    {
+      "day": -2525.65723,
+      "hjd": 2457475.86027,
+      "magnitude": 18.722,
+      "magnitude_error": 0.056,
+      "relative_flux": 0.9523575,
+      "flux_error": 0.0491206,
+      "seeing_px": 6.58,
+      "sky": 496.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.95982
+    },
+    {
+      "day": -2524.73251,
+      "hjd": 2457476.78499,
+      "magnitude": 18.628,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0384845,
+      "flux_error": 0.0344333,
+      "seeing_px": 5.14,
+      "sky": 499.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.13204
+    },
+    {
+      "day": -2516.61644,
+      "hjd": 2457484.90106,
+      "magnitude": 18.652,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0157808,
+      "flux_error": 0.0336805,
+      "seeing_px": 5.45,
+      "sky": 317.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.48325
+    },
+    {
+      "day": -2513.78318,
+      "hjd": 2457487.73432,
+      "magnitude": 18.636,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0308607,
+      "flux_error": 0.0341805,
+      "seeing_px": 5.85,
+      "sky": 340.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.91737
+    },
+    {
+      "day": -2509.81014,
+      "hjd": 2457491.70736,
+      "magnitude": 18.732,
+      "magnitude_error": 0.045,
+      "relative_flux": 0.9436262,
+      "flux_error": 0.03911,
+      "seeing_px": 6.98,
+      "sky": 339.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.42875
+    },
+    {
+      "day": -2507.7763,
+      "hjd": 2457493.7412,
+      "magnitude": 18.636,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0308607,
+      "flux_error": 0.0303827,
+      "seeing_px": 5.29,
+      "sky": 285.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.03204
+    },
+    {
+      "day": -2505.75299,
+      "hjd": 2457495.76451,
+      "magnitude": 18.688,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0343921,
+      "seeing_px": 5.29,
+      "sky": 349.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.49
+    },
+    {
+      "day": -2501.78836,
+      "hjd": 2457499.72914,
+      "magnitude": 18.646,
+      "magnitude_error": 0.045,
+      "relative_flux": 1.0214098,
+      "flux_error": 0.0423339,
+      "seeing_px": 6.04,
+      "sky": 521.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.51744
+    },
+    {
+      "day": -2492.60277,
+      "hjd": 2457508.91473,
+      "magnitude": 18.66,
+      "magnitude_error": 0.028,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0260036,
+      "seeing_px": 4.04,
+      "sky": 372.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.33915
+    },
+    {
+      "day": -2489.59348,
+      "hjd": 2457511.92402,
+      "magnitude": 18.695,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9763376,
+      "flux_error": 0.026078,
+      "seeing_px": 4.03,
+      "sky": 395.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.88838
+    },
+    {
+      "day": -2477.60411,
+      "hjd": 2457523.91339,
+      "magnitude": 18.634,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0327614,
+      "flux_error": 0.0332923,
+      "seeing_px": 5.36,
+      "sky": 381.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.99893
+    },
+    {
+      "day": -2471.74161,
+      "hjd": 2457529.77589,
+      "magnitude": 18.68,
+      "magnitude_error": 0.06,
+      "relative_flux": 0.9899198,
+      "flux_error": 0.054705,
+      "seeing_px": 6.81,
+      "sky": 622.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.17521
+    },
+    {
+      "day": -2466.59588,
+      "hjd": 2457534.92162,
+      "magnitude": 18.596,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0695473,
+      "flux_error": 0.0354632,
+      "seeing_px": 4.57,
+      "sky": 627.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.97508
+    },
+    {
+      "day": -2455.61671,
+      "hjd": 2457545.90079,
+      "magnitude": 18.625,
+      "magnitude_error": 0.036,
+      "relative_flux": 1.0413579,
+      "flux_error": 0.0345285,
+      "seeing_px": 5.25,
+      "sky": 374.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.21213
+    },
+    {
+      "day": -2453.86952,
+      "hjd": 2457547.64798,
+      "magnitude": 18.665,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0036909,
+      "flux_error": 0.027733,
+      "seeing_px": 5.06,
+      "sky": 233.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.15095
+    },
+    {
+      "day": -2450.59702,
+      "hjd": 2457550.92048,
+      "magnitude": 18.689,
+      "magnitude_error": 0.06,
+      "relative_flux": 0.9817479,
+      "flux_error": 0.0542534,
+      "seeing_px": 7.39,
+      "sky": 517.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.32729
+    },
+    {
+      "day": -2445.77477,
+      "hjd": 2457555.74273,
+      "magnitude": 18.703,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9691701,
+      "flux_error": 0.0303497,
+      "seeing_px": 4.94,
+      "sky": 361.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.9995
+    },
+    {
+      "day": -2443.6233,
+      "hjd": 2457557.8942,
+      "magnitude": 18.718,
+      "magnitude_error": 0.05,
+      "relative_flux": 0.9558726,
+      "flux_error": 0.0440196,
+      "seeing_px": 5.24,
+      "sky": 693.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.9912
+    },
+    {
+      "day": -2434.81583,
+      "hjd": 2457566.70167,
+      "magnitude": 18.701,
+      "magnitude_error": 0.032,
+      "relative_flux": 0.970957,
+      "flux_error": 0.0286171,
+      "seeing_px": 5.1,
+      "sky": 262.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.99757
+    },
+    {
+      "day": -2433.7147,
+      "hjd": 2457567.8028,
+      "magnitude": 18.649,
+      "magnitude_error": 0.043,
+      "relative_flux": 1.0185914,
+      "flux_error": 0.0403408,
+      "seeing_px": 6.42,
+      "sky": 402.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.47314
+    },
+    {
+      "day": -2431.87072,
+      "hjd": 2457569.64678,
+      "magnitude": 18.683,
+      "magnitude_error": 0.029,
+      "relative_flux": 0.9871883,
+      "flux_error": 0.0263678,
+      "seeing_px": 4.75,
+      "sky": 308.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.4671
+    },
+    {
+      "day": -2427.81794,
+      "hjd": 2457573.69956,
+      "magnitude": 18.655,
+      "magnitude_error": 0.045,
+      "relative_flux": 1.012978,
+      "flux_error": 0.0419844,
+      "seeing_px": 7.95,
+      "sky": 245.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.32091
+    },
+    {
+      "day": -2424.81289,
+      "hjd": 2457576.70461,
+      "magnitude": 18.667,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0018438,
+      "flux_error": 0.0295274,
+      "seeing_px": 5.55,
+      "sky": 237.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.07922
+    },
+    {
+      "day": -2417.75478,
+      "hjd": 2457583.76272,
+      "magnitude": 18.67,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0322065,
+      "seeing_px": 5.36,
+      "sky": 311.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.0132
+    },
+    {
+      "day": -2411.83884,
+      "hjd": 2457589.67866,
+      "magnitude": 18.677,
+      "magnitude_error": 0.053,
+      "relative_flux": 0.9926588,
+      "flux_error": 0.0484564,
+      "seeing_px": 5.96,
+      "sky": 657.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.14128
+    },
+    {
+      "day": -2408.02625,
+      "hjd": 2457593.49125,
+      "magnitude": 18.769,
+      "magnitude_error": 0.048,
+      "relative_flux": 0.9120108,
+      "flux_error": 0.0403197,
+      "seeing_px": 7.43,
+      "sky": 271.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.17
+    },
+    {
+      "day": -2401.91672,
+      "hjd": 2457599.60078,
+      "magnitude": 18.725,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9497297,
+      "flux_error": 0.0271167,
+      "seeing_px": 4.99,
+      "sky": 239.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.83558
+    },
+    {
+      "day": -2398.96816,
+      "hjd": 2457602.54934,
+      "magnitude": 18.8,
+      "magnitude_error": 0.056,
+      "relative_flux": 0.8863393,
+      "flux_error": 0.0457155,
+      "seeing_px": 7.86,
+      "sky": 297.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.47543
+    },
+    {
+      "day": -2397.72887,
+      "hjd": 2457603.78863,
+      "magnitude": 18.711,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9620552,
+      "flux_error": 0.0327852,
+      "seeing_px": 5.65,
+      "sky": 295.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.14227
+    },
+    {
+      "day": -2395.79541,
+      "hjd": 2457605.72209,
+      "magnitude": 18.681,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9890084,
+      "flux_error": 0.0318819,
+      "seeing_px": 5.23,
+      "sky": 298.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.32922
+    },
+    {
+      "day": -2392.84701,
+      "hjd": 2457608.67049,
+      "magnitude": 18.68,
+      "magnitude_error": 0.028,
+      "relative_flux": 0.9899198,
+      "flux_error": 0.025529,
+      "seeing_px": 4.62,
+      "sky": 257.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.37545
+    },
+    {
+      "day": -2390.00241,
+      "hjd": 2457611.51509,
+      "magnitude": 18.761,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.9187556,
+      "flux_error": 0.0389254,
+      "seeing_px": 5.85,
+      "sky": 402.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.07445
+    },
+    {
+      "day": -2384.85427,
+      "hjd": 2457616.66323,
+      "magnitude": 18.671,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9981596,
+      "flux_error": 0.0340155,
+      "seeing_px": 4.7,
+      "sky": 553.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.03954
+    },
+    {
+      "day": -2381.97008,
+      "hjd": 2457619.54742,
+      "magnitude": 18.598,
+      "magnitude_error": 0.045,
+      "relative_flux": 1.0675789,
+      "flux_error": 0.0442474,
+      "seeing_px": 6.41,
+      "sky": 442.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.53849
+    },
+    {
+      "day": -2377.89778,
+      "hjd": 2457623.61972,
+      "magnitude": 18.664,
+      "magnitude_error": 0.027,
+      "relative_flux": 1.0046158,
+      "flux_error": 0.0249827,
+      "seeing_px": 4.33,
+      "sky": 241.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.20459
+    },
+    {
+      "day": -2374.89385,
+      "hjd": 2457626.62365,
+      "magnitude": 18.663,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.0055415,
+      "flux_error": 0.0324148,
+      "seeing_px": 5.21,
+      "sky": 293.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 0.18624
+    },
+    {
+      "day": -2368.85544,
+      "hjd": 2457632.66206,
+      "magnitude": 18.679,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9908319,
+      "flux_error": 0.0310281,
+      "seeing_px": 4.68,
+      "sky": 299.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.27951
+    },
+    {
+      "day": -2363.91299,
+      "hjd": 2457637.60451,
+      "magnitude": 18.632,
+      "magnitude_error": 0.033,
+      "relative_flux": 1.0346656,
+      "flux_error": 0.0314478,
+      "seeing_px": 5.68,
+      "sky": 276.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": 1.11807
+    },
+    {
+      "day": -2354.00864,
+      "hjd": 2457647.50886,
+      "magnitude": 18.688,
+      "magnitude_error": 0.063,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0570186,
+      "seeing_px": 6.53,
+      "sky": 733.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.29555
+    },
+    {
+      "day": -2349.93645,
+      "hjd": 2457651.58105,
+      "magnitude": 18.697,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9745407,
+      "flux_error": 0.0332107,
+      "seeing_px": 4.91,
+      "sky": 472.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -0.75168
+    },
+    {
+      "day": -2344.95658,
+      "hjd": 2457656.56092,
+      "magnitude": 18.717,
+      "magnitude_error": 0.034,
+      "relative_flux": 0.9567534,
+      "flux_error": 0.0299609,
+      "seeing_px": 4.72,
+      "sky": 331.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -1.4269
+    },
+    {
+      "day": -2338.98416,
+      "hjd": 2457662.53334,
+      "magnitude": 18.773,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.908657,
+      "flux_error": 0.0426821,
+      "seeing_px": 6.13,
+      "sky": 431.0,
+      "model_flux": 0.9995047,
+      "standardised_residual": -2.12847
+    },
+    {
+      "day": -7.66764,
+      "hjd": 2459993.84986,
+      "magnitude": 17.793,
+      "magnitude_error": 0.021,
+      "relative_flux": 2.240784,
+      "flux_error": 0.0433406,
+      "seeing_px": 6.49,
+      "sky": 405.0,
+      "model_flux": 2.3010627,
+      "standardised_residual": -1.39081
+    },
+    {
+      "day": -3.67926,
+      "hjd": 2459997.83824,
+      "magnitude": 17.513,
+      "magnitude_error": 0.015,
+      "relative_flux": 2.9000134,
+      "flux_error": 0.0400652,
+      "seeing_px": 5.89,
+      "sky": 426.0,
+      "model_flux": 2.8680648,
+      "standardised_residual": 0.79742
+    },
+    {
+      "day": 0.33499,
+      "hjd": 2460001.85249,
+      "magnitude": 17.41,
+      "magnitude_error": 0.011,
+      "relative_flux": 3.1885997,
+      "flux_error": 0.0323049,
+      "seeing_px": 4.55,
+      "sky": 400.0,
+      "model_flux": 3.1654112,
+      "standardised_residual": 0.7178
+    },
+    {
+      "day": 4.33112,
+      "hjd": 2460005.84862,
+      "magnitude": 17.589,
+      "magnitude_error": 0.013,
+      "relative_flux": 2.7039584,
+      "flux_error": 0.0323757,
+      "seeing_px": 4.85,
+      "sky": 406.0,
+      "model_flux": 2.7756775,
+      "standardised_residual": -2.21521
+    },
+    {
+      "day": 8.31361,
+      "hjd": 2460009.83111,
+      "magnitude": 17.768,
+      "magnitude_error": 0.019,
+      "relative_flux": 2.2929786,
+      "flux_error": 0.0401263,
+      "seeing_px": 4.95,
+      "sky": 587.0,
+      "model_flux": 2.21928,
+      "standardised_residual": 1.83666
+    },
+    {
+      "day": 12.36219,
+      "hjd": 2460013.87969,
+      "magnitude": 18.001,
+      "magnitude_error": 0.016,
+      "relative_flux": 1.8501204,
+      "flux_error": 0.0272644,
+      "seeing_px": 4.02,
+      "sky": 393.0,
+      "model_flux": 1.8115017,
+      "standardised_residual": 1.41645
+    },
+    {
+      "day": 15.29747,
+      "hjd": 2460016.81497,
+      "magnitude": 18.154,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.6069413,
+      "flux_error": 0.0370012,
+      "seeing_px": 4.81,
+      "sky": 617.0,
+      "model_flux": 1.6112632,
+      "standardised_residual": -0.11681
+    },
+    {
+      "day": 21.27916,
+      "hjd": 2460022.79666,
+      "magnitude": 18.374,
+      "magnitude_error": 0.023,
+      "relative_flux": 1.3121999,
+      "flux_error": 0.0277974,
+      "seeing_px": 4.91,
+      "sky": 285.0,
+      "model_flux": 1.3577074,
+      "standardised_residual": -1.63712
+    },
+    {
+      "day": 24.24696,
+      "hjd": 2460025.76446,
+      "magnitude": 18.357,
+      "magnitude_error": 0.034,
+      "relative_flux": 1.3329075,
+      "flux_error": 0.0417402,
+      "seeing_px": 7.15,
+      "sky": 317.0,
+      "model_flux": 1.279472,
+      "standardised_residual": 1.28019
+    },
+    {
+      "day": 26.36103,
+      "hjd": 2460027.87853,
+      "magnitude": 18.46,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.2122718,
+      "flux_error": 0.0279136,
+      "seeing_px": 5.0,
+      "sky": 307.0,
+      "model_flux": 1.2360029,
+      "standardised_residual": -0.85016
+    },
+    {
+      "day": 29.25494,
+      "hjd": 2460030.77244,
+      "magnitude": 18.496,
+      "magnitude_error": 0.026,
+      "relative_flux": 1.1727353,
+      "flux_error": 0.0280834,
+      "seeing_px": 5.52,
+      "sky": 274.0,
+      "model_flux": 1.1888059,
+      "standardised_residual": -0.57225
+    },
+    {
+      "day": 31.31257,
+      "hjd": 2460032.83007,
+      "magnitude": 18.517,
+      "magnitude_error": 0.023,
+      "relative_flux": 1.1502705,
+      "flux_error": 0.0243671,
+      "seeing_px": 4.53,
+      "sky": 252.0,
+      "model_flux": 1.1619791,
+      "standardised_residual": -0.48051
+    },
+    {
+      "day": 33.35776,
+      "hjd": 2460034.87526,
+      "magnitude": 18.489,
+      "magnitude_error": 0.022,
+      "relative_flux": 1.1803206,
+      "flux_error": 0.0239165,
+      "seeing_px": 4.33,
+      "sky": 274.0,
+      "model_flux": 1.139669,
+      "standardised_residual": 1.69973
+    },
+    {
+      "day": 36.31268,
+      "hjd": 2460037.83018,
+      "magnitude": 18.602,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0636531,
+      "flux_error": 0.0284102,
+      "seeing_px": 4.66,
+      "sky": 333.0,
+      "model_flux": 1.1135194,
+      "standardised_residual": -1.75523
+    },
+    {
+      "day": 39.22296,
+      "hjd": 2460040.74046,
+      "magnitude": 18.529,
+      "magnitude_error": 0.035,
+      "relative_flux": 1.1376273,
+      "flux_error": 0.0366728,
+      "seeing_px": 4.81,
+      "sky": 710.0,
+      "model_flux": 1.0932366,
+      "standardised_residual": 1.21045
+    },
+    {
+      "day": 41.2321,
+      "hjd": 2460042.7496,
+      "magnitude": 18.5,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.1684227,
+      "flux_error": 0.0322847,
+      "seeing_px": 4.6,
+      "sky": 568.0,
+      "model_flux": 1.0817147,
+      "standardised_residual": 2.68573
+    },
+    {
+      "day": 42.38764,
+      "hjd": 2460043.90514,
+      "magnitude": 18.592,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0734949,
+      "flux_error": 0.0316392,
+      "seeing_px": 4.29,
+      "sky": 579.0,
+      "model_flux": 1.0758512,
+      "standardised_residual": -0.07447
+    },
+    {
+      "day": 48.36173,
+      "hjd": 2460049.87923,
+      "magnitude": 18.589,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0764652,
+      "flux_error": 0.0247865,
+      "seeing_px": 4.71,
+      "sky": 300.0,
+      "model_flux": 1.0524099,
+      "standardised_residual": 0.9705
+    },
+    {
+      "day": 51.32593,
+      "hjd": 2460052.84343,
+      "magnitude": 18.66,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0083238,
+      "flux_error": 0.0269323,
+      "seeing_px": 4.97,
+      "sky": 322.0,
+      "model_flux": 1.044014,
+      "standardised_residual": -1.32518
+    },
+    {
+      "day": 55.20803,
+      "hjd": 2460056.72553,
+      "magnitude": 18.674,
+      "magnitude_error": 0.04,
+      "relative_flux": 0.9954054,
+      "flux_error": 0.0366721,
+      "seeing_px": 6.67,
+      "sky": 334.0,
+      "model_flux": 1.0353026,
+      "standardised_residual": -1.08795
+    },
+    {
+      "day": 57.29287,
+      "hjd": 2460058.81037,
+      "magnitude": 18.688,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0298669,
+      "seeing_px": 5.59,
+      "sky": 317.0,
+      "model_flux": 1.0314713,
+      "standardised_residual": -1.63454
+    },
+    {
+      "day": 59.28751,
+      "hjd": 2460060.80501,
+      "magnitude": 18.633,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0337131,
+      "flux_error": 0.0276105,
+      "seeing_px": 4.74,
+      "sky": 339.0,
+      "model_flux": 1.0282577,
+      "standardised_residual": 0.19758
+    },
+    {
+      "day": 61.33355,
+      "hjd": 2460062.85105,
+      "magnitude": 18.605,
+      "magnitude_error": 0.025,
+      "relative_flux": 1.0607181,
+      "flux_error": 0.0244239,
+      "seeing_px": 4.36,
+      "sky": 317.0,
+      "model_flux": 1.0253563,
+      "standardised_residual": 1.44783
+    },
+    {
+      "day": 65.2037,
+      "hjd": 2460066.7212,
+      "magnitude": 18.702,
+      "magnitude_error": 0.031,
+      "relative_flux": 0.9700631,
+      "flux_error": 0.0276973,
+      "seeing_px": 4.74,
+      "sky": 369.0,
+      "model_flux": 1.0207744,
+      "standardised_residual": -1.83091
+    },
+    {
+      "day": 67.15213,
+      "hjd": 2460068.66963,
+      "magnitude": 18.691,
+      "magnitude_error": 0.045,
+      "relative_flux": 0.9799412,
+      "flux_error": 0.0406152,
+      "seeing_px": 5.65,
+      "sky": 624.0,
+      "model_flux": 1.0188405,
+      "standardised_residual": -0.95776
+    },
+    {
+      "day": 68.39525,
+      "hjd": 2460069.91275,
+      "magnitude": 18.606,
+      "magnitude_error": 0.04,
+      "relative_flux": 1.0597416,
+      "flux_error": 0.0390423,
+      "seeing_px": 4.73,
+      "sky": 750.0,
+      "model_flux": 1.0177173,
+      "standardised_residual": 1.07638
+    },
+    {
+      "day": 74.40273,
+      "hjd": 2460075.92023,
+      "magnitude": 18.671,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9981596,
+      "flux_error": 0.0340155,
+      "seeing_px": 4.06,
+      "sky": 742.0,
+      "model_flux": 1.0132827,
+      "standardised_residual": -0.44459
+    },
+    {
+      "day": 84.15585,
+      "hjd": 2460085.67335,
+      "magnitude": 18.637,
+      "magnitude_error": 0.046,
+      "relative_flux": 1.0299117,
+      "flux_error": 0.0436349,
+      "seeing_px": 7.17,
+      "sky": 320.0,
+      "model_flux": 1.0085547,
+      "standardised_residual": 0.48945
+    },
+    {
+      "day": 88.13983,
+      "hjd": 2460089.65733,
+      "magnitude": 18.719,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9549926,
+      "flux_error": 0.0334241,
+      "seeing_px": 5.1,
+      "sky": 417.0,
+      "model_flux": 1.0072074,
+      "standardised_residual": -1.56219
+    },
+    {
+      "day": 90.22769,
+      "hjd": 2460091.74519,
+      "magnitude": 18.614,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0519619,
+      "flux_error": 0.0310046,
+      "seeing_px": 4.73,
+      "sky": 379.0,
+      "model_flux": 1.0065992,
+      "standardised_residual": 1.4631
+    },
+    {
+      "day": 93.11971,
+      "hjd": 2460094.63721,
+      "magnitude": 18.642,
+      "magnitude_error": 0.044,
+      "relative_flux": 1.0251797,
+      "flux_error": 0.0415459,
+      "seeing_px": 5.29,
+      "sky": 649.0,
+      "model_flux": 1.0058507,
+      "standardised_residual": 0.46524
+    },
+    {
+      "day": 95.09098,
+      "hjd": 2460096.60848,
+      "magnitude": 18.632,
+      "magnitude_error": 0.039,
+      "relative_flux": 1.0346656,
+      "flux_error": 0.0371655,
+      "seeing_px": 5.07,
+      "sky": 529.0,
+      "model_flux": 1.0053954,
+      "standardised_residual": 0.78756
+    },
+    {
+      "day": 97.33478,
+      "hjd": 2460098.85228,
+      "magnitude": 18.619,
+      "magnitude_error": 0.071,
+      "relative_flux": 1.0471285,
+      "flux_error": 0.0684753,
+      "seeing_px": 6.49,
+      "sky": 1134.0,
+      "model_flux": 1.0049249,
+      "standardised_residual": 0.61633
+    },
+    {
+      "day": 104.04872,
+      "hjd": 2460105.56622,
+      "magnitude": 18.684,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9862795,
+      "flux_error": 0.0381527,
+      "seeing_px": 6.29,
+      "sky": 336.0,
+      "model_flux": 1.0037677,
+      "standardised_residual": -0.45837
+    },
+    {
+      "day": 109.02014,
+      "hjd": 2460110.53764,
+      "magnitude": 18.732,
+      "magnitude_error": 0.05,
+      "relative_flux": 0.9436262,
+      "flux_error": 0.0434556,
+      "seeing_px": 6.44,
+      "sky": 489.0,
+      "model_flux": 1.0031022,
+      "standardised_residual": -1.36866
+    },
+    {
+      "day": 110.25515,
+      "hjd": 2460111.77265,
+      "magnitude": 18.688,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0298669,
+      "seeing_px": 4.81,
+      "sky": 323.0,
+      "model_flux": 1.0029571,
+      "standardised_residual": -0.67983
+    },
+    {
+      "day": 112.01123,
+      "hjd": 2460113.52873,
+      "magnitude": 18.737,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.9392907,
+      "flux_error": 0.0397955,
+      "seeing_px": 5.54,
+      "sky": 463.0,
+      "model_flux": 1.0027629,
+      "standardised_residual": -1.59496
+    },
+    {
+      "day": 113.37057,
+      "hjd": 2460114.88807,
+      "magnitude": 18.694,
+      "magnitude_error": 0.064,
+      "relative_flux": 0.9772372,
+      "flux_error": 0.0576044,
+      "seeing_px": 7.55,
+      "sky": 545.0,
+      "model_flux": 1.0026218,
+      "standardised_residual": -0.44067
+    },
+    {
+      "day": 119.0077,
+      "hjd": 2460120.5252,
+      "magnitude": 18.711,
+      "magnitude_error": 0.041,
+      "relative_flux": 0.9620552,
+      "flux_error": 0.0363295,
+      "seeing_px": 6.02,
+      "sky": 375.0,
+      "model_flux": 1.0021111,
+      "standardised_residual": -1.10257
+    },
+    {
+      "day": 120.20255,
+      "hjd": 2460121.72005,
+      "magnitude": 18.697,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9745407,
+      "flux_error": 0.0341082,
+      "seeing_px": 5.62,
+      "sky": 361.0,
+      "model_flux": 1.0020165,
+      "standardised_residual": -0.80555
+    },
+    {
+      "day": 122.12516,
+      "hjd": 2460123.64266,
+      "magnitude": 18.67,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0340469,
+      "seeing_px": 4.85,
+      "sky": 540.0,
+      "model_flux": 1.0018729,
+      "standardised_residual": -0.08205
+    },
+    {
+      "day": 122.1512,
+      "hjd": 2460123.6687,
+      "magnitude": 18.667,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0018438,
+      "flux_error": 0.027682,
+      "seeing_px": 4.65,
+      "sky": 325.0,
+      "model_flux": 1.001871,
+      "standardised_residual": -0.00098
+    },
+    {
+      "day": 123.34273,
+      "hjd": 2460124.86023,
+      "magnitude": 18.678,
+      "magnitude_error": 0.047,
+      "relative_flux": 0.991745,
+      "flux_error": 0.0429313,
+      "seeing_px": 5.56,
+      "sky": 596.0,
+      "model_flux": 1.0017872,
+      "standardised_residual": -0.23391
+    },
+    {
+      "day": 128.96618,
+      "hjd": 2460130.48368,
+      "magnitude": 18.619,
+      "magnitude_error": 0.078,
+      "relative_flux": 1.0471285,
+      "flux_error": 0.0752264,
+      "seeing_px": 7.73,
+      "sky": 969.0,
+      "model_flux": 1.0014375,
+      "standardised_residual": 0.60738
+    },
+    {
+      "day": 130.23189,
+      "hjd": 2460131.74939,
+      "magnitude": 18.73,
+      "magnitude_error": 0.058,
+      "relative_flux": 0.945366,
+      "flux_error": 0.0505014,
+      "seeing_px": 5.58,
+      "sky": 882.0,
+      "model_flux": 1.0013681,
+      "standardised_residual": -1.10892
+    },
+    {
+      "day": 132.96788,
+      "hjd": 2460134.48538,
+      "magnitude": 18.676,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9935735,
+      "flux_error": 0.0402651,
+      "seeing_px": 5.7,
+      "sky": 537.0,
+      "model_flux": 1.0012284,
+      "standardised_residual": -0.19011
+    },
+    {
+      "day": 138.18568,
+      "hjd": 2460139.70318,
+      "magnitude": 18.707,
+      "magnitude_error": 0.033,
+      "relative_flux": 0.9656061,
+      "flux_error": 0.0293488,
+      "seeing_px": 5.0,
+      "sky": 275.0,
+      "model_flux": 1.000996,
+      "standardised_residual": -1.20584
+    },
+    {
+      "day": 140.12497,
+      "hjd": 2460141.64247,
+      "magnitude": 18.711,
+      "magnitude_error": 0.035,
+      "relative_flux": 0.9620552,
+      "flux_error": 0.031013,
+      "seeing_px": 5.36,
+      "sky": 268.0,
+      "model_flux": 1.0009196,
+      "standardised_residual": -1.25317
+    },
+    {
+      "day": 142.14621,
+      "hjd": 2460143.66371,
+      "magnitude": 18.659,
+      "magnitude_error": 0.029,
+      "relative_flux": 1.0092529,
+      "flux_error": 0.0269571,
+      "seeing_px": 4.82,
+      "sky": 269.0,
+      "model_flux": 1.0008451,
+      "standardised_residual": 0.3119
+    },
+    {
+      "day": 148.04403,
+      "hjd": 2460149.56153,
+      "magnitude": 18.663,
+      "magnitude_error": 0.032,
+      "relative_flux": 1.0055415,
+      "flux_error": 0.0296364,
+      "seeing_px": 4.86,
+      "sky": 325.0,
+      "model_flux": 1.0006537,
+      "standardised_residual": 0.16493
+    },
+    {
+      "day": 151.96624,
+      "hjd": 2460153.48374,
+      "magnitude": 18.673,
+      "magnitude_error": 0.051,
+      "relative_flux": 0.9963226,
+      "flux_error": 0.0468,
+      "seeing_px": 5.89,
+      "sky": 570.0,
+      "model_flux": 1.0005449,
+      "standardised_residual": -0.09022
+    },
+    {
+      "day": 152.22867,
+      "hjd": 2460153.74617,
+      "magnitude": 18.722,
+      "magnitude_error": 0.052,
+      "relative_flux": 0.9523575,
+      "flux_error": 0.045612,
+      "seeing_px": 5.59,
+      "sky": 768.0,
+      "model_flux": 1.0005381,
+      "standardised_residual": -1.05632
+    },
+    {
+      "day": 152.28599,
+      "hjd": 2460153.80349,
+      "magnitude": 18.688,
+      "magnitude_error": 0.054,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.048873,
+      "seeing_px": 6.11,
+      "sky": 761.0,
+      "model_flux": 1.0005366,
+      "standardised_residual": -0.36593
+    },
+    {
+      "day": 156.25797,
+      "hjd": 2460157.77547,
+      "magnitude": 18.611,
+      "magnitude_error": 0.048,
+      "relative_flux": 1.0548726,
+      "flux_error": 0.0466355,
+      "seeing_px": 4.67,
+      "sky": 1210.0,
+      "model_flux": 1.0004402,
+      "standardised_residual": 1.16719
+    },
+    {
+      "day": 158.22294,
+      "hjd": 2460159.74044,
+      "magnitude": 18.654,
+      "magnitude_error": 0.039,
+      "relative_flux": 1.0139114,
+      "flux_error": 0.03642,
+      "seeing_px": 4.93,
+      "sky": 552.0,
+      "model_flux": 1.0003966,
+      "standardised_residual": 0.37108
+    },
+    {
+      "day": 159.24824,
+      "hjd": 2460160.76574,
+      "magnitude": 18.684,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9862795,
+      "flux_error": 0.0399695,
+      "seeing_px": 4.9,
+      "sky": 598.0,
+      "model_flux": 1.0003748,
+      "standardised_residual": -0.35265
+    },
+    {
+      "day": 166.97677,
+      "hjd": 2460168.49427,
+      "magnitude": 18.686,
+      "magnitude_error": 0.038,
+      "relative_flux": 0.9844644,
+      "flux_error": 0.0344556,
+      "seeing_px": 6.18,
+      "sky": 304.0,
+      "model_flux": 1.0002304,
+      "standardised_residual": -0.45758
+    },
+    {
+      "day": 168.228,
+      "hjd": 2460169.7455,
+      "magnitude": 18.666,
+      "magnitude_error": 0.045,
+      "relative_flux": 1.0027669,
+      "flux_error": 0.0415612,
+      "seeing_px": 7.17,
+      "sky": 296.0,
+      "model_flux": 1.0002099,
+      "standardised_residual": 0.06153
+    },
+    {
+      "day": 170.21517,
+      "hjd": 2460171.73267,
+      "magnitude": 18.752,
+      "magnitude_error": 0.045,
+      "relative_flux": 0.9264031,
+      "flux_error": 0.0383962,
+      "seeing_px": 6.21,
+      "sky": 344.0,
+      "model_flux": 1.0001788,
+      "standardised_residual": -1.92143
+    },
+    {
+      "day": 173.98652,
+      "hjd": 2460175.50402,
+      "magnitude": 18.732,
+      "magnitude_error": 0.058,
+      "relative_flux": 0.9436262,
+      "flux_error": 0.0504085,
+      "seeing_px": 7.68,
+      "sky": 397.0,
+      "model_flux": 1.0001243,
+      "standardised_residual": -1.1208
+    },
+    {
+      "day": 178.12258,
+      "hjd": 2460179.64008,
+      "magnitude": 18.675,
+      "magnitude_error": 0.046,
+      "relative_flux": 0.994489,
+      "flux_error": 0.0421341,
+      "seeing_px": 6.61,
+      "sky": 345.0,
+      "model_flux": 1.0000706,
+      "standardised_residual": -0.13247
+    },
+    {
+      "day": 184.0896,
+      "hjd": 2460185.6071,
+      "magnitude": 18.693,
+      "magnitude_error": 0.054,
+      "relative_flux": 0.9781377,
+      "flux_error": 0.0486485,
+      "seeing_px": 5.87,
+      "sky": 661.0,
+      "model_flux": 1.000003,
+      "standardised_residual": -0.44946
+    },
+    {
+      "day": 187.14644,
+      "hjd": 2460188.66394,
+      "magnitude": 18.609,
+      "magnitude_error": 0.044,
+      "relative_flux": 1.0568175,
+      "flux_error": 0.0428281,
+      "seeing_px": 5.57,
+      "sky": 580.0,
+      "model_flux": 0.9999723,
+      "standardised_residual": 1.32729
+    },
+    {
+      "day": 200.12982,
+      "hjd": 2460201.64732,
+      "magnitude": 18.688,
+      "magnitude_error": 0.039,
+      "relative_flux": 0.9826526,
+      "flux_error": 0.0352972,
+      "seeing_px": 5.5,
+      "sky": 376.0,
+      "model_flux": 0.9998652,
+      "standardised_residual": -0.48765
+    },
+    {
+      "day": 203.01867,
+      "hjd": 2460204.53617,
+      "magnitude": 18.718,
+      "magnitude_error": 0.055,
+      "relative_flux": 0.9558726,
+      "flux_error": 0.0484215,
+      "seeing_px": 7.53,
+      "sky": 346.0,
+      "model_flux": 0.9998457,
+      "standardised_residual": -0.90813
+    },
+    {
+      "day": 211.07257,
+      "hjd": 2460212.59007,
+      "magnitude": 18.673,
+      "magnitude_error": 0.042,
+      "relative_flux": 0.9963226,
+      "flux_error": 0.0385412,
+      "seeing_px": 5.03,
+      "sky": 591.0,
+      "model_flux": 0.9997977,
+      "standardised_residual": -0.09017
+    },
+    {
+      "day": 215.10244,
+      "hjd": 2460216.61994,
+      "magnitude": 18.7,
+      "magnitude_error": 0.074,
+      "relative_flux": 0.9718517,
+      "flux_error": 0.066238,
+      "seeing_px": 7.02,
+      "sky": 866.0,
+      "model_flux": 0.9997769,
+      "standardised_residual": -0.42159
+    },
+    {
+      "day": 221.057,
+      "hjd": 2460222.5745,
+      "magnitude": 18.74,
+      "magnitude_error": 0.048,
+      "relative_flux": 0.9366989,
+      "flux_error": 0.0414111,
+      "seeing_px": 6.24,
+      "sky": 399.0,
+      "model_flux": 0.9997494,
+      "standardised_residual": -1.52255
+    },
+    {
+      "day": 227.06511,
+      "hjd": 2460228.58261,
+      "magnitude": 18.661,
+      "magnitude_error": 0.062,
+      "relative_flux": 1.0073955,
+      "flux_error": 0.0575264,
+      "seeing_px": 7.82,
+      "sky": 498.0,
+      "model_flux": 0.9997251,
+      "standardised_residual": 0.13334
+    },
+    {
+      "day": 241.00784,
+      "hjd": 2460242.52534,
+      "magnitude": 18.67,
+      "magnitude_error": 0.054,
+      "relative_flux": 0.9990794,
+      "flux_error": 0.0496901,
+      "seeing_px": 5.94,
+      "sky": 665.0,
+      "model_flux": 0.9996792,
+      "standardised_residual": -0.01207
+    },
+    {
+      "day": 252.99194,
+      "hjd": 2460254.50944,
+      "magnitude": 18.732,
+      "magnitude_error": 0.069,
+      "relative_flux": 0.9436262,
+      "flux_error": 0.0599687,
+      "seeing_px": 7.02,
+      "sky": 712.0,
+      "model_flux": 0.9996489,
+      "standardised_residual": -0.9342
+    },
+    {
+      "day": 356.36652,
+      "hjd": 2460357.88402,
+      "magnitude": 18.712,
+      "magnitude_error": 0.044,
+      "relative_flux": 0.9611695,
+      "flux_error": 0.0389519,
+      "seeing_px": 5.99,
+      "sky": 471.0,
+      "model_flux": 0.999542,
+      "standardised_residual": -0.98512
+    },
+    {
+      "day": 367.3468,
+      "hjd": 2460368.8643,
+      "magnitude": 18.698,
+      "magnitude_error": 0.037,
+      "relative_flux": 0.9736436,
+      "flux_error": 0.0331801,
+      "seeing_px": 4.93,
+      "sky": 448.0,
+      "model_flux": 0.9995377,
+      "standardised_residual": -0.78041
+    },
+    {
+      "day": 375.35045,
+      "hjd": 2460376.86795,
+      "magnitude": 18.714,
+      "magnitude_error": 0.045,
+      "relative_flux": 0.9594006,
+      "flux_error": 0.0397638,
+      "seeing_px": 5.91,
+      "sky": 460.0,
+      "model_flux": 0.999535,
+      "standardised_residual": -1.00932
+    },
+    {
+      "day": 378.33808,
+      "hjd": 2460379.85558,
+      "magnitude": 18.662,
+      "magnitude_error": 0.03,
+      "relative_flux": 1.0064681,
+      "flux_error": 0.0278097,
+      "seeing_px": 4.31,
+      "sky": 347.0,
+      "model_flux": 0.9995341,
+      "standardised_residual": 0.24934
+    }
+  ],
+  "curve": [
+    {
+      "day": -110.0,
+      "relative_flux": 1.0029864
+    },
+    {
+      "day": -109.68526,
+      "relative_flux": 1.0030231
+    },
+    {
+      "day": -109.37053,
+      "relative_flux": 1.0030602
+    },
+    {
+      "day": -109.05579,
+      "relative_flux": 1.0030979
+    },
+    {
+      "day": -108.74106,
+      "relative_flux": 1.003136
+    },
+    {
+      "day": -108.42632,
+      "relative_flux": 1.0031746
+    },
+    {
+      "day": -108.11159,
+      "relative_flux": 1.0032137
+    },
+    {
+      "day": -107.79685,
+      "relative_flux": 1.0032533
+    },
+    {
+      "day": -107.48212,
+      "relative_flux": 1.0032935
+    },
+    {
+      "day": -107.16738,
+      "relative_flux": 1.0033342
+    },
+    {
+      "day": -106.85265,
+      "relative_flux": 1.0033754
+    },
+    {
+      "day": -106.53791,
+      "relative_flux": 1.0034171
+    },
+    {
+      "day": -106.22318,
+      "relative_flux": 1.0034595
+    },
+    {
+      "day": -105.90844,
+      "relative_flux": 1.0035023
+    },
+    {
+      "day": -105.59371,
+      "relative_flux": 1.0035458
+    },
+    {
+      "day": -105.27897,
+      "relative_flux": 1.0035898
+    },
+    {
+      "day": -104.96423,
+      "relative_flux": 1.0036345
+    },
+    {
+      "day": -104.6495,
+      "relative_flux": 1.0036797
+    },
+    {
+      "day": -104.33476,
+      "relative_flux": 1.0037255
+    },
+    {
+      "day": -104.02003,
+      "relative_flux": 1.003772
+    },
+    {
+      "day": -103.70529,
+      "relative_flux": 1.0038191
+    },
+    {
+      "day": -103.39056,
+      "relative_flux": 1.0038668
+    },
+    {
+      "day": -103.07582,
+      "relative_flux": 1.0039151
+    },
+    {
+      "day": -102.76109,
+      "relative_flux": 1.0039642
+    },
+    {
+      "day": -102.44635,
+      "relative_flux": 1.0040139
+    },
+    {
+      "day": -102.13162,
+      "relative_flux": 1.0040643
+    },
+    {
+      "day": -101.81688,
+      "relative_flux": 1.0041153
+    },
+    {
+      "day": -101.50215,
+      "relative_flux": 1.0041671
+    },
+    {
+      "day": -101.18741,
+      "relative_flux": 1.0042196
+    },
+    {
+      "day": -100.87268,
+      "relative_flux": 1.0042728
+    },
+    {
+      "day": -100.55794,
+      "relative_flux": 1.0043268
+    },
+    {
+      "day": -100.2432,
+      "relative_flux": 1.0043815
+    },
+    {
+      "day": -99.92847,
+      "relative_flux": 1.004437
+    },
+    {
+      "day": -99.61373,
+      "relative_flux": 1.0044932
+    },
+    {
+      "day": -99.299,
+      "relative_flux": 1.0045503
+    },
+    {
+      "day": -98.98426,
+      "relative_flux": 1.0046081
+    },
+    {
+      "day": -98.66953,
+      "relative_flux": 1.0046668
+    },
+    {
+      "day": -98.35479,
+      "relative_flux": 1.0047263
+    },
+    {
+      "day": -98.04006,
+      "relative_flux": 1.0047866
+    },
+    {
+      "day": -97.72532,
+      "relative_flux": 1.0048478
+    },
+    {
+      "day": -97.41059,
+      "relative_flux": 1.0049098
+    },
+    {
+      "day": -97.09585,
+      "relative_flux": 1.0049728
+    },
+    {
+      "day": -96.78112,
+      "relative_flux": 1.0050366
+    },
+    {
+      "day": -96.46638,
+      "relative_flux": 1.0051013
+    },
+    {
+      "day": -96.15165,
+      "relative_flux": 1.005167
+    },
+    {
+      "day": -95.83691,
+      "relative_flux": 1.0052337
+    },
+    {
+      "day": -95.52217,
+      "relative_flux": 1.0053012
+    },
+    {
+      "day": -95.20744,
+      "relative_flux": 1.0053698
+    },
+    {
+      "day": -94.8927,
+      "relative_flux": 1.0054394
+    },
+    {
+      "day": -94.57797,
+      "relative_flux": 1.00551
+    },
+    {
+      "day": -94.26323,
+      "relative_flux": 1.0055816
+    },
+    {
+      "day": -93.9485,
+      "relative_flux": 1.0056542
+    },
+    {
+      "day": -93.63376,
+      "relative_flux": 1.0057279
+    },
+    {
+      "day": -93.31903,
+      "relative_flux": 1.0058027
+    },
+    {
+      "day": -93.00429,
+      "relative_flux": 1.0058787
+    },
+    {
+      "day": -92.68956,
+      "relative_flux": 1.0059557
+    },
+    {
+      "day": -92.37482,
+      "relative_flux": 1.0060339
+    },
+    {
+      "day": -92.06009,
+      "relative_flux": 1.0061132
+    },
+    {
+      "day": -91.74535,
+      "relative_flux": 1.0061937
+    },
+    {
+      "day": -91.43062,
+      "relative_flux": 1.0062754
+    },
+    {
+      "day": -91.11588,
+      "relative_flux": 1.0063584
+    },
+    {
+      "day": -90.80114,
+      "relative_flux": 1.0064425
+    },
+    {
+      "day": -90.48641,
+      "relative_flux": 1.006528
+    },
+    {
+      "day": -90.17167,
+      "relative_flux": 1.0066147
+    },
+    {
+      "day": -89.85694,
+      "relative_flux": 1.0067028
+    },
+    {
+      "day": -89.5422,
+      "relative_flux": 1.0067922
+    },
+    {
+      "day": -89.22747,
+      "relative_flux": 1.0068829
+    },
+    {
+      "day": -88.91273,
+      "relative_flux": 1.0069751
+    },
+    {
+      "day": -88.598,
+      "relative_flux": 1.0070686
+    },
+    {
+      "day": -88.28326,
+      "relative_flux": 1.0071636
+    },
+    {
+      "day": -87.96853,
+      "relative_flux": 1.00726
+    },
+    {
+      "day": -87.65379,
+      "relative_flux": 1.007358
+    },
+    {
+      "day": -87.33906,
+      "relative_flux": 1.0074574
+    },
+    {
+      "day": -87.02432,
+      "relative_flux": 1.0075584
+    },
+    {
+      "day": -86.70959,
+      "relative_flux": 1.0076609
+    },
+    {
+      "day": -86.39485,
+      "relative_flux": 1.0077651
+    },
+    {
+      "day": -86.08011,
+      "relative_flux": 1.0078709
+    },
+    {
+      "day": -85.76538,
+      "relative_flux": 1.0079783
+    },
+    {
+      "day": -85.45064,
+      "relative_flux": 1.0080874
+    },
+    {
+      "day": -85.13591,
+      "relative_flux": 1.0081982
+    },
+    {
+      "day": -84.82117,
+      "relative_flux": 1.0083108
+    },
+    {
+      "day": -84.50644,
+      "relative_flux": 1.0084252
+    },
+    {
+      "day": -84.1917,
+      "relative_flux": 1.0085414
+    },
+    {
+      "day": -83.87697,
+      "relative_flux": 1.0086594
+    },
+    {
+      "day": -83.56223,
+      "relative_flux": 1.0087793
+    },
+    {
+      "day": -83.2475,
+      "relative_flux": 1.0089012
+    },
+    {
+      "day": -82.93276,
+      "relative_flux": 1.009025
+    },
+    {
+      "day": -82.61803,
+      "relative_flux": 1.0091508
+    },
+    {
+      "day": -82.30329,
+      "relative_flux": 1.0092786
+    },
+    {
+      "day": -81.98856,
+      "relative_flux": 1.0094085
+    },
+    {
+      "day": -81.67382,
+      "relative_flux": 1.0095405
+    },
+    {
+      "day": -81.35908,
+      "relative_flux": 1.0096746
+    },
+    {
+      "day": -81.04435,
+      "relative_flux": 1.0098109
+    },
+    {
+      "day": -80.72961,
+      "relative_flux": 1.0099495
+    },
+    {
+      "day": -80.41488,
+      "relative_flux": 1.0100903
+    },
+    {
+      "day": -80.10014,
+      "relative_flux": 1.0102335
+    },
+    {
+      "day": -79.78541,
+      "relative_flux": 1.010379
+    },
+    {
+      "day": -79.47067,
+      "relative_flux": 1.0105269
+    },
+    {
+      "day": -79.15594,
+      "relative_flux": 1.0106773
+    },
+    {
+      "day": -78.8412,
+      "relative_flux": 1.0108302
+    },
+    {
+      "day": -78.52647,
+      "relative_flux": 1.0109856
+    },
+    {
+      "day": -78.21173,
+      "relative_flux": 1.0111437
+    },
+    {
+      "day": -77.897,
+      "relative_flux": 1.0113043
+    },
+    {
+      "day": -77.58226,
+      "relative_flux": 1.0114677
+    },
+    {
+      "day": -77.26753,
+      "relative_flux": 1.0116339
+    },
+    {
+      "day": -76.95279,
+      "relative_flux": 1.0118028
+    },
+    {
+      "day": -76.63805,
+      "relative_flux": 1.0119747
+    },
+    {
+      "day": -76.32332,
+      "relative_flux": 1.0121494
+    },
+    {
+      "day": -76.00858,
+      "relative_flux": 1.0123272
+    },
+    {
+      "day": -75.69385,
+      "relative_flux": 1.0125079
+    },
+    {
+      "day": -75.37911,
+      "relative_flux": 1.0126918
+    },
+    {
+      "day": -75.06438,
+      "relative_flux": 1.0128789
+    },
+    {
+      "day": -74.74964,
+      "relative_flux": 1.0130691
+    },
+    {
+      "day": -74.43491,
+      "relative_flux": 1.0132627
+    },
+    {
+      "day": -74.12017,
+      "relative_flux": 1.0134596
+    },
+    {
+      "day": -73.80544,
+      "relative_flux": 1.01366
+    },
+    {
+      "day": -73.4907,
+      "relative_flux": 1.0138639
+    },
+    {
+      "day": -73.17597,
+      "relative_flux": 1.0140713
+    },
+    {
+      "day": -72.86123,
+      "relative_flux": 1.0142824
+    },
+    {
+      "day": -72.54649,
+      "relative_flux": 1.0144972
+    },
+    {
+      "day": -72.23176,
+      "relative_flux": 1.0147158
+    },
+    {
+      "day": -71.91702,
+      "relative_flux": 1.0149382
+    },
+    {
+      "day": -71.60229,
+      "relative_flux": 1.0151647
+    },
+    {
+      "day": -71.28755,
+      "relative_flux": 1.0153951
+    },
+    {
+      "day": -70.97282,
+      "relative_flux": 1.0156297
+    },
+    {
+      "day": -70.65808,
+      "relative_flux": 1.0158685
+    },
+    {
+      "day": -70.34335,
+      "relative_flux": 1.0161116
+    },
+    {
+      "day": -70.02861,
+      "relative_flux": 1.016359
+    },
+    {
+      "day": -69.71388,
+      "relative_flux": 1.016611
+    },
+    {
+      "day": -69.39914,
+      "relative_flux": 1.0168675
+    },
+    {
+      "day": -69.08441,
+      "relative_flux": 1.0171287
+    },
+    {
+      "day": -68.76967,
+      "relative_flux": 1.0173946
+    },
+    {
+      "day": -68.45494,
+      "relative_flux": 1.0176654
+    },
+    {
+      "day": -68.1402,
+      "relative_flux": 1.0179412
+    },
+    {
+      "day": -67.82546,
+      "relative_flux": 1.0182221
+    },
+    {
+      "day": -67.51073,
+      "relative_flux": 1.0185081
+    },
+    {
+      "day": -67.19599,
+      "relative_flux": 1.0187995
+    },
+    {
+      "day": -66.88126,
+      "relative_flux": 1.0190963
+    },
+    {
+      "day": -66.56652,
+      "relative_flux": 1.0193986
+    },
+    {
+      "day": -66.25179,
+      "relative_flux": 1.0197065
+    },
+    {
+      "day": -65.93705,
+      "relative_flux": 1.0200203
+    },
+    {
+      "day": -65.62232,
+      "relative_flux": 1.0203399
+    },
+    {
+      "day": -65.30758,
+      "relative_flux": 1.0206656
+    },
+    {
+      "day": -64.99285,
+      "relative_flux": 1.0209974
+    },
+    {
+      "day": -64.67811,
+      "relative_flux": 1.0213355
+    },
+    {
+      "day": -64.36338,
+      "relative_flux": 1.0216801
+    },
+    {
+      "day": -64.04864,
+      "relative_flux": 1.0220313
+    },
+    {
+      "day": -63.73391,
+      "relative_flux": 1.0223891
+    },
+    {
+      "day": -63.41917,
+      "relative_flux": 1.0227539
+    },
+    {
+      "day": -63.10443,
+      "relative_flux": 1.0231257
+    },
+    {
+      "day": -62.7897,
+      "relative_flux": 1.0235046
+    },
+    {
+      "day": -62.47496,
+      "relative_flux": 1.023891
+    },
+    {
+      "day": -62.16023,
+      "relative_flux": 1.0242848
+    },
+    {
+      "day": -61.84549,
+      "relative_flux": 1.0246863
+    },
+    {
+      "day": -61.53076,
+      "relative_flux": 1.0250957
+    },
+    {
+      "day": -61.21602,
+      "relative_flux": 1.0255132
+    },
+    {
+      "day": -60.90129,
+      "relative_flux": 1.0259388
+    },
+    {
+      "day": -60.58655,
+      "relative_flux": 1.0263729
+    },
+    {
+      "day": -60.27182,
+      "relative_flux": 1.0268156
+    },
+    {
+      "day": -59.95708,
+      "relative_flux": 1.027267
+    },
+    {
+      "day": -59.64235,
+      "relative_flux": 1.0277275
+    },
+    {
+      "day": -59.32761,
+      "relative_flux": 1.0281972
+    },
+    {
+      "day": -59.01288,
+      "relative_flux": 1.0286763
+    },
+    {
+      "day": -58.69814,
+      "relative_flux": 1.0291651
+    },
+    {
+      "day": -58.3834,
+      "relative_flux": 1.0296638
+    },
+    {
+      "day": -58.06867,
+      "relative_flux": 1.0301725
+    },
+    {
+      "day": -57.75393,
+      "relative_flux": 1.0306916
+    },
+    {
+      "day": -57.4392,
+      "relative_flux": 1.0312213
+    },
+    {
+      "day": -57.12446,
+      "relative_flux": 1.0317619
+    },
+    {
+      "day": -56.80973,
+      "relative_flux": 1.0323135
+    },
+    {
+      "day": -56.49499,
+      "relative_flux": 1.0328765
+    },
+    {
+      "day": -56.18026,
+      "relative_flux": 1.0334511
+    },
+    {
+      "day": -55.86552,
+      "relative_flux": 1.0340376
+    },
+    {
+      "day": -55.55079,
+      "relative_flux": 1.0346364
+    },
+    {
+      "day": -55.23605,
+      "relative_flux": 1.0352476
+    },
+    {
+      "day": -54.92132,
+      "relative_flux": 1.0358716
+    },
+    {
+      "day": -54.60658,
+      "relative_flux": 1.0365087
+    },
+    {
+      "day": -54.29185,
+      "relative_flux": 1.0371593
+    },
+    {
+      "day": -53.97711,
+      "relative_flux": 1.0378236
+    },
+    {
+      "day": -53.66237,
+      "relative_flux": 1.038502
+    },
+    {
+      "day": -53.34764,
+      "relative_flux": 1.0391948
+    },
+    {
+      "day": -53.0329,
+      "relative_flux": 1.0399024
+    },
+    {
+      "day": -52.71817,
+      "relative_flux": 1.0406252
+    },
+    {
+      "day": -52.40343,
+      "relative_flux": 1.0413635
+    },
+    {
+      "day": -52.0887,
+      "relative_flux": 1.0421177
+    },
+    {
+      "day": -51.77396,
+      "relative_flux": 1.0428882
+    },
+    {
+      "day": -51.45923,
+      "relative_flux": 1.0436755
+    },
+    {
+      "day": -51.14449,
+      "relative_flux": 1.0444799
+    },
+    {
+      "day": -50.82976,
+      "relative_flux": 1.0453018
+    },
+    {
+      "day": -50.51502,
+      "relative_flux": 1.0461418
+    },
+    {
+      "day": -50.20029,
+      "relative_flux": 1.0470003
+    },
+    {
+      "day": -49.88555,
+      "relative_flux": 1.0478777
+    },
+    {
+      "day": -49.57082,
+      "relative_flux": 1.0487746
+    },
+    {
+      "day": -49.25608,
+      "relative_flux": 1.0496914
+    },
+    {
+      "day": -48.94134,
+      "relative_flux": 1.0506286
+    },
+    {
+      "day": -48.62661,
+      "relative_flux": 1.0515868
+    },
+    {
+      "day": -48.31187,
+      "relative_flux": 1.0525665
+    },
+    {
+      "day": -47.99714,
+      "relative_flux": 1.0535683
+    },
+    {
+      "day": -47.6824,
+      "relative_flux": 1.0545927
+    },
+    {
+      "day": -47.36767,
+      "relative_flux": 1.0556404
+    },
+    {
+      "day": -47.05293,
+      "relative_flux": 1.0567119
+    },
+    {
+      "day": -46.7382,
+      "relative_flux": 1.0578079
+    },
+    {
+      "day": -46.42346,
+      "relative_flux": 1.058929
+    },
+    {
+      "day": -46.10873,
+      "relative_flux": 1.060076
+    },
+    {
+      "day": -45.79399,
+      "relative_flux": 1.0612493
+    },
+    {
+      "day": -45.47926,
+      "relative_flux": 1.0624499
+    },
+    {
+      "day": -45.16452,
+      "relative_flux": 1.0636784
+    },
+    {
+      "day": -44.84979,
+      "relative_flux": 1.0649355
+    },
+    {
+      "day": -44.53505,
+      "relative_flux": 1.0662221
+    },
+    {
+      "day": -44.22031,
+      "relative_flux": 1.0675389
+    },
+    {
+      "day": -43.90558,
+      "relative_flux": 1.0688868
+    },
+    {
+      "day": -43.59084,
+      "relative_flux": 1.0702665
+    },
+    {
+      "day": -43.27611,
+      "relative_flux": 1.071679
+    },
+    {
+      "day": -42.96137,
+      "relative_flux": 1.0731252
+    },
+    {
+      "day": -42.64664,
+      "relative_flux": 1.074606
+    },
+    {
+      "day": -42.3319,
+      "relative_flux": 1.0761224
+    },
+    {
+      "day": -42.01717,
+      "relative_flux": 1.0776752
+    },
+    {
+      "day": -41.70243,
+      "relative_flux": 1.0792657
+    },
+    {
+      "day": -41.3877,
+      "relative_flux": 1.0808948
+    },
+    {
+      "day": -41.07296,
+      "relative_flux": 1.0825635
+    },
+    {
+      "day": -40.75823,
+      "relative_flux": 1.0842731
+    },
+    {
+      "day": -40.44349,
+      "relative_flux": 1.0860246
+    },
+    {
+      "day": -40.12876,
+      "relative_flux": 1.0878193
+    },
+    {
+      "day": -39.81402,
+      "relative_flux": 1.0896584
+    },
+    {
+      "day": -39.49928,
+      "relative_flux": 1.0915431
+    },
+    {
+      "day": -39.18455,
+      "relative_flux": 1.0934749
+    },
+    {
+      "day": -38.86981,
+      "relative_flux": 1.0954549
+    },
+    {
+      "day": -38.55508,
+      "relative_flux": 1.0974847
+    },
+    {
+      "day": -38.24034,
+      "relative_flux": 1.0995656
+    },
+    {
+      "day": -37.92561,
+      "relative_flux": 1.1016992
+    },
+    {
+      "day": -37.61087,
+      "relative_flux": 1.103887
+    },
+    {
+      "day": -37.29614,
+      "relative_flux": 1.1061306
+    },
+    {
+      "day": -36.9814,
+      "relative_flux": 1.1084317
+    },
+    {
+      "day": -36.66667,
+      "relative_flux": 1.1107919
+    },
+    {
+      "day": -36.35193,
+      "relative_flux": 1.113213
+    },
+    {
+      "day": -36.0372,
+      "relative_flux": 1.1156969
+    },
+    {
+      "day": -35.72246,
+      "relative_flux": 1.1182454
+    },
+    {
+      "day": -35.40773,
+      "relative_flux": 1.1208605
+    },
+    {
+      "day": -35.09299,
+      "relative_flux": 1.1235441
+    },
+    {
+      "day": -34.77825,
+      "relative_flux": 1.1262984
+    },
+    {
+      "day": -34.46352,
+      "relative_flux": 1.1291256
+    },
+    {
+      "day": -34.14878,
+      "relative_flux": 1.1320278
+    },
+    {
+      "day": -33.83405,
+      "relative_flux": 1.1350074
+    },
+    {
+      "day": -33.51931,
+      "relative_flux": 1.1380668
+    },
+    {
+      "day": -33.20458,
+      "relative_flux": 1.1412084
+    },
+    {
+      "day": -32.88984,
+      "relative_flux": 1.1444349
+    },
+    {
+      "day": -32.57511,
+      "relative_flux": 1.1477489
+    },
+    {
+      "day": -32.26037,
+      "relative_flux": 1.1511531
+    },
+    {
+      "day": -31.94564,
+      "relative_flux": 1.1546504
+    },
+    {
+      "day": -31.6309,
+      "relative_flux": 1.1582438
+    },
+    {
+      "day": -31.31617,
+      "relative_flux": 1.1619363
+    },
+    {
+      "day": -31.00143,
+      "relative_flux": 1.1657311
+    },
+    {
+      "day": -30.6867,
+      "relative_flux": 1.1696316
+    },
+    {
+      "day": -30.37196,
+      "relative_flux": 1.1736411
+    },
+    {
+      "day": -30.05722,
+      "relative_flux": 1.1777632
+    },
+    {
+      "day": -29.74249,
+      "relative_flux": 1.1820016
+    },
+    {
+      "day": -29.42775,
+      "relative_flux": 1.1863602
+    },
+    {
+      "day": -29.11302,
+      "relative_flux": 1.1908428
+    },
+    {
+      "day": -28.79828,
+      "relative_flux": 1.1954536
+    },
+    {
+      "day": -28.48355,
+      "relative_flux": 1.2001969
+    },
+    {
+      "day": -28.16881,
+      "relative_flux": 1.2050772
+    },
+    {
+      "day": -27.85408,
+      "relative_flux": 1.210099
+    },
+    {
+      "day": -27.53934,
+      "relative_flux": 1.2152672
+    },
+    {
+      "day": -27.22461,
+      "relative_flux": 1.2205867
+    },
+    {
+      "day": -26.90987,
+      "relative_flux": 1.2260628
+    },
+    {
+      "day": -26.59514,
+      "relative_flux": 1.2317008
+    },
+    {
+      "day": -26.2804,
+      "relative_flux": 1.2375064
+    },
+    {
+      "day": -25.96567,
+      "relative_flux": 1.2434853
+    },
+    {
+      "day": -25.65093,
+      "relative_flux": 1.2496437
+    },
+    {
+      "day": -25.33619,
+      "relative_flux": 1.2559878
+    },
+    {
+      "day": -25.02146,
+      "relative_flux": 1.2625242
+    },
+    {
+      "day": -24.70672,
+      "relative_flux": 1.2692598
+    },
+    {
+      "day": -24.39199,
+      "relative_flux": 1.2762017
+    },
+    {
+      "day": -24.07725,
+      "relative_flux": 1.2833573
+    },
+    {
+      "day": -23.76252,
+      "relative_flux": 1.2907342
+    },
+    {
+      "day": -23.44778,
+      "relative_flux": 1.2983407
+    },
+    {
+      "day": -23.13305,
+      "relative_flux": 1.3061849
+    },
+    {
+      "day": -22.81831,
+      "relative_flux": 1.3142758
+    },
+    {
+      "day": -22.50358,
+      "relative_flux": 1.3226222
+    },
+    {
+      "day": -22.18884,
+      "relative_flux": 1.3312339
+    },
+    {
+      "day": -21.87411,
+      "relative_flux": 1.3401206
+    },
+    {
+      "day": -21.55937,
+      "relative_flux": 1.3492926
+    },
+    {
+      "day": -21.24464,
+      "relative_flux": 1.3587607
+    },
+    {
+      "day": -20.9299,
+      "relative_flux": 1.3685361
+    },
+    {
+      "day": -20.61516,
+      "relative_flux": 1.3786305
+    },
+    {
+      "day": -20.30043,
+      "relative_flux": 1.389056
+    },
+    {
+      "day": -19.98569,
+      "relative_flux": 1.3998255
+    },
+    {
+      "day": -19.67096,
+      "relative_flux": 1.4109521
+    },
+    {
+      "day": -19.35622,
+      "relative_flux": 1.4224497
+    },
+    {
+      "day": -19.04149,
+      "relative_flux": 1.4343328
+    },
+    {
+      "day": -18.72675,
+      "relative_flux": 1.4466162
+    },
+    {
+      "day": -18.41202,
+      "relative_flux": 1.4593159
+    },
+    {
+      "day": -18.09728,
+      "relative_flux": 1.472448
+    },
+    {
+      "day": -17.78255,
+      "relative_flux": 1.4860296
+    },
+    {
+      "day": -17.46781,
+      "relative_flux": 1.5000785
+    },
+    {
+      "day": -17.15308,
+      "relative_flux": 1.5146132
+    },
+    {
+      "day": -16.83834,
+      "relative_flux": 1.5296529
+    },
+    {
+      "day": -16.52361,
+      "relative_flux": 1.5452177
+    },
+    {
+      "day": -16.20887,
+      "relative_flux": 1.5613284
+    },
+    {
+      "day": -15.89413,
+      "relative_flux": 1.5780066
+    },
+    {
+      "day": -15.5794,
+      "relative_flux": 1.5952747
+    },
+    {
+      "day": -15.26466,
+      "relative_flux": 1.6131562
+    },
+    {
+      "day": -14.94993,
+      "relative_flux": 1.631675
+    },
+    {
+      "day": -14.63519,
+      "relative_flux": 1.6508562
+    },
+    {
+      "day": -14.32046,
+      "relative_flux": 1.6707256
+    },
+    {
+      "day": -14.00572,
+      "relative_flux": 1.6913095
+    },
+    {
+      "day": -13.69099,
+      "relative_flux": 1.7126355
+    },
+    {
+      "day": -13.37625,
+      "relative_flux": 1.7347314
+    },
+    {
+      "day": -13.06152,
+      "relative_flux": 1.7576257
+    },
+    {
+      "day": -12.74678,
+      "relative_flux": 1.7813477
+    },
+    {
+      "day": -12.43205,
+      "relative_flux": 1.8059268
+    },
+    {
+      "day": -12.11731,
+      "relative_flux": 1.8313928
+    },
+    {
+      "day": -11.80258,
+      "relative_flux": 1.8577753
+    },
+    {
+      "day": -11.48784,
+      "relative_flux": 1.885104
+    },
+    {
+      "day": -11.1731,
+      "relative_flux": 1.9134079
+    },
+    {
+      "day": -10.85837,
+      "relative_flux": 1.9427152
+    },
+    {
+      "day": -10.54363,
+      "relative_flux": 1.9730529
+    },
+    {
+      "day": -10.2289,
+      "relative_flux": 2.004446
+    },
+    {
+      "day": -9.91416,
+      "relative_flux": 2.0369174
+    },
+    {
+      "day": -9.59943,
+      "relative_flux": 2.0704867
+    },
+    {
+      "day": -9.28469,
+      "relative_flux": 2.1051697
+    },
+    {
+      "day": -8.96996,
+      "relative_flux": 2.1409771
+    },
+    {
+      "day": -8.65522,
+      "relative_flux": 2.1779137
+    },
+    {
+      "day": -8.34049,
+      "relative_flux": 2.2159772
+    },
+    {
+      "day": -8.02575,
+      "relative_flux": 2.2551562
+    },
+    {
+      "day": -7.71102,
+      "relative_flux": 2.2954289
+    },
+    {
+      "day": -7.39628,
+      "relative_flux": 2.3367615
+    },
+    {
+      "day": -7.08155,
+      "relative_flux": 2.3791054
+    },
+    {
+      "day": -6.76681,
+      "relative_flux": 2.4223958
+    },
+    {
+      "day": -6.45207,
+      "relative_flux": 2.4665487
+    },
+    {
+      "day": -6.13734,
+      "relative_flux": 2.5114586
+    },
+    {
+      "day": -5.8226,
+      "relative_flux": 2.5569957
+    },
+    {
+      "day": -5.50787,
+      "relative_flux": 2.6030037
+    },
+    {
+      "day": -5.19313,
+      "relative_flux": 2.6492969
+    },
+    {
+      "day": -4.8784,
+      "relative_flux": 2.6956585
+    },
+    {
+      "day": -4.56366,
+      "relative_flux": 2.7418385
+    },
+    {
+      "day": -4.24893,
+      "relative_flux": 2.7875532
+    },
+    {
+      "day": -3.93419,
+      "relative_flux": 2.8324848
+    },
+    {
+      "day": -3.61946,
+      "relative_flux": 2.8762831
+    },
+    {
+      "day": -3.30472,
+      "relative_flux": 2.9185678
+    },
+    {
+      "day": -2.98999,
+      "relative_flux": 2.9589333
+    },
+    {
+      "day": -2.67525,
+      "relative_flux": 2.9969552
+    },
+    {
+      "day": -2.36052,
+      "relative_flux": 3.0321985
+    },
+    {
+      "day": -2.04578,
+      "relative_flux": 3.0642279
+    },
+    {
+      "day": -1.73104,
+      "relative_flux": 3.0926202
+    },
+    {
+      "day": -1.41631,
+      "relative_flux": 3.1169768
+    },
+    {
+      "day": -1.10157,
+      "relative_flux": 3.1369383
+    },
+    {
+      "day": -0.78684,
+      "relative_flux": 3.1521971
+    },
+    {
+      "day": -0.4721,
+      "relative_flux": 3.1625103
+    },
+    {
+      "day": -0.15737,
+      "relative_flux": 3.1677099
+    },
+    {
+      "day": 0.15737,
+      "relative_flux": 3.1677099
+    },
+    {
+      "day": 0.4721,
+      "relative_flux": 3.1625103
+    },
+    {
+      "day": 0.78684,
+      "relative_flux": 3.1521971
+    },
+    {
+      "day": 1.10157,
+      "relative_flux": 3.1369383
+    },
+    {
+      "day": 1.41631,
+      "relative_flux": 3.1169768
+    },
+    {
+      "day": 1.73104,
+      "relative_flux": 3.0926202
+    },
+    {
+      "day": 2.04578,
+      "relative_flux": 3.0642279
+    },
+    {
+      "day": 2.36052,
+      "relative_flux": 3.0321985
+    },
+    {
+      "day": 2.67525,
+      "relative_flux": 2.9969552
+    },
+    {
+      "day": 2.98999,
+      "relative_flux": 2.9589333
+    },
+    {
+      "day": 3.30472,
+      "relative_flux": 2.9185678
+    },
+    {
+      "day": 3.61946,
+      "relative_flux": 2.8762831
+    },
+    {
+      "day": 3.93419,
+      "relative_flux": 2.8324848
+    },
+    {
+      "day": 4.24893,
+      "relative_flux": 2.7875532
+    },
+    {
+      "day": 4.56366,
+      "relative_flux": 2.7418385
+    },
+    {
+      "day": 4.8784,
+      "relative_flux": 2.6956585
+    },
+    {
+      "day": 5.19313,
+      "relative_flux": 2.6492969
+    },
+    {
+      "day": 5.50787,
+      "relative_flux": 2.6030037
+    },
+    {
+      "day": 5.8226,
+      "relative_flux": 2.5569957
+    },
+    {
+      "day": 6.13734,
+      "relative_flux": 2.5114586
+    },
+    {
+      "day": 6.45207,
+      "relative_flux": 2.4665487
+    },
+    {
+      "day": 6.76681,
+      "relative_flux": 2.4223958
+    },
+    {
+      "day": 7.08155,
+      "relative_flux": 2.3791054
+    },
+    {
+      "day": 7.39628,
+      "relative_flux": 2.3367615
+    },
+    {
+      "day": 7.71102,
+      "relative_flux": 2.2954289
+    },
+    {
+      "day": 8.02575,
+      "relative_flux": 2.2551562
+    },
+    {
+      "day": 8.34049,
+      "relative_flux": 2.2159772
+    },
+    {
+      "day": 8.65522,
+      "relative_flux": 2.1779137
+    },
+    {
+      "day": 8.96996,
+      "relative_flux": 2.1409771
+    },
+    {
+      "day": 9.28469,
+      "relative_flux": 2.1051697
+    },
+    {
+      "day": 9.59943,
+      "relative_flux": 2.0704867
+    },
+    {
+      "day": 9.91416,
+      "relative_flux": 2.0369174
+    },
+    {
+      "day": 10.2289,
+      "relative_flux": 2.004446
+    },
+    {
+      "day": 10.54363,
+      "relative_flux": 1.9730529
+    },
+    {
+      "day": 10.85837,
+      "relative_flux": 1.9427152
+    },
+    {
+      "day": 11.1731,
+      "relative_flux": 1.9134079
+    },
+    {
+      "day": 11.48784,
+      "relative_flux": 1.885104
+    },
+    {
+      "day": 11.80258,
+      "relative_flux": 1.8577753
+    },
+    {
+      "day": 12.11731,
+      "relative_flux": 1.8313928
+    },
+    {
+      "day": 12.43205,
+      "relative_flux": 1.8059268
+    },
+    {
+      "day": 12.74678,
+      "relative_flux": 1.7813477
+    },
+    {
+      "day": 13.06152,
+      "relative_flux": 1.7576257
+    },
+    {
+      "day": 13.37625,
+      "relative_flux": 1.7347314
+    },
+    {
+      "day": 13.69099,
+      "relative_flux": 1.7126355
+    },
+    {
+      "day": 14.00572,
+      "relative_flux": 1.6913095
+    },
+    {
+      "day": 14.32046,
+      "relative_flux": 1.6707256
+    },
+    {
+      "day": 14.63519,
+      "relative_flux": 1.6508562
+    },
+    {
+      "day": 14.94993,
+      "relative_flux": 1.631675
+    },
+    {
+      "day": 15.26466,
+      "relative_flux": 1.6131562
+    },
+    {
+      "day": 15.5794,
+      "relative_flux": 1.5952747
+    },
+    {
+      "day": 15.89413,
+      "relative_flux": 1.5780066
+    },
+    {
+      "day": 16.20887,
+      "relative_flux": 1.5613284
+    },
+    {
+      "day": 16.52361,
+      "relative_flux": 1.5452177
+    },
+    {
+      "day": 16.83834,
+      "relative_flux": 1.5296529
+    },
+    {
+      "day": 17.15308,
+      "relative_flux": 1.5146132
+    },
+    {
+      "day": 17.46781,
+      "relative_flux": 1.5000785
+    },
+    {
+      "day": 17.78255,
+      "relative_flux": 1.4860296
+    },
+    {
+      "day": 18.09728,
+      "relative_flux": 1.472448
+    },
+    {
+      "day": 18.41202,
+      "relative_flux": 1.4593159
+    },
+    {
+      "day": 18.72675,
+      "relative_flux": 1.4466162
+    },
+    {
+      "day": 19.04149,
+      "relative_flux": 1.4343328
+    },
+    {
+      "day": 19.35622,
+      "relative_flux": 1.4224497
+    },
+    {
+      "day": 19.67096,
+      "relative_flux": 1.4109521
+    },
+    {
+      "day": 19.98569,
+      "relative_flux": 1.3998255
+    },
+    {
+      "day": 20.30043,
+      "relative_flux": 1.389056
+    },
+    {
+      "day": 20.61516,
+      "relative_flux": 1.3786305
+    },
+    {
+      "day": 20.9299,
+      "relative_flux": 1.3685361
+    },
+    {
+      "day": 21.24464,
+      "relative_flux": 1.3587607
+    },
+    {
+      "day": 21.55937,
+      "relative_flux": 1.3492926
+    },
+    {
+      "day": 21.87411,
+      "relative_flux": 1.3401206
+    },
+    {
+      "day": 22.18884,
+      "relative_flux": 1.3312339
+    },
+    {
+      "day": 22.50358,
+      "relative_flux": 1.3226222
+    },
+    {
+      "day": 22.81831,
+      "relative_flux": 1.3142758
+    },
+    {
+      "day": 23.13305,
+      "relative_flux": 1.3061849
+    },
+    {
+      "day": 23.44778,
+      "relative_flux": 1.2983407
+    },
+    {
+      "day": 23.76252,
+      "relative_flux": 1.2907342
+    },
+    {
+      "day": 24.07725,
+      "relative_flux": 1.2833573
+    },
+    {
+      "day": 24.39199,
+      "relative_flux": 1.2762017
+    },
+    {
+      "day": 24.70672,
+      "relative_flux": 1.2692598
+    },
+    {
+      "day": 25.02146,
+      "relative_flux": 1.2625242
+    },
+    {
+      "day": 25.33619,
+      "relative_flux": 1.2559878
+    },
+    {
+      "day": 25.65093,
+      "relative_flux": 1.2496437
+    },
+    {
+      "day": 25.96567,
+      "relative_flux": 1.2434853
+    },
+    {
+      "day": 26.2804,
+      "relative_flux": 1.2375064
+    },
+    {
+      "day": 26.59514,
+      "relative_flux": 1.2317008
+    },
+    {
+      "day": 26.90987,
+      "relative_flux": 1.2260628
+    },
+    {
+      "day": 27.22461,
+      "relative_flux": 1.2205867
+    },
+    {
+      "day": 27.53934,
+      "relative_flux": 1.2152672
+    },
+    {
+      "day": 27.85408,
+      "relative_flux": 1.210099
+    },
+    {
+      "day": 28.16881,
+      "relative_flux": 1.2050772
+    },
+    {
+      "day": 28.48355,
+      "relative_flux": 1.2001969
+    },
+    {
+      "day": 28.79828,
+      "relative_flux": 1.1954536
+    },
+    {
+      "day": 29.11302,
+      "relative_flux": 1.1908428
+    },
+    {
+      "day": 29.42775,
+      "relative_flux": 1.1863602
+    },
+    {
+      "day": 29.74249,
+      "relative_flux": 1.1820016
+    },
+    {
+      "day": 30.05722,
+      "relative_flux": 1.1777632
+    },
+    {
+      "day": 30.37196,
+      "relative_flux": 1.1736411
+    },
+    {
+      "day": 30.6867,
+      "relative_flux": 1.1696316
+    },
+    {
+      "day": 31.00143,
+      "relative_flux": 1.1657311
+    },
+    {
+      "day": 31.31617,
+      "relative_flux": 1.1619363
+    },
+    {
+      "day": 31.6309,
+      "relative_flux": 1.1582438
+    },
+    {
+      "day": 31.94564,
+      "relative_flux": 1.1546504
+    },
+    {
+      "day": 32.26037,
+      "relative_flux": 1.1511531
+    },
+    {
+      "day": 32.57511,
+      "relative_flux": 1.1477489
+    },
+    {
+      "day": 32.88984,
+      "relative_flux": 1.1444349
+    },
+    {
+      "day": 33.20458,
+      "relative_flux": 1.1412084
+    },
+    {
+      "day": 33.51931,
+      "relative_flux": 1.1380668
+    },
+    {
+      "day": 33.83405,
+      "relative_flux": 1.1350074
+    },
+    {
+      "day": 34.14878,
+      "relative_flux": 1.1320278
+    },
+    {
+      "day": 34.46352,
+      "relative_flux": 1.1291256
+    },
+    {
+      "day": 34.77825,
+      "relative_flux": 1.1262984
+    },
+    {
+      "day": 35.09299,
+      "relative_flux": 1.1235441
+    },
+    {
+      "day": 35.40773,
+      "relative_flux": 1.1208605
+    },
+    {
+      "day": 35.72246,
+      "relative_flux": 1.1182454
+    },
+    {
+      "day": 36.0372,
+      "relative_flux": 1.1156969
+    },
+    {
+      "day": 36.35193,
+      "relative_flux": 1.113213
+    },
+    {
+      "day": 36.66667,
+      "relative_flux": 1.1107919
+    },
+    {
+      "day": 36.9814,
+      "relative_flux": 1.1084317
+    },
+    {
+      "day": 37.29614,
+      "relative_flux": 1.1061306
+    },
+    {
+      "day": 37.61087,
+      "relative_flux": 1.103887
+    },
+    {
+      "day": 37.92561,
+      "relative_flux": 1.1016992
+    },
+    {
+      "day": 38.24034,
+      "relative_flux": 1.0995656
+    },
+    {
+      "day": 38.55508,
+      "relative_flux": 1.0974847
+    },
+    {
+      "day": 38.86981,
+      "relative_flux": 1.0954549
+    },
+    {
+      "day": 39.18455,
+      "relative_flux": 1.0934749
+    },
+    {
+      "day": 39.49928,
+      "relative_flux": 1.0915431
+    },
+    {
+      "day": 39.81402,
+      "relative_flux": 1.0896584
+    },
+    {
+      "day": 40.12876,
+      "relative_flux": 1.0878193
+    },
+    {
+      "day": 40.44349,
+      "relative_flux": 1.0860246
+    },
+    {
+      "day": 40.75823,
+      "relative_flux": 1.0842731
+    },
+    {
+      "day": 41.07296,
+      "relative_flux": 1.0825635
+    },
+    {
+      "day": 41.3877,
+      "relative_flux": 1.0808948
+    },
+    {
+      "day": 41.70243,
+      "relative_flux": 1.0792657
+    },
+    {
+      "day": 42.01717,
+      "relative_flux": 1.0776752
+    },
+    {
+      "day": 42.3319,
+      "relative_flux": 1.0761224
+    },
+    {
+      "day": 42.64664,
+      "relative_flux": 1.074606
+    },
+    {
+      "day": 42.96137,
+      "relative_flux": 1.0731252
+    },
+    {
+      "day": 43.27611,
+      "relative_flux": 1.071679
+    },
+    {
+      "day": 43.59084,
+      "relative_flux": 1.0702665
+    },
+    {
+      "day": 43.90558,
+      "relative_flux": 1.0688868
+    },
+    {
+      "day": 44.22031,
+      "relative_flux": 1.0675389
+    },
+    {
+      "day": 44.53505,
+      "relative_flux": 1.0662221
+    },
+    {
+      "day": 44.84979,
+      "relative_flux": 1.0649355
+    },
+    {
+      "day": 45.16452,
+      "relative_flux": 1.0636784
+    },
+    {
+      "day": 45.47926,
+      "relative_flux": 1.0624499
+    },
+    {
+      "day": 45.79399,
+      "relative_flux": 1.0612493
+    },
+    {
+      "day": 46.10873,
+      "relative_flux": 1.060076
+    },
+    {
+      "day": 46.42346,
+      "relative_flux": 1.058929
+    },
+    {
+      "day": 46.7382,
+      "relative_flux": 1.0578079
+    },
+    {
+      "day": 47.05293,
+      "relative_flux": 1.0567119
+    },
+    {
+      "day": 47.36767,
+      "relative_flux": 1.0556404
+    },
+    {
+      "day": 47.6824,
+      "relative_flux": 1.0545927
+    },
+    {
+      "day": 47.99714,
+      "relative_flux": 1.0535683
+    },
+    {
+      "day": 48.31187,
+      "relative_flux": 1.0525665
+    },
+    {
+      "day": 48.62661,
+      "relative_flux": 1.0515868
+    },
+    {
+      "day": 48.94134,
+      "relative_flux": 1.0506286
+    },
+    {
+      "day": 49.25608,
+      "relative_flux": 1.0496914
+    },
+    {
+      "day": 49.57082,
+      "relative_flux": 1.0487746
+    },
+    {
+      "day": 49.88555,
+      "relative_flux": 1.0478777
+    },
+    {
+      "day": 50.20029,
+      "relative_flux": 1.0470003
+    },
+    {
+      "day": 50.51502,
+      "relative_flux": 1.0461418
+    },
+    {
+      "day": 50.82976,
+      "relative_flux": 1.0453018
+    },
+    {
+      "day": 51.14449,
+      "relative_flux": 1.0444799
+    },
+    {
+      "day": 51.45923,
+      "relative_flux": 1.0436755
+    },
+    {
+      "day": 51.77396,
+      "relative_flux": 1.0428882
+    },
+    {
+      "day": 52.0887,
+      "relative_flux": 1.0421177
+    },
+    {
+      "day": 52.40343,
+      "relative_flux": 1.0413635
+    },
+    {
+      "day": 52.71817,
+      "relative_flux": 1.0406252
+    },
+    {
+      "day": 53.0329,
+      "relative_flux": 1.0399024
+    },
+    {
+      "day": 53.34764,
+      "relative_flux": 1.0391948
+    },
+    {
+      "day": 53.66237,
+      "relative_flux": 1.038502
+    },
+    {
+      "day": 53.97711,
+      "relative_flux": 1.0378236
+    },
+    {
+      "day": 54.29185,
+      "relative_flux": 1.0371593
+    },
+    {
+      "day": 54.60658,
+      "relative_flux": 1.0365087
+    },
+    {
+      "day": 54.92132,
+      "relative_flux": 1.0358716
+    },
+    {
+      "day": 55.23605,
+      "relative_flux": 1.0352476
+    },
+    {
+      "day": 55.55079,
+      "relative_flux": 1.0346364
+    },
+    {
+      "day": 55.86552,
+      "relative_flux": 1.0340376
+    },
+    {
+      "day": 56.18026,
+      "relative_flux": 1.0334511
+    },
+    {
+      "day": 56.49499,
+      "relative_flux": 1.0328765
+    },
+    {
+      "day": 56.80973,
+      "relative_flux": 1.0323135
+    },
+    {
+      "day": 57.12446,
+      "relative_flux": 1.0317619
+    },
+    {
+      "day": 57.4392,
+      "relative_flux": 1.0312213
+    },
+    {
+      "day": 57.75393,
+      "relative_flux": 1.0306916
+    },
+    {
+      "day": 58.06867,
+      "relative_flux": 1.0301725
+    },
+    {
+      "day": 58.3834,
+      "relative_flux": 1.0296638
+    },
+    {
+      "day": 58.69814,
+      "relative_flux": 1.0291651
+    },
+    {
+      "day": 59.01288,
+      "relative_flux": 1.0286763
+    },
+    {
+      "day": 59.32761,
+      "relative_flux": 1.0281972
+    },
+    {
+      "day": 59.64235,
+      "relative_flux": 1.0277275
+    },
+    {
+      "day": 59.95708,
+      "relative_flux": 1.027267
+    },
+    {
+      "day": 60.27182,
+      "relative_flux": 1.0268156
+    },
+    {
+      "day": 60.58655,
+      "relative_flux": 1.0263729
+    },
+    {
+      "day": 60.90129,
+      "relative_flux": 1.0259388
+    },
+    {
+      "day": 61.21602,
+      "relative_flux": 1.0255132
+    },
+    {
+      "day": 61.53076,
+      "relative_flux": 1.0250957
+    },
+    {
+      "day": 61.84549,
+      "relative_flux": 1.0246863
+    },
+    {
+      "day": 62.16023,
+      "relative_flux": 1.0242848
+    },
+    {
+      "day": 62.47496,
+      "relative_flux": 1.023891
+    },
+    {
+      "day": 62.7897,
+      "relative_flux": 1.0235046
+    },
+    {
+      "day": 63.10443,
+      "relative_flux": 1.0231257
+    },
+    {
+      "day": 63.41917,
+      "relative_flux": 1.0227539
+    },
+    {
+      "day": 63.73391,
+      "relative_flux": 1.0223891
+    },
+    {
+      "day": 64.04864,
+      "relative_flux": 1.0220313
+    },
+    {
+      "day": 64.36338,
+      "relative_flux": 1.0216801
+    },
+    {
+      "day": 64.67811,
+      "relative_flux": 1.0213355
+    },
+    {
+      "day": 64.99285,
+      "relative_flux": 1.0209974
+    },
+    {
+      "day": 65.30758,
+      "relative_flux": 1.0206656
+    },
+    {
+      "day": 65.62232,
+      "relative_flux": 1.0203399
+    },
+    {
+      "day": 65.93705,
+      "relative_flux": 1.0200203
+    },
+    {
+      "day": 66.25179,
+      "relative_flux": 1.0197065
+    },
+    {
+      "day": 66.56652,
+      "relative_flux": 1.0193986
+    },
+    {
+      "day": 66.88126,
+      "relative_flux": 1.0190963
+    },
+    {
+      "day": 67.19599,
+      "relative_flux": 1.0187995
+    },
+    {
+      "day": 67.51073,
+      "relative_flux": 1.0185081
+    },
+    {
+      "day": 67.82546,
+      "relative_flux": 1.0182221
+    },
+    {
+      "day": 68.1402,
+      "relative_flux": 1.0179412
+    },
+    {
+      "day": 68.45494,
+      "relative_flux": 1.0176654
+    },
+    {
+      "day": 68.76967,
+      "relative_flux": 1.0173946
+    },
+    {
+      "day": 69.08441,
+      "relative_flux": 1.0171287
+    },
+    {
+      "day": 69.39914,
+      "relative_flux": 1.0168675
+    },
+    {
+      "day": 69.71388,
+      "relative_flux": 1.016611
+    },
+    {
+      "day": 70.02861,
+      "relative_flux": 1.016359
+    },
+    {
+      "day": 70.34335,
+      "relative_flux": 1.0161116
+    },
+    {
+      "day": 70.65808,
+      "relative_flux": 1.0158685
+    },
+    {
+      "day": 70.97282,
+      "relative_flux": 1.0156297
+    },
+    {
+      "day": 71.28755,
+      "relative_flux": 1.0153951
+    },
+    {
+      "day": 71.60229,
+      "relative_flux": 1.0151647
+    },
+    {
+      "day": 71.91702,
+      "relative_flux": 1.0149382
+    },
+    {
+      "day": 72.23176,
+      "relative_flux": 1.0147158
+    },
+    {
+      "day": 72.54649,
+      "relative_flux": 1.0144972
+    },
+    {
+      "day": 72.86123,
+      "relative_flux": 1.0142824
+    },
+    {
+      "day": 73.17597,
+      "relative_flux": 1.0140713
+    },
+    {
+      "day": 73.4907,
+      "relative_flux": 1.0138639
+    },
+    {
+      "day": 73.80544,
+      "relative_flux": 1.01366
+    },
+    {
+      "day": 74.12017,
+      "relative_flux": 1.0134596
+    },
+    {
+      "day": 74.43491,
+      "relative_flux": 1.0132627
+    },
+    {
+      "day": 74.74964,
+      "relative_flux": 1.0130691
+    },
+    {
+      "day": 75.06438,
+      "relative_flux": 1.0128789
+    },
+    {
+      "day": 75.37911,
+      "relative_flux": 1.0126918
+    },
+    {
+      "day": 75.69385,
+      "relative_flux": 1.0125079
+    },
+    {
+      "day": 76.00858,
+      "relative_flux": 1.0123272
+    },
+    {
+      "day": 76.32332,
+      "relative_flux": 1.0121494
+    },
+    {
+      "day": 76.63805,
+      "relative_flux": 1.0119747
+    },
+    {
+      "day": 76.95279,
+      "relative_flux": 1.0118028
+    },
+    {
+      "day": 77.26753,
+      "relative_flux": 1.0116339
+    },
+    {
+      "day": 77.58226,
+      "relative_flux": 1.0114677
+    },
+    {
+      "day": 77.897,
+      "relative_flux": 1.0113043
+    },
+    {
+      "day": 78.21173,
+      "relative_flux": 1.0111437
+    },
+    {
+      "day": 78.52647,
+      "relative_flux": 1.0109856
+    },
+    {
+      "day": 78.8412,
+      "relative_flux": 1.0108302
+    },
+    {
+      "day": 79.15594,
+      "relative_flux": 1.0106773
+    },
+    {
+      "day": 79.47067,
+      "relative_flux": 1.0105269
+    },
+    {
+      "day": 79.78541,
+      "relative_flux": 1.010379
+    },
+    {
+      "day": 80.10014,
+      "relative_flux": 1.0102335
+    },
+    {
+      "day": 80.41488,
+      "relative_flux": 1.0100903
+    },
+    {
+      "day": 80.72961,
+      "relative_flux": 1.0099495
+    },
+    {
+      "day": 81.04435,
+      "relative_flux": 1.0098109
+    },
+    {
+      "day": 81.35908,
+      "relative_flux": 1.0096746
+    },
+    {
+      "day": 81.67382,
+      "relative_flux": 1.0095405
+    },
+    {
+      "day": 81.98856,
+      "relative_flux": 1.0094085
+    },
+    {
+      "day": 82.30329,
+      "relative_flux": 1.0092786
+    },
+    {
+      "day": 82.61803,
+      "relative_flux": 1.0091508
+    },
+    {
+      "day": 82.93276,
+      "relative_flux": 1.009025
+    },
+    {
+      "day": 83.2475,
+      "relative_flux": 1.0089012
+    },
+    {
+      "day": 83.56223,
+      "relative_flux": 1.0087793
+    },
+    {
+      "day": 83.87697,
+      "relative_flux": 1.0086594
+    },
+    {
+      "day": 84.1917,
+      "relative_flux": 1.0085414
+    },
+    {
+      "day": 84.50644,
+      "relative_flux": 1.0084252
+    },
+    {
+      "day": 84.82117,
+      "relative_flux": 1.0083108
+    },
+    {
+      "day": 85.13591,
+      "relative_flux": 1.0081982
+    },
+    {
+      "day": 85.45064,
+      "relative_flux": 1.0080874
+    },
+    {
+      "day": 85.76538,
+      "relative_flux": 1.0079783
+    },
+    {
+      "day": 86.08011,
+      "relative_flux": 1.0078709
+    },
+    {
+      "day": 86.39485,
+      "relative_flux": 1.0077651
+    },
+    {
+      "day": 86.70959,
+      "relative_flux": 1.0076609
+    },
+    {
+      "day": 87.02432,
+      "relative_flux": 1.0075584
+    },
+    {
+      "day": 87.33906,
+      "relative_flux": 1.0074574
+    },
+    {
+      "day": 87.65379,
+      "relative_flux": 1.007358
+    },
+    {
+      "day": 87.96853,
+      "relative_flux": 1.00726
+    },
+    {
+      "day": 88.28326,
+      "relative_flux": 1.0071636
+    },
+    {
+      "day": 88.598,
+      "relative_flux": 1.0070686
+    },
+    {
+      "day": 88.91273,
+      "relative_flux": 1.0069751
+    },
+    {
+      "day": 89.22747,
+      "relative_flux": 1.0068829
+    },
+    {
+      "day": 89.5422,
+      "relative_flux": 1.0067922
+    },
+    {
+      "day": 89.85694,
+      "relative_flux": 1.0067028
+    },
+    {
+      "day": 90.17167,
+      "relative_flux": 1.0066147
+    },
+    {
+      "day": 90.48641,
+      "relative_flux": 1.006528
+    },
+    {
+      "day": 90.80114,
+      "relative_flux": 1.0064425
+    },
+    {
+      "day": 91.11588,
+      "relative_flux": 1.0063584
+    },
+    {
+      "day": 91.43062,
+      "relative_flux": 1.0062754
+    },
+    {
+      "day": 91.74535,
+      "relative_flux": 1.0061937
+    },
+    {
+      "day": 92.06009,
+      "relative_flux": 1.0061132
+    },
+    {
+      "day": 92.37482,
+      "relative_flux": 1.0060339
+    },
+    {
+      "day": 92.68956,
+      "relative_flux": 1.0059557
+    },
+    {
+      "day": 93.00429,
+      "relative_flux": 1.0058787
+    },
+    {
+      "day": 93.31903,
+      "relative_flux": 1.0058027
+    },
+    {
+      "day": 93.63376,
+      "relative_flux": 1.0057279
+    },
+    {
+      "day": 93.9485,
+      "relative_flux": 1.0056542
+    },
+    {
+      "day": 94.26323,
+      "relative_flux": 1.0055816
+    },
+    {
+      "day": 94.57797,
+      "relative_flux": 1.00551
+    },
+    {
+      "day": 94.8927,
+      "relative_flux": 1.0054394
+    },
+    {
+      "day": 95.20744,
+      "relative_flux": 1.0053698
+    },
+    {
+      "day": 95.52217,
+      "relative_flux": 1.0053012
+    },
+    {
+      "day": 95.83691,
+      "relative_flux": 1.0052337
+    },
+    {
+      "day": 96.15165,
+      "relative_flux": 1.005167
+    },
+    {
+      "day": 96.46638,
+      "relative_flux": 1.0051013
+    },
+    {
+      "day": 96.78112,
+      "relative_flux": 1.0050366
+    },
+    {
+      "day": 97.09585,
+      "relative_flux": 1.0049728
+    },
+    {
+      "day": 97.41059,
+      "relative_flux": 1.0049098
+    },
+    {
+      "day": 97.72532,
+      "relative_flux": 1.0048478
+    },
+    {
+      "day": 98.04006,
+      "relative_flux": 1.0047866
+    },
+    {
+      "day": 98.35479,
+      "relative_flux": 1.0047263
+    },
+    {
+      "day": 98.66953,
+      "relative_flux": 1.0046668
+    },
+    {
+      "day": 98.98426,
+      "relative_flux": 1.0046081
+    },
+    {
+      "day": 99.299,
+      "relative_flux": 1.0045503
+    },
+    {
+      "day": 99.61373,
+      "relative_flux": 1.0044932
+    },
+    {
+      "day": 99.92847,
+      "relative_flux": 1.004437
+    },
+    {
+      "day": 100.2432,
+      "relative_flux": 1.0043815
+    },
+    {
+      "day": 100.55794,
+      "relative_flux": 1.0043268
+    },
+    {
+      "day": 100.87268,
+      "relative_flux": 1.0042728
+    },
+    {
+      "day": 101.18741,
+      "relative_flux": 1.0042196
+    },
+    {
+      "day": 101.50215,
+      "relative_flux": 1.0041671
+    },
+    {
+      "day": 101.81688,
+      "relative_flux": 1.0041153
+    },
+    {
+      "day": 102.13162,
+      "relative_flux": 1.0040643
+    },
+    {
+      "day": 102.44635,
+      "relative_flux": 1.0040139
+    },
+    {
+      "day": 102.76109,
+      "relative_flux": 1.0039642
+    },
+    {
+      "day": 103.07582,
+      "relative_flux": 1.0039151
+    },
+    {
+      "day": 103.39056,
+      "relative_flux": 1.0038668
+    },
+    {
+      "day": 103.70529,
+      "relative_flux": 1.0038191
+    },
+    {
+      "day": 104.02003,
+      "relative_flux": 1.003772
+    },
+    {
+      "day": 104.33476,
+      "relative_flux": 1.0037255
+    },
+    {
+      "day": 104.6495,
+      "relative_flux": 1.0036797
+    },
+    {
+      "day": 104.96423,
+      "relative_flux": 1.0036345
+    },
+    {
+      "day": 105.27897,
+      "relative_flux": 1.0035898
+    },
+    {
+      "day": 105.59371,
+      "relative_flux": 1.0035458
+    },
+    {
+      "day": 105.90844,
+      "relative_flux": 1.0035023
+    },
+    {
+      "day": 106.22318,
+      "relative_flux": 1.0034595
+    },
+    {
+      "day": 106.53791,
+      "relative_flux": 1.0034171
+    },
+    {
+      "day": 106.85265,
+      "relative_flux": 1.0033754
+    },
+    {
+      "day": 107.16738,
+      "relative_flux": 1.0033342
+    },
+    {
+      "day": 107.48212,
+      "relative_flux": 1.0032935
+    },
+    {
+      "day": 107.79685,
+      "relative_flux": 1.0032533
+    },
+    {
+      "day": 108.11159,
+      "relative_flux": 1.0032137
+    },
+    {
+      "day": 108.42632,
+      "relative_flux": 1.0031746
+    },
+    {
+      "day": 108.74106,
+      "relative_flux": 1.003136
+    },
+    {
+      "day": 109.05579,
+      "relative_flux": 1.0030979
+    },
+    {
+      "day": 109.37053,
+      "relative_flux": 1.0030602
+    },
+    {
+      "day": 109.68526,
+      "relative_flux": 1.0030231
+    },
+    {
+      "day": 110.0,
+      "relative_flux": 1.0029864
+    }
+  ],
+  "scope": {
+    "inferred": [
+      "event timescale",
+      "impact parameter",
+      "source and blend flux",
+      "goodness of fit"
+    ],
+    "not_inferred": [
+      "unique lens mass",
+      "lens distance",
+      "planetary companion"
+    ],
+    "reason": "A photometric PSPL light curve alone leaves the mass-distance-velocity degeneracy unresolved."
+  }
+}

@@ -1,93 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Paczynski light curves, blending and finite cadence residuals.">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reproducible fit of a point-lens model to 360 public OGLE-IV measurements of OGLE-2023-BLG-0100.">
   <meta property="og:image" content="https://biswajit1999.github.io/microlensing-event-lab/assets/social-preview.svg">
-  <title>Microlensing Event Lab</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>One Star, Briefly Brighter | OGLE Microlensing Case Study</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="responsive-fixes.css">
 </head>
 <body>
-  <a class="skip-link" href="#lab">Skip to the laboratory</a>
-  <main class="shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">Galactic bulge time-domain laboratory</p>
-        <h1>Microlensing Event Lab</h1>
-      </div>
-      <div class="top-actions">
-        <div class="status-card">
-          <span id="workerStatus">Worker booting</span>
-          <strong id="frameRate">-- fps</strong>
-        </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme" aria-pressed="false">Light</button>
-      </div>
-    </header>
-
-    <section class="research-intro" aria-labelledby="research-question">
-      <div>
-        <p class="eyebrow">Research question</p>
-        <h2 id="research-question">How much of a real OGLE event can a single point lens explain?</h2>
-        <p class="lede">Fit the Paczyński geometry against 160 measured I-band epochs from OGLE-2023-BLG-0001. Change the Einstein timescale, closest approach and blending, then inspect where the ideal symmetric model stops matching a crowded-field survey light curve.</p>
-        <div class="intro-links"><a href="#lab">Open the fit console</a><a href="https://ogle.astrouw.edu.pl/ogle4/ews/2023/blg-0001.html" target="_blank" rel="noopener">OGLE source record</a></div>
-      </div>
-      <dl class="evidence-strip">
-        <div><dt>Observed epochs</dt><dd>160 / 631</dd></div><div><dt>Peak amplification</dt><dd>≈ 8×</dd></div><div><dt>Model</dt><dd>PSPL + blend</dd></div><div><dt>Survey</dt><dd>OGLE-IV EWS</dd></div>
-      </dl>
+  <a class="skip-link" href="#case-study">Skip to the data</a>
+  <header class="site-header"><a class="wordmark" href="#top" aria-label="Microlensing case study home"><span>μ</span> lens / 0100</a><nav aria-label="Page sections"><a href="#story">What happened?</a><a href="#case-study">Evidence</a><a href="#limits">Limits</a></nav><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false">Night</button></header>
+  <main id="top">
+    <section class="hero" id="story">
+      <div class="hero-copy"><p class="kicker">A real OGLE-IV case study · Galactic bulge</p><h1>One star became <em>3.37× brighter.</em><br>Was gravity the lens?</h1><p class="standfirst">Microlensing does not photograph the foreground object. It reveals it when gravity bends a background star’s light into a smooth, temporary brightening. Here, 360 public measurements are tested against that prediction.</p><div class="hero-actions"><a class="primary" href="#case-study">Read the evidence</a><a href="https://ogle.astrouw.edu.pl/ogle4/ews/2023/blg-0100.html" target="_blank" rel="noopener">Open the OGLE record ↗</a></div><dl class="headline-data" aria-label="Event summary"><div><dt>Event</dt><dd>OGLE-2023-BLG-0100</dd></div><div><dt>Peak date</dt><dd>26 Feb 2023</dd></div><div><dt>Best-fit timescale</dt><dd id="heroTimescale">—</dd></div></dl></div>
+      <figure class="field-card"><img src="assets/ogle-2023-blg-0100-finding-chart.jpg" alt="OGLE I-band finding chart of the two arcminute field around OGLE-2023-BLG-0100, with the target marked by crosshairs"><figcaption><span>Real survey image</span> OGLE I-band finding chart · 2′ × 2′ · north up, east left</figcaption></figure>
     </section>
-    <section class="method-strip" aria-label="Scientific scope">
-      <article><span>01</span><h3>Observed</h3><p>Individual-epoch OGLE DIA photometry with propagated flux uncertainty.</p></article>
-      <article><span>02</span><h3>Modelled</h3><p>Point-source, point-lens magnification with explicit unresolved blending.</p></article>
-      <article><span>03</span><h3>Not inferred</h3><p>No unique lens mass, distance or planetary claim without parallax or finite-source information.</p></article>
+    <section class="primer" aria-labelledby="primer-title"><div class="section-number">01 / PHYSICS</div><div><h2 id="primer-title">The alignment is invisible.<br>The light curve is not.</h2><p>A foreground lens passes near our line of sight. Its gravity makes multiple unresolved images of the source star, increasing the total light. For one isolated lens moving steadily, the brightening should be smooth and nearly symmetric.</p></div><div class="geometry" aria-label="Microlensing geometry diagram"><div class="observer">observer</div><div class="beam beam-a"></div><div class="lens">lens</div><div class="beam beam-b"></div><div class="source">source</div></div></section>
+    <section class="case-study" id="case-study" aria-labelledby="evidence-title">
+      <div class="case-heading"><div><p class="kicker">02 / EVIDENCE</p><h2 id="evidence-title">Test the signature, one question at a time.</h2></div><p id="chartSummary" aria-live="polite">Loading the public OGLE photometry…</p></div>
+      <div class="step-tabs" role="tablist" aria-label="Evidence views"><button class="step-tab active" data-view="signal" role="tab" aria-selected="true"><span>1</span><b>Is there a transient?</b><small>Zoom into the event</small></button><button class="step-tab" data-view="residuals" role="tab" aria-selected="false"><span>2</span><b>Does one lens fit?</b><small>Inspect what remains</small></button><button class="step-tab" data-view="baseline" role="tab" aria-selected="false"><span>3</span><b>Why trust the baseline?</b><small>See every observing season</small></button></div>
+      <div class="evidence-stage"><div class="chart-wrap"><div class="chart-key" id="chartKey"></div><canvas id="evidenceChart" width="1400" height="700" aria-label="OGLE photometry and fitted microlensing model"></canvas><p class="chart-caption" id="chartCaption"></p></div><aside class="finding" id="findingPanel" aria-live="polite"></aside></div>
     </section>
-
-    <section class="grid" id="lab" aria-label="Interactive microlensing laboratory">
-      <aside class="panel controls">
-        <div class="panel-title">
-          <span>Controls</span>
-          <b id="referenceLabel">Reference loading</b>
-        </div>
-        <div id="controls"></div>
-        <button id="reset">Reset model</button>
-      </aside>
-
-      <section class="panel plot-panel">
-        <div class="panel-title">
-          <span>Reference Data + Simulation</span>
-          <b id="seriesLabel">Time - t0 [days]</b>
-        </div>
-        <canvas id="seriesCanvas" width="1200" height="620"></canvas>
-      </section>
-
-      <section class="panel heat-panel">
-        <div class="panel-title">
-          <span>Parameter Response Field</span>
-          <b>worker heatmap</b>
-        </div>
-        <canvas id="heatCanvas" width="620" height="620"></canvas>
-      </section>
-
-      <section class="panel telemetry">
-        <div class="panel-title">
-          <span>Telemetry</span>
-          <b id="runId">run --</b>
-        </div>
-        <div id="metrics" class="metrics"></div>
-        <pre id="notes"></pre>
-      </section>
-    </section>
+    <section class="model-section" aria-labelledby="model-title"><div class="section-number">03 / MODEL AUDIT</div><div class="model-copy"><h2 id="model-title">Three explanations enter.<br>Only one follows the peak.</h2><p>A constant star is the null hypothesis. A point-source/point-lens curve is fitted both with and without extra unresolved blend light. Lower BIC is preferred because it rewards fit quality but penalises unnecessary parameters.</p></div><div class="model-table-wrap"><table><thead><tr><th>Explanation</th><th>Parameters</th><th>Reduced χ²</th><th>BIC</th><th>Reading</th></tr></thead><tbody id="modelRows"></tbody></table></div></section>
+    <section class="parameter-section" aria-labelledby="parameters-title"><div class="parameter-intro"><p class="kicker">WHAT THE FIT ACTUALLY MEANS</p><h2 id="parameters-title">Three numbers describe the shape—not the identity of the lens.</h2></div><div class="parameter-cards" id="parameterCards"></div></section>
+    <section class="limits" id="limits" aria-labelledby="limits-title"><div><p class="kicker">04 / RESEARCH BOUNDARY</p><h2 id="limits-title">The light curve detects lensing.<br>It does not weigh the lens by itself.</h2></div><div class="boundary-grid"><article><h3>Supported here</h3><ul><li>A transient, symmetric brightening</li><li>A PSPL event timescale and impact parameter</li><li>Model residuals and information criteria</li></ul></article><article><h3>Still degenerate</h3><ul><li>Unique lens mass and distance</li><li>Transverse velocity</li><li>A planetary companion</li></ul></article><article class="equation"><h3>Fitted relation</h3><p>F(t) = F<sub>s</sub>A[u(t)] + F<sub>b</sub></p><small>The data mildly prefer no additional blend parameter: ΔBIC is shown above.</small></article></div></section>
+    <section class="provenance" aria-labelledby="provenance-title"><div><p class="kicker">REPRODUCIBILITY</p><h2 id="provenance-title">From survey file to browser figure.</h2></div><ol><li><b>Acquire</b><span>360 I-band epochs from the official OGLE EWS file.</span></li><li><b>Transform</b><span>Magnitude to relative flux with propagated reported errors.</span></li><li><b>Fit</b><span>Bounded least squares for t₀, tE, u₀, source flux and blend flux.</span></li><li><b>Audit</b><span>Residuals, χ², BIC, source hash and a regenerating Python script.</span></li></ol><div class="source-links"><a href="data/ogle-2023-blg-0100-phot.dat" download>Raw photometry ↓</a><a href="data/ogle-2023-blg-0100-fit.json" download>Derived fit JSON ↓</a><a href="https://github.com/Biswajit1999/microlensing-event-lab" target="_blank" rel="noopener">Methods on GitHub ↗</a></div><p class="checksum" id="checksum"></p></section>
   </main>
-  <footer class="site-footer">
-    <span>&copy; 2026 Biswajit Jana</span>
-    <nav>
-      <a href="https://biswajit1999.github.io/Biswajit_Jana.github.io/" target="_blank" rel="noopener">Portfolio</a>
-      <a href="https://github.com/Biswajit1999" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/biswajit-jana-27011a151/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://orcid.org/0009-0002-2411-1891" target="_blank" rel="noopener">ORCID</a>
-    </nav>
-  </footer>
-  <script src="theme.js"></script>
-  <script src="app.js"></script>
+  <footer><span>Biswajit Jana · 2026</span><span>Data: OGLE-IV Early Warning System</span></footer><script src="app.js"></script>
 </body>
 </html>

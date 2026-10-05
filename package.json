@@ -1,17 +1,17 @@
 {
   "name": "microlensing-event-lab",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Paczynski light curves, blending and finite cadence residuals.",
+  "description": "A reproducible PSPL fit to 360 public OGLE-IV observations of OGLE-2023-BLG-0100.",
   "scripts": {
-    "check": "node --check app.js && node --check physicsWorker.js && node --check scripts/validate.js && node scripts/validate.js",
+    "check": "node --check app.js && node --check scripts/validate.js && node scripts/validate.js",
     "validate:research": "node scripts/validate_repository.mjs"
   },
   "keywords": [
     "astrophysics",
-    "simulation",
-    "canvas",
-    "web-worker",
+    "ogle-iv",
+    "time-domain-astronomy",
+    "model-comparison",
     "microlensing"
   ],
   "author": "Biswajit Jana",
