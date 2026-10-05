@@ -15,3 +15,4 @@ function renderMetrics(){const root=$('metrics');root.innerHTML='';for(const [k,
 function tick(now){state.frames++;if(now-state.lastFrame>1000){$('frameRate').textContent=Math.round(state.frames*1000/(now-state.lastFrame))+' fps';state.frames=0;state.lastFrame=now}requestAnimationFrame(tick)}
 $('reset').addEventListener('click',()=>{for(const c of LAB.controls){state.params[c[0]]=c[2];$('ctrl-'+c[0]).value=c[2];$('out-'+c[0]).textContent=c[2]}runModel()});
 buildControls();loadReference().then(runModel).catch(err=>{$('workerStatus').textContent='Reference error';$('notes').textContent=err.message});requestAnimationFrame(tick);
+window.addEventListener('lab:theme',()=>{if(state.result)draw()});

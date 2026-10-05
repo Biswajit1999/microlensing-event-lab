@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 const required = ['README.md', 'data/research-reference.json'];
-required.push('research-overlay.js');
 let failures = [];
 for (const file of required) if (!fs.existsSync(file)) failures.push(file + ' missing');
 const ref = JSON.parse(fs.readFileSync('data/research-reference.json', 'utf8'));

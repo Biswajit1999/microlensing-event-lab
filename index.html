@@ -4,23 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Paczynski light curves, blending and finite cadence residuals.">
+  <meta property="og:image" content="https://biswajit1999.github.io/microlensing-event-lab/assets/social-preview.svg">
   <title>Microlensing Event Lab</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#lab">Skip to the laboratory</a>
   <main class="shell">
     <header class="topbar">
       <div>
-        <p class="eyebrow">Research Console</p>
+        <p class="eyebrow">Galactic bulge time-domain laboratory</p>
         <h1>Microlensing Event Lab</h1>
       </div>
-      <div class="status-card">
-        <span id="workerStatus">Worker booting</span>
-        <strong id="frameRate">-- fps</strong>
+      <div class="top-actions">
+        <div class="status-card">
+          <span id="workerStatus">Worker booting</span>
+          <strong id="frameRate">-- fps</strong>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme" aria-pressed="false">Light</button>
       </div>
     </header>
 
-    <section class="grid">
+    <section class="research-intro" aria-labelledby="research-question">
+      <div>
+        <p class="eyebrow">Research question</p>
+        <h2 id="research-question">How much of a real OGLE event can a single point lens explain?</h2>
+        <p class="lede">Fit the Paczyński geometry against 160 measured I-band epochs from OGLE-2023-BLG-0001. Change the Einstein timescale, closest approach and blending, then inspect where the ideal symmetric model stops matching a crowded-field survey light curve.</p>
+        <div class="intro-links"><a href="#lab">Open the fit console</a><a href="https://ogle.astrouw.edu.pl/ogle4/ews/2023/blg-0001.html" target="_blank" rel="noopener">OGLE source record</a></div>
+      </div>
+      <dl class="evidence-strip">
+        <div><dt>Observed epochs</dt><dd>160 / 631</dd></div><div><dt>Peak amplification</dt><dd>≈ 8×</dd></div><div><dt>Model</dt><dd>PSPL + blend</dd></div><div><dt>Survey</dt><dd>OGLE-IV EWS</dd></div>
+      </dl>
+    </section>
+    <section class="method-strip" aria-label="Scientific scope">
+      <article><span>01</span><h3>Observed</h3><p>Individual-epoch OGLE DIA photometry with propagated flux uncertainty.</p></article>
+      <article><span>02</span><h3>Modelled</h3><p>Point-source, point-lens magnification with explicit unresolved blending.</p></article>
+      <article><span>03</span><h3>Not inferred</h3><p>No unique lens mass, distance or planetary claim without parallax or finite-source information.</p></article>
+    </section>
+
+    <section class="grid" id="lab" aria-label="Interactive microlensing laboratory">
       <aside class="panel controls">
         <div class="panel-title">
           <span>Controls</span>
@@ -65,7 +87,7 @@
       <a href="https://orcid.org/0009-0002-2411-1891" target="_blank" rel="noopener">ORCID</a>
     </nav>
   </footer>
+  <script src="theme.js"></script>
   <script src="app.js"></script>
-  <script src="research-overlay.js"></script>
 </body>
 </html>

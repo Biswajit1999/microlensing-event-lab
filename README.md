@@ -1,5 +1,7 @@
 # Microlensing Event Lab
 
+![Microlensing Event Lab scientific interface](assets/social-preview.svg)
+
 Paczynski light curves, blending and finite cadence residuals.
 
 Created and maintained by Biswajit Jana.
@@ -94,7 +96,7 @@ This repository is a self-contained, zero-build browser app (no bundler, no fram
 3. **`data/reference.json`** now ships the actual I-band photometry (160-epoch stratified subsample of a 631-point light curve) of a real OGLE-IV Early Warning System event, **OGLE-2023-BLG-0001**, pulled directly from `ogle.astrouw.edu.pl/ogle4/ews/`. Magnitudes are converted to baseline-normalised relative flux (`flux = 10^(-0.4*(mag - baseline))`, with the baseline taken as the median of the faintest 150 epochs), and time is referenced to the epoch of peak brightness. The real event shows genuine ~8x amplification at peak. Each point carries its propagated 1-sigma flux uncertainty, rendered as an error bar. This replaces the previous 5-point synthetic morphology sketch with an actual observed event — drag `tE`/`u0` to see how well a single-lens Paczynski curve can (or cannot) match real survey photometry.
 4. **`scripts/validate.js`** is a dependency-free repository check (`npm run check`): verifies required files exist, that reference points are finite, that required citations appear in the README, and that no unfinished scaffold tokens remain.
 
-The `cadence` control does not currently resample or add noise to the simulated curve inside `physicsWorker.js` — it is exposed as a parameter for future work on finite-cadence sampling residuals (see Limitations below).
+The `cadence` control now changes the number of samples across the displayed `-4 tE` to `+4 tE` interval (bounded to 80–1200 samples). It does not inject weather gaps or photometric noise.
 
 ## Architecture
 
@@ -104,7 +106,6 @@ The `cadence` control does not currently resample or add noise to the simulated 
 - `physicsWorker.js`: numerical model and heatmap generation.
 - `data/reference.json`: small auditable reference-data bundle.
 - `data/research-reference.json`: benchmark anchors for the validation layer.
-- `research-overlay.js`: non-invasive validation/telemetry panel.
 - `scripts/validate.js`: no-dependency repository validation.
 
 ## Usage
@@ -188,8 +189,10 @@ either omitting mass entirely or presenting a false-precision single value.
 
 This is a teaching/exploration lab, not a research-grade fitting pipeline: it implements the
 idealized point-source, point-lens Paczynski model only (no finite-source effects, no
-parallax, no binary-lens/planetary caustics), and the `cadence` control is not yet wired into
-resampling or synthetic noise. The lens-mass estimate above assumes typical bulge lensing
+parallax, no binary-lens/planetary caustics), and the cadence model is uniform rather than a
+survey-window simulation. The reported reduced chi-square is a goodness-of-fit diagnostic
+against the bundled stratified OGLE points, not a publication-grade parameter fit. The
+lens-mass estimate above assumes typical bulge lensing
 geometry rather than fitting it from the data, which is a real methodological limitation
 inherent to single-epoch photometric microlensing, not an implementation shortcut.
 
