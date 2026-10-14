@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite it using this metadata."
+title: "One Star, Briefly Brighter | OGLE Microlensing Case Study"
+abstract: "A reproducible fit of a point-lens model to 360 public OGLE-IV measurements of OGLE-2023-BLG-0100."
+type: software
+authors:
+  - family-names: Jana
+    given-names: Biswajit
+repository-code: "https://github.com/Biswajit1999/microlensing-event-lab"
+url: "https://biswajit1999.github.io/microlensing-event-lab/"
+keywords:
+  - "astronomy"
+  - "astrophysics"
+  - "scientific computing"
+  - "gravitational lensing"
+  - "dark matter"
+  - "observational cosmology"
+  - "gravitational microlensing"
+  - "transient astronomy"
+  - "exoplanet detection"
