@@ -1,0 +1,23 @@
+name: PSPL robustness diagnostics
+on:
+  push:
+    paths:
+      - 'scripts/pspl_robustness.py'
+      - 'scripts/test_pspl_robustness.py'
+      - 'scripts/fit_ogle_event.py'
+      - 'data/ogle-2023-blg-0100-phot.dat'
+      - '.github/workflows/pspl-robustness.yml'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-research.txt
+      - run: python -m unittest discover -s scripts -p 'test_pspl_robustness.py' -v
+      - run: python scripts/pspl_robustness.py --bootstrap 32 --output /tmp/ogle-robustness.json
+      - run: python -c 'import json; p=json.load(open("/tmp/ogle-robustness.json")); assert p["n_observations"] == 360'
