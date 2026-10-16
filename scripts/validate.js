@@ -7,7 +7,13 @@ if(data.observations?.length!==360)failures.push('expected 360 observations');
 if(data.curve?.length!==700)failures.push('expected 700 model samples');
 if(!(data.fits.pspl_blended.parameters.tE_days>20&&data.fits.pspl_blended.parameters.tE_days<28))failures.push('timescale outside regression bounds');
 if(!(data.fits.pspl_blended.parameters.u0>.25&&data.fits.pspl_blended.parameters.u0<.38))failures.push('u0 outside regression bounds');
-const digest=crypto.createHash('sha256').update(fs.readFileSync('data/ogle-2023-blg-0100-phot.dat')).digest('hex');
+// Git may expose the archival ASCII file with CRLF on Windows. Hash the
+// canonical OGLE byte stream (LF line endings) so provenance validation is
+// platform-independent while the committed .gitattributes prevents future
+// working-tree conversion.
+const sourceBytes=fs.readFileSync('data/ogle-2023-blg-0100-phot.dat');
+const canonicalSource=Buffer.from(sourceBytes.toString('utf8').replace(/\r\n/g,'\n'),'utf8');
+const digest=crypto.createHash('sha256').update(canonicalSource).digest('hex');
 if(digest!==data.provenance.source_sha256)failures.push('source checksum mismatch');
 const combined=['index.html','app.js'].map(f=>fs.readFileSync(f,'utf8')).join('\n').toLowerCase();
 for(const token of ['todo','placeholder','physicsworker.js','ogle-2023-blg-0001'])if(combined.includes(token))failures.push(`obsolete or unfinished token: ${token}`);
