@@ -35,6 +35,13 @@ jobs:
         run: python scripts/run_residual_robustness.py --synthetic --output results/synthetic_residual_audit.json
       - name: Run pinned OGLE observational diagnostics
         run: python scripts/run_residual_robustness.py --output results/ogle_residual_audit.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate existing browser and research outputs
+        run: |
+          npm run check
+          npm run validate:research
       - name: Upload descriptive diagnostics
         uses: actions/upload-artifact@v4
         with:
