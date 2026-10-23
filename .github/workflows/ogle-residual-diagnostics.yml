@@ -1,0 +1,50 @@
+name: OGLE residual robustness diagnostics
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "tests/**"
+      - "data/ogle-2023-blg-0100-phot.dat"
+      - ".github/workflows/ogle-residual-diagnostics.yml"
+  push:
+    branches:
+      - "research/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-diagnostics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-research.txt
+      - name: Install numerical and test dependencies
+        run: |
+          python -m pip install -r requirements-research.txt
+          python -m pip install "pytest>=8,<10"
+      - name: Run regression tests
+        run: python -m pytest -q tests/test_residual_robustness.py
+      - name: Run synthetic diagnostic fixture
+        run: python scripts/run_residual_robustness.py --synthetic --output results/synthetic_residual_audit.json
+      - name: Run pinned OGLE observational diagnostics
+        run: python scripts/run_residual_robustness.py --output results/ogle_residual_audit.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate existing browser and research outputs
+        run: |
+          npm run check
+          npm run validate:research
+      - name: Upload descriptive diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: ogle-residual-audit
+          path: results/*_residual_audit.json
+          if-no-files-found: error
