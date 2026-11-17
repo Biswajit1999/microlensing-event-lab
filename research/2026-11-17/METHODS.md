@@ -1,0 +1,5 @@
+# PSPL information sensitivity (17 November 2026)
+
+This isolated module computes (1) the five-parameter blended point-source/point-lens flux Jacobian and its local Gaussian Fisher information, and (2) leave-one-cadence-group-out sensitivity of the smallest weighted-Jacobian singular value. The calculation is conditional on supplied PSPL parameters, cadence, and independent Gaussian measurement errors. It is **not** a parameter fit, an uncertainty interval from real OGLE observations, or a planetary-anomaly test. Small singular values indicate local degeneracy; Fisher inversion is inappropriate when rank-deficient. The finite-difference step is a numerical approximation and should be checked against step variation.
+
+Reproduce with `cd research/2026-11-17 && python -m pytest -q test_pspl_information.py`. No external data are used or modified. The existing OGLE data provenance and fit are unchanged. AI coding assistance was used; Biswajit Jana remains the requested authenticated Git commit author. No observational plot is claimed.
