@@ -21,6 +21,19 @@ def test_information_scaling():
     b = fisher_diagnostics(t, np.full(t.size, 2.), P)
     assert np.allclose(b["fisher"], a["fisher"]/4)
     assert a["rank"] == 5
+    assert np.isfinite(a["condition"])
+
+
+def test_fisher_condition_is_infinite_for_underdetermined_cadence():
+    res = fisher_diagnostics([-10, 1, 8], [1, 1, 1], P)
+    assert res["rank"] == 3
+    assert np.all(res["singular_values"] > 0)
+    assert np.isinf(res["condition"])
+
+
+def test_fisher_rejects_empty_cadence():
+    with pytest.raises(ValueError, match="invalid uncertainties"):
+        fisher_diagnostics([], [], P)
 
 def test_cadence_groups():
     t = np.linspace(-30, 30, 61)

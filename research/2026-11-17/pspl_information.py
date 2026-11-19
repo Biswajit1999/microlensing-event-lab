@@ -40,22 +40,23 @@ def numerical_jacobian(times, params, relative_step=1e-5):
 
 
 def fisher_diagnostics(times, sigma, params):
-    """Independent Gaussian errors; reports rank and singular values, not a fit."""
+    """Weighted-Jacobian singular values and Fisher condition for independent Gaussian errors."""
     t = np.asarray(times, dtype=float)
     s = np.asarray(sigma, dtype=float)
-    if t.ndim != 1 or s.shape != t.shape or not np.all(np.isfinite(s)) or np.any(s <= 0):
+    if t.ndim != 1 or t.size == 0 or s.shape != t.shape or not np.all(np.isfinite(s)) or np.any(s <= 0):
         raise ValueError("invalid uncertainties")
     j = numerical_jacobian(t, params)
     weighted = j / s[:, None]
     singular = np.linalg.svd(weighted, compute_uv=False)
     rank = int(np.linalg.matrix_rank(weighted))
+    condition = np.inf if rank < weighted.shape[1] else (singular[0] / singular[-1]) ** 2
     return {"fisher": weighted.T @ weighted, "rank": rank,
             "singular_values": singular,
-            "condition": float(np.inf if singular[-1] == 0 else (singular[0]/singular[-1])**2)}
+            "condition": float(condition)}
 
 
 def cadence_deletion(times, sigma, params, groups):
-    """Leave-one-group-out smallest Fisher singular value, conditional on parameters."""
+    """Leave-one-group-out smallest weighted-Jacobian singular value."""
     t, s, g = np.asarray(times), np.asarray(sigma), np.asarray(groups)
     if g.shape != t.shape:
         raise ValueError("group shape mismatch")
