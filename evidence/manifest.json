@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "project": "One Star, Briefly Brighter",
+  "repository": "https://github.com/Biswajit1999/microlensing-event-lab",
+  "files": [
+    {
+      "label": "Ogle 2023 blg 0100 fit",
+      "path": "data/ogle-2023-blg-0100-fit.json",
+      "role": "Data and provenance",
+      "bytes": 161322,
+      "sha256": "20c3c168c6c0ccc5cc68e679fd6a9c67c8ab3cfacf9e4d49cb175d7a07eaab98",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "schema_version",
+        "event",
+        "provenance",
+        "model",
+        "fits",
+        "comparison",
+        "observations"
+      ],
+      "arrays": {
+        "observations": 360,
+        "curve": 700
+      }
+    },
+    {
+      "label": "METHODS",
+      "path": "research/2026-11-17/METHODS.md",
+      "role": "Data and provenance",
+      "bytes": 1044,
+      "sha256": "859316725157e1235ae5d43f3bbc44747c211d5f4b28d4f870a57d0f12055225",
+      "hash_basis": "LF-normalised text",
+      "format": "MD"
+    }
+  ]
+}

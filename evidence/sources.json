@@ -1,0 +1,16 @@
+{
+  "project": "One Star, Briefly Brighter",
+  "repository": "https://github.com/Biswajit1999/microlensing-event-lab",
+  "files": [
+    {
+      "label": "Ogle 2023 blg 0100 fit",
+      "path": "data/ogle-2023-blg-0100-fit.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "METHODS",
+      "path": "research/2026-11-17/METHODS.md",
+      "role": "Data and provenance"
+    }
+  ]
+}
