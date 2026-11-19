@@ -73,3 +73,15 @@ Data: OGLE-IV Early Warning System. Survey reference: Udalski, A., Szymański, M
 ## Author
 
 Biswajit Jana, 2026. MIT License.
+
+## Research evidence and downloads
+
+- [Browse the evidence file index](evidence/manifest.json) or open `evidence.html` from the checkout to inspect previews and downloads.
+- Start with [Ogle 2023 blg 0100 fit](data/ogle-2023-blg-0100-fit.json), [METHODS](research/2026-11-17/METHODS.md).
+
+Run these commands from the repository root to rebuild the published evidence.
+
+```sh
+python scripts/evidence_catalog.py
+python scripts/render_evidence_page.py
+```
