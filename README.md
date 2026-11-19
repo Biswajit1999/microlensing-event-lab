@@ -12,6 +12,10 @@ The previous version used OGLE-2023-BLG-0001. The official OGLE record flags tha
 
 ## Result
 
+![OGLE-IV flux observations with reported one-sigma errors and a fitted point-lens curve above standardised residuals](assets/ogle-lightcurve-evidence.svg)
+
+The figure shows the ±90-day window around peak. The fit uses all 360 observations, including the longer baseline. [Open the interactive light curve](https://biswajit1999.github.io/microlensing-event-lab/) or [read the cadence-sensitivity methods](research/2026-11-17/METHODS.md).
+
 The offline fit uses
 
 \[
@@ -49,6 +53,8 @@ python scripts/fit_ogle_event.py
 npm run check
 npm run validate:research
 ```
+
+To regenerate the static figure from the committed fit, install Matplotlib and run `python scripts/plot_ogle_evidence.py`.
 
 Serve the repository through HTTP because the page fetches JSON:
 
